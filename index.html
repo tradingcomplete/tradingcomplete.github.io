@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trading Complete - すべてのトレードを、この一つで</title>
+    <title>Trading Complete - プロフェッショナルFXトレード管理システム</title>
+    
+    <!-- SEO対策 -->
+    <meta name="description" content="Trading Completeは、複数FX業者の取引を一元管理し、確定申告を効率化する次世代トレード管理システムです。2026年1月リリース予定。">
+    <meta name="keywords" content="FX,トレード管理,確定申告,Trading Complete,トレーディング">
+    <meta property="og:title" content="Trading Complete - すべてのトレードを、この一つで">
+    <meta property="og:description" content="複数FX業者対応・AI分析・確定申告サポート搭載の統合トレード管理システム">
+    <meta property="og:image" content="https://tradingcomplete.com/og-image.png">
+    <meta property="og:url" content="https://tradingcomplete.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Compana_Doppio">
+    
+    <!-- ファビコン -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+    
     <style>
         * {
             margin: 0;
@@ -12,158 +26,324 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
+            overflow-x: hidden;
         }
         
-        .container {
-            max-width: 700px;
-            animation: fadeIn 1s ease-in;
+        /* プロ感のあるヘッダー */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* メインコンテンツ */
+        .hero {
+            padding: 150px 20px 100px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease-out;
         }
         
         .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease-out 0.2s backwards;
         }
         
-        .release-date {
-            display: inline-block;
-            padding: 12px 30px;
-            background: rgba(255,255,255,0.2);
-            border: 2px solid white;
+        .release-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+            border: 2px solid rgba(255,255,255,0.5);
             border-radius: 50px;
             font-size: 1.3rem;
             font-weight: bold;
             letter-spacing: 1px;
-            margin-bottom: 3rem;
-            animation: pulse 2s infinite;
+            margin-bottom: 4rem;
+            animation: fadeInUp 0.8s ease-out 0.4s backwards, pulse 2s infinite;
+            backdrop-filter: blur(10px);
         }
         
-        .features {
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: #4ade80;
+            border-radius: 50%;
+            animation: blink 2s infinite;
+        }
+        
+        /* 機能カード */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 0 20px;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 30px;
             text-align: left;
-            margin: 3rem auto;
-            max-width: 500px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out backwards;
+            cursor: default;
         }
         
-        .feature {
-            font-size: 1.2rem;
-            line-height: 2;
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: slideIn 0.5s ease-out forwards;
+        .feature-card:nth-child(1) { animation-delay: 0.5s; }
+        .feature-card:nth-child(2) { animation-delay: 0.6s; }
+        .feature-card:nth-child(3) { animation-delay: 0.7s; }
+        .feature-card:nth-child(4) { animation-delay: 0.8s; }
+        .feature-card:nth-child(5) { animation-delay: 0.9s; }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
         
-        .feature:nth-child(1) { animation-delay: 0.2s; }
-        .feature:nth-child(2) { animation-delay: 0.4s; }
-        .feature:nth-child(3) { animation-delay: 0.6s; }
-        .feature:nth-child(4) { animation-delay: 0.8s; }
-        .feature:nth-child(5) { animation-delay: 1.0s; }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
         
+        .feature-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .feature-desc {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        /* CTA セクション */
         .cta-section {
-            margin-top: 4rem;
+            text-align: center;
+            padding: 80px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            margin-top: 100px;
         }
         
         .cta-title {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            opacity: 0.9;
+            font-size: 2rem;
+            margin-bottom: 2rem;
         }
         
-        .twitter-button {
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 15px 35px;
-            background: #1DA1F2;
-            color: white;
-            text-decoration: none;
+            padding: 18px 40px;
             border-radius: 50px;
             font-size: 1.1rem;
             font-weight: bold;
+            text-decoration: none;
             transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #1DA1F2, #1a8cd8);
+            color: white;
             box-shadow: 0 4px 15px rgba(29, 161, 242, 0.4);
         }
         
-        .twitter-button:hover {
-            background: #1a8cd8;
+        .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(29, 161, 242, 0.5);
+            box-shadow: 0 6px 25px rgba(29, 161, 242, 0.5);
         }
         
-        .twitter-icon {
-            width: 24px;
-            height: 24px;
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
         
-        @keyframes slideIn {
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            opacity: 0.8;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* アニメーション */
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        
+        @keyframes fadeInUp {
             from { 
                 opacity: 0; 
-                transform: translateX(-20px);
+                transform: translateY(30px);
             }
             to { 
                 opacity: 1; 
-                transform: translateX(0);
+                transform: translateY(0);
             }
         }
         
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
         }
         
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* レスポンシブ */
         @media (max-width: 768px) {
+            header { padding: 15px 20px; }
             h1 { font-size: 2.5rem; }
-            .subtitle { font-size: 1.2rem; }
-            .release-date { font-size: 1.1rem; }
-            .feature { font-size: 1.1rem; }
-            .features { max-width: 100%; }
+            .subtitle { font-size: 1.3rem; }
+            .release-badge { font-size: 1.1rem; padding: 12px 30px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .cta-title { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>📊 Trading Complete</h1>
+    <!-- ヘッダー -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span>📊</span>
+                <span>Trading Complete</span>
+            </div>
+        </div>
+    </header>
+    
+    <!-- ヒーローセクション -->
+    <main class="hero">
+        <h1>Trading Complete</h1>
         <p class="subtitle">すべてのトレードを、この一つで。</p>
         
-        <div class="release-date">2026年1月 リリース予定</div>
-        
-        <div class="features">
-            <div class="feature">✅ トレード記録を簡単に</div>
-            <div class="feature">📊 自動分析でパフォーマンス改善</div>
-            <div class="feature">📱 スマホ・PCどこでもアクセス</div>
-            <div class="feature">🧾 確定申告もサポート</div>
-            <div class="feature">🎮 AIプロンプト生成でゲーミフィケーション</div>
+        <div class="release-badge">
+            <span class="status-dot"></span>
+            <span>2026年1月 リリース予定</span>
         </div>
         
-        <div class="cta-section">
-            <p class="cta-title">🔔 最新情報を受け取る</p>
-            <a href="https://twitter.com/Compana_Doppio" target="_blank" rel="noopener noreferrer" class="twitter-button">
-                <svg class="twitter-icon" viewBox="0 0 24 24" fill="currentColor">
+        <!-- 機能カード -->
+        <div class="features-grid" id="features">
+            <div class="feature-card">
+                <div class="feature-icon">✅</div>
+                <div class="feature-title">簡単記録</div>
+                <div class="feature-desc">直感的なUIで、トレード記録を素早く入力。複数FX業者の取引を一元管理。</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <div class="feature-title">AI自動分析</div>
+                <div class="feature-desc">勝率、リスクリワード比、連勝記録などを自動で分析。改善点を可視化。</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <div class="feature-title">マルチデバイス</div>
+                <div class="feature-desc">PC、スマホ、タブレット。どこからでもアクセス可能なクラウド同期。</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🧾</div>
+                <div class="feature-title">確定申告サポート</div>
+                <div class="feature-desc">年間損益を自動集計。CSVインポートで正確な申告準備を15分で完了。</div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎮</div>
+                <div class="feature-title">ゲーミフィケーション</div>
+                <div class="feature-desc">AIプロンプト生成でトレード結果を視覚化。SNSシェアで仲間と競争。</div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- CTAセクション -->
+    <section class="cta-section" id="contact">
+        <h2 class="cta-title">🚀 最新情報をいち早くゲット</h2>
+        <div class="cta-buttons">
+            <a href="https://twitter.com/Compana_Doppio" target="_blank" class="btn btn-primary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                 </svg>
                  (Twitter) でフォロー
             </a>
+            <a href="https://github.com/tradingcomplete" target="_blank" class="btn btn-secondary">
+                GitHubで開発状況を見る
+            </a>
         </div>
-    </div>
+    </section>
+    
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2025 Trading Complete by Compana. All rights reserved.</p>
+        <p style="margin-top: 10px; font-size: 0.9rem;">FXトレード管理の新スタンダードを目指して</p>
+    </footer>
+    
+    <!-- スムーススクロール -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
