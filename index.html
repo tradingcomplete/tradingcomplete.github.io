@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trading Complete - Coming Soon</title>
+    <title>Trading Complete - すべてのトレードを、この一つで</title>
     <style>
         * {
             margin: 0;
@@ -15,7 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,12 +24,12 @@
         }
         
         .container {
-            max-width: 600px;
+            max-width: 700px;
             animation: fadeIn 1s ease-in;
         }
         
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
@@ -40,28 +40,89 @@
             opacity: 0.9;
         }
         
-        .description {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 3rem;
-            opacity: 0.8;
-        }
-        
-        .coming-soon {
+        .release-date {
             display: inline-block;
-            padding: 15px 40px;
+            padding: 12px 30px;
             background: rgba(255,255,255,0.2);
             border: 2px solid white;
             border-radius: 50px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: bold;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            margin-bottom: 3rem;
             animation: pulse 2s infinite;
+        }
+        
+        .features {
+            text-align: left;
+            margin: 3rem auto;
+            max-width: 500px;
+        }
+        
+        .feature {
+            font-size: 1.2rem;
+            line-height: 2;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: slideIn 0.5s ease-out forwards;
+        }
+        
+        .feature:nth-child(1) { animation-delay: 0.2s; }
+        .feature:nth-child(2) { animation-delay: 0.4s; }
+        .feature:nth-child(3) { animation-delay: 0.6s; }
+        .feature:nth-child(4) { animation-delay: 0.8s; }
+        .feature:nth-child(5) { animation-delay: 1.0s; }
+        
+        .cta-section {
+            margin-top: 4rem;
+        }
+        
+        .cta-title {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .twitter-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background: #1DA1F2;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(29, 161, 242, 0.4);
+        }
+        
+        .twitter-button:hover {
+            background: #1a8cd8;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(29, 161, 242, 0.5);
+        }
+        
+        .twitter-icon {
+            width: 24px;
+            height: 24px;
         }
         
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideIn {
+            from { 
+                opacity: 0; 
+                transform: translateX(-20px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateX(0);
+            }
         }
         
         @keyframes pulse {
@@ -71,9 +132,11 @@
         }
         
         @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
+            h1 { font-size: 2.5rem; }
             .subtitle { font-size: 1.2rem; }
-            .description { font-size: 1rem; }
+            .release-date { font-size: 1.1rem; }
+            .feature { font-size: 1.1rem; }
+            .features { max-width: 100%; }
         }
     </style>
 </head>
@@ -81,11 +144,26 @@
     <div class="container">
         <h1>📊 Trading Complete</h1>
         <p class="subtitle">すべてのトレードを、この一つで。</p>
-        <p class="description">
-            FXトレーダーのための統合トレード管理システム<br>
-            複数FX業者の一元管理・確定申告サポート・AIによる分析
-        </p>
-        <div class="coming-soon">COMING SOON</div>
+        
+        <div class="release-date">2026年1月 リリース予定</div>
+        
+        <div class="features">
+            <div class="feature">✅ トレード記録を簡単に</div>
+            <div class="feature">📊 自動分析でパフォーマンス改善</div>
+            <div class="feature">📱 スマホ・PCどこでもアクセス</div>
+            <div class="feature">🧾 確定申告もサポート</div>
+            <div class="feature">🎮 AIプロンプト生成でゲーミフィケーション</div>
+        </div>
+        
+        <div class="cta-section">
+            <p class="cta-title">🔔 最新情報を受け取る</p>
+            <a href="https://twitter.com/Compana_Doppio" target="_blank" rel="noopener noreferrer" class="twitter-button">
+                <svg class="twitter-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+                 (Twitter) でフォロー
+            </a>
+        </div>
     </div>
 </body>
 </html>
