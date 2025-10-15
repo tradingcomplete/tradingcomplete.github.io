@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>収支管理機能 - Trading Complete</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .back-btn {
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .main-content {
+            padding: 120px 20px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .feature-icon-large {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .feature-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+        
+        .content-section {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .screenshot-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .screenshot-placeholder {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+        
+        .screenshot-caption {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features-list li {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: start;
+            backdrop-filter: blur(10px);
+        }
+        
+        .feature-check {
+            color: #4ade80;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .feature-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        
+        .feature-text p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .expense-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .category-badge {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .closing-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .closing-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .closing-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 30px;
+            margin-top: 80px;
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(74, 222, 128, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            h1 { font-size: 2rem; }
+            .section-title { font-size: 1.5rem; }
+            .screenshot-placeholder { height: 250px; }
+            .expense-categories { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span>📊</span>
+                <span>Trading Complete</span>
+            </div>
+            <a href="index.html" class="back-btn">← トップに戻る</a>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="feature-header">
+            <div class="feature-icon-large">💰</div>
+            <h1>収支管理機能</h1>
+            <p class="feature-subtitle">経費管理と締め処理で、確定申告の準備を完璧に</p>
+        </div>
+        
+        <section class="content-section">
+            <h2 class="section-title">📸 画面イメージ</h2>
+            
+            <div class="screenshot-container">
+                <div class="screenshot-placeholder">
+                    [経費入力画面のスクリーンショット]
+                </div>
+                <p class="screenshot-caption">経費入力画面 - カテゴリ別に簡単登録</p>
+            </div>
+            
+            <div class="screenshot-container">
+                <div class="screenshot-placeholder">
+                    [締め処理画面のスクリーンショット]
+                </div>
+                <p class="screenshot-caption">締め処理画面 - 月次・四半期・年次で確定</p>
+            </div>
+            
+            <div class="screenshot-container">
+                <div class="screenshot-placeholder">
+                    [一括入力画面のスクリーンショット]
+                </div>
+                <p class="screenshot-caption">一括入力画面 - 複数トレードをまとめて登録</p>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 class="section-title">📂 経費カテゴリ</h2>
+            <div class="expense-categories">
+                <div class="category-badge">📚 書籍代</div>
+                <div class="category-badge">💻 ツール代</div>
+                <div class="category-badge">🎓 セミナー費</div>
+                <div class="category-badge">📡 通信費</div>
+                <div class="category-badge">🖥️ PC関連</div>
+                <div class="category-badge">📝 その他</div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 class="section-title">🔒 締め処理タイプ</h2>
+            <div class="closing-types">
+                <div class="closing-card">
+                    <div class="closing-icon">📅</div>
+                    <h3>月次締め</h3>
+                    <p>毎月のトレードを確定。変更不可にして記録を保護。</p>
+                </div>
+                <div class="closing-card">
+                    <div class="closing-icon">📊</div>
+                    <h3>四半期締め</h3>
+                    <p>3ヶ月分をまとめて締め。四半期レポート作成に便利。</p>
+                </div>
+                <div class="closing-card">
+                    <div class="closing-icon">📈</div>
+                    <h3>年次締め</h3>
+                    <p>年間の全取引を確定。確定申告の準備が完了。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 class="section-title">🚀 主要機能</h2>
+            <ul class="features-list">
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>経費管理</h3>
+                        <p>トレードに関連する経費を日付・カテゴリ別に管理。年間の必要経費を正確に把握できます。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>一括入力機能</h3>
+                        <p>複数のトレードをまとめて入力。CSVからのコピペや、定型パターンの保存も可能。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>締め処理</h3>
+                        <p>期間を確定させることで、誤って過去のデータを変更することを防止。監査証跡としても有効。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>収支サマリー</h3>
+                        <p>トレード損益、経費、純利益を自動計算。税金計算に必要な数字が一目でわかります。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>FX業者照合</h3>
+                        <p>FX業者の年間損益報告書と照合可能。差異があれば即座に発見できます。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>編集・削除制限</h3>
+                        <p>締め処理後は編集不可。確定申告の信頼性を高め、税務調査にも対応。</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="cta-section">
+            <h2 class="cta-title">確定申告の準備を簡単に</h2>
+            <p>2026年3月のリリースに向けて、開発を進めています</p>
+            <a href="index.html#contact" class="cta-btn">最新情報を受け取る</a>
+        </section>
+    </main>
+</body>
+</html>
