@@ -269,19 +269,21 @@
         .calendar-view-demo {
             background: rgba(0, 0, 0, 0.3);
             border-radius: 15px;
-            padding: 30px;
+            padding: 20px;
             backdrop-filter: blur(10px);
+            max-width: 600px;
+            margin: 0 auto;
         }
         
         .calendar-header-demo {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         
         .calendar-header-demo h3 {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin: 0;
         }
         
@@ -289,10 +291,11 @@
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
             color: white;
-            padding: 8px 15px;
+            padding: 5px 12px;
             border-radius: 5px;
             cursor: pointer;
             transition: all 0.2s;
+            font-size: 0.9rem;
         }
         
         .calendar-nav-btn:hover {
@@ -302,26 +305,26 @@
         .calendar-grid-demo {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
-            gap: 8px;
+            gap: 4px;
         }
         
         .calendar-day-header {
             text-align: center;
-            padding: 10px;
+            padding: 5px;
             font-weight: bold;
             opacity: 0.7;
-            font-size: 0.9rem;
+            font-size: 0.75rem;
         }
         
         .calendar-day-cell {
             aspect-ratio: 1;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1rem;
+            font-size: 0.85rem;
             cursor: pointer;
             transition: all 0.2s;
         }
