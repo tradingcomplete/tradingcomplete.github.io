@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相場ノート機能 - Trading Complete</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .back-btn {
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .main-content {
+            padding: 120px 20px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .feature-icon-large {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .feature-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+        
+        .content-section {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .screenshot-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .screenshot-placeholder {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+        
+        .screenshot-caption {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features-list li {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: start;
+            backdrop-filter: blur(10px);
+        }
+        
+        .feature-check {
+            color: #4ade80;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .feature-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        
+        .feature-text p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .week-preview {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .day-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px 15px;
+            text-align: center;
+            flex: 1;
+            min-width: 100px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .day-card.has-note {
+            background: linear-gradient(135deg, rgba(74, 222, 128, 0.2), rgba(34, 197, 94, 0.2));
+            border-color: rgba(74, 222, 128, 0.5);
+        }
+        
+        .day-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .day-date {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .note-indicator {
+            margin-top: 10px;
+            color: #4ade80;
+        }
+        
+        .calendar-preview {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            margin-top: 20px;
+        }
+        
+        .calendar-day {
+            aspect-ratio: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+        }
+        
+        .calendar-day.has-note {
+            background: linear-gradient(135deg, rgba(74, 222, 128, 0.3), rgba(34, 197, 94, 0.3));
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 30px;
+            margin-top: 80px;
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(74, 222, 128, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            h1 { font-size: 2rem; }
+            .section-title { font-size: 1.5rem; }
+            .screenshot-placeholder { height: 250px; }
+            .week-preview { flex-direction: column; }
+            .calendar-grid { grid-template-columns: repeat(7, 1fr); font-size: 0.8rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span>📊</span>
+                <span>Trading Complete</span>
+            </div>
+            <a href="index.html" class="back-btn">← トップに戻る</a>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="feature-header">
+            <div class="feature-icon-large">📝</div>
+            <h1>相場ノート機能</h1>
+            <p class="feature-subtitle">日々の相場観察を記録し、パターンを見つけ出す</p>
+        </div>
+        
+        <section class="content-section">
+            <h2 class="section-title">📸 画面イメージ</h2>
+            
+            <div class="screenshot-container">
+                <div class="screenshot-placeholder">
+                    [週間プレビュー画面のスクリーンショット]
+                </div>
+                <p class="screenshot-caption">週間プレビュー - 1週間のノートを一目で確認</p>
+            </div>
+            
+            <div class="screenshot-container">
+                <div class="screenshot-placeholder">
+                    [ノート入力画面のスクリーンショット]
+                </div>
+                <p class="screenshot-caption">ノート入力画面 - リッチテキストエディタで自由に記録</p>
+            </div>
+            
+            <div class="screenshot-container">
+                <div class="screenshot-placeholder">
+                    [カレンダー表示画面のスクリーンショット]
+                </div>
+                <p class="screenshot-caption">月間カレンダー - 記録済みの日がひと目でわかる</p>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 class="section-title">📅 週間プレビュー</h2>
+            <div class="week-preview">
+                <div class="day-card">
+                    <div class="day-name">月</div>
+                    <div class="day-date">10/14</div>
+                </div>
+                <div class="day-card has-note">
+                    <div class="day-name">火</div>
+                    <div class="day-date">10/15</div>
+                    <div class="note-indicator">✓</div>
+                </div>
+                <div class="day-card has-note">
+                    <div class="day-name">水</div>
+                    <div class="day-date">10/16</div>
+                    <div class="note-indicator">✓</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">木</div>
+                    <div class="day-date">10/17</div>
+                </div>
+                <div class="day-card has-note">
+                    <div class="day-name">金</div>
+                    <div class="day-date">10/18</div>
+                    <div class="note-indicator">✓</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">土</div>
+                    <div class="day-date">10/19</div>
+                </div>
+                <div class="day-card">
+                    <div class="day-name">日</div>
+                    <div class="day-date">10/20</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 class="section-title">🗓️ 月間カレンダービュー</h2>
+            <div class="calendar-preview">
+                <h3 style="text-align: center; margin-bottom: 10px;">2025年10月</h3>
+                <div class="calendar-grid">
+                    <!-- 簡易的なカレンダー表示 -->
+                    <div class="calendar-day">日</div>
+                    <div class="calendar-day">月</div>
+                    <div class="calendar-day">火</div>
+                    <div class="calendar-day">水</div>
+                    <div class="calendar-day">木</div>
+                    <div class="calendar-day">金</div>
+                    <div class="calendar-day">土</div>
+                    <!-- 日付 -->
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day"></div>
+                    <div class="calendar-day has-note">1</div>
+                    <div class="calendar-day">2</div>
+                    <div class="calendar-day has-note">3</div>
+                    <div class="calendar-day">4</div>
+                    <div class="calendar-day">5</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 class="section-title">🚀 主要機能</h2>
+            <ul class="features-list">
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>日次記録</h3>
+                        <p>毎日の相場の動き、重要な指標発表、自分の感情や気づきを自由に記録。後から振り返る際の貴重な資料に。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>リッチテキストエディタ</h3>
+                        <p>見出し、太字、リスト機能を使って見やすく整理。重要な部分を強調して記録できます。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>画像添付</h3>
+                        <p>チャート画像や経済指標のスクリーンショットを添付。文字だけでは伝わらない情報も保存。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>週間プレビュー</h3>
+                        <p>現在の週の記録状況を一目で確認。記録の習慣化をサポートします。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>カレンダー表示</h3>
+                        <p>月間カレンダーで記録済みの日をビジュアル表示。記録の継続性が一目瞭然。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>検索機能</h3>
+                        <p>過去のノートをキーワード検索。特定の相場状況や気づきをすぐに見つけられます。</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="cta-section">
+            <h2 class="cta-title">記録は最強の武器になる</h2>
+            <p>2026年3月のリリースに向けて、開発を進めています</p>
+            <a href="index.html#contact" class="cta-btn">最新情報を受け取る</a>
+        </section>
+    </main>
+</body>
+</html>
