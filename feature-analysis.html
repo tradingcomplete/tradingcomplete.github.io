@@ -268,114 +268,128 @@
         <div class="feature-header">
             <div class="feature-icon-large">📊</div>
             <h1>統計分析機能</h1>
-            <p class="feature-subtitle">データに基づいた改善で、勝率アップを実現</p>
+            <p class="feature-subtitle">トレード履歴を多角的に分析し、成長のヒントを見つける機能。「なんとなく」を「データで裏付けられた強み」に変換します。</p>
         </div>
         
         <section class="content-section">
             <h2 class="section-title">📸 画面イメージ</h2>
+            <p style="margin-bottom: 30px; line-height: 1.8; opacity: 0.95;">
+                分析タブは大きく4つのエリアで構成されています。統計サマリーで全体像を把握し、レポート生成で詳細を確認、チャート表示で視覚的に理解するという流れで、多角的な分析が可能です。
+            </p>
             
             <div class="screenshot-container">
                 <img src="https://cdn.discordapp.com/attachments/1230167966511792329/1428145171857539072/feature-analysis1.jpg?ex=68f16f56&is=68f01dd6&hm=d741a967acc50519796c018ffa5dc1f328fb827c04660ddb69350505ab5af3b9&" alt="統計ダッシュボード画面" style="width: 100%; border-radius: 10px;">
-                <p class="screenshot-caption">統計ダッシュボード - 重要指標を一目で把握</p>
+                <p class="screenshot-caption">統計ダッシュボード - 重要指標を一目で把握。総トレード数、勝率、総獲得Pipsなどをリアルタイム表示</p>
             </div>
             
             <div class="screenshot-container">
-                <img src="ここにDiscordのURL2を貼り付け" alt="月次レポート画面" style="width: 100%; border-radius: 10px;">
-                <p class="screenshot-caption">月次レポート - 詳細な分析結果を自動生成</p>
+                <img src="https://cdn.discordapp.com/attachments/1230167966511792329/1428147931944321124/feature-analysis2.jpg?ex=68f171e8&is=68f02068&hm=efef4b8dc71fdba9347a1382548e7325b199dadfe59a3bb581a46f66222d4fe7&" alt="月次レポート画面" style="width: 100%; border-radius: 10px;">
+                <p class="screenshot-caption">月次レポート - 通貨ペア別・曜日別の詳細分析結果を自動生成。強み・弱みが一目瞭然</p>
             </div>
             
             <div class="screenshot-container">
                 <img src="ここにDiscordのURL3を貼り付け" alt="チャート表示画面" style="width: 100%; border-radius: 10px;">
-                <p class="screenshot-caption">パフォーマンスチャート - 成長を視覚的に確認</p>
+                <p class="screenshot-caption">パフォーマンスチャート - 月別推移と累積損益を美しいグラフで視覚化。成長の軌跡を実感</p>
             </div>
         </section>
         
         <section class="content-section">
-            <h2 class="section-title">📈 分析可能な指標</h2>
+            <h2 class="section-title">📈 分析可能な主要指標</h2>
+            <p style="margin-bottom: 20px; line-height: 1.8; opacity: 0.95;">
+                統計サマリーエリアに常時表示される重要指標です。Pips表示と円建て表示を切り替えることで、技術面と収支面の両方を把握できます。
+            </p>
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-icon">🎯</div>
                     <div class="stat-title">勝率</div>
                     <div class="stat-value">65.3%</div>
+                    <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">勝ちトレード ÷ 全体 × 100<br>50%以上なら優秀</p>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">💹</div>
-                    <div class="stat-title">リスクリワード比</div>
+                    <div class="stat-title">平均リスクリワード比</div>
                     <div class="stat-value">1:2.4</div>
+                    <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">平均的な損失と利益の比率<br>1.5以上が理想的</p>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">📊</div>
                     <div class="stat-title">プロフィットファクター</div>
                     <div class="stat-value">2.15</div>
+                    <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">総利益 ÷ 総損失<br>1.5以上で優秀なトレーダー</p>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">📉</div>
                     <div class="stat-title">最大ドローダウン</div>
                     <div class="stat-value">-8.2%</div>
+                    <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">資金の最大下落率<br>リスク管理の指標</p>
                 </div>
             </div>
             
-            <div style="text-align: center; margin-top: 30px;">
-                <p>表示切替：</p>
+            <div style="text-align: center; margin-top: 40px;">
+                <p style="font-size: 1.1rem; margin-bottom: 15px;">💡 表示切替で技術面と収支面を両方確認</p>
                 <div class="toggle-container">
-                    <button class="toggle-btn active">Pips表示</button>
-                    <button class="toggle-btn">円建て表示</button>
+                    <button class="toggle-btn active">Pips表示（技術評価）</button>
+                    <button class="toggle-btn">円建て表示（実損益）</button>
                 </div>
+                <p style="margin-top: 15px; font-size: 0.95rem; opacity: 0.85;">
+                    ワンクリックで切り替え可能。技術向上には「Pips表示」、実際の収支確認には「円建て表示」を活用。
+                </p>
             </div>
         </section>
         
         <section class="content-section">
-            <h2 class="section-title">🚀 主要機能</h2>
+            <h2 class="section-title">🚀 主要機能と活用方法</h2>
             <ul class="features-list">
                 <li>
                     <span class="feature-check">✓</span>
                     <div class="feature-text">
-                        <h3>リアルタイム統計</h3>
-                        <p>総トレード数、勝敗数、勝率、平均獲得Pips、連勝・連敗記録など、重要な統計を自動計算。</p>
+                        <h3>リアルタイム統計自動計算</h3>
+                        <p>総トレード数、勝敗数、勝率、平均獲得Pips、連勝・連敗記録など、重要な統計を自動計算。トレードを記録するだけで、常に最新の成績が確認できます。データに基づいた改善ポイントの発見に役立ちます。</p>
                     </div>
                 </li>
                 <li>
                     <span class="feature-check">✓</span>
                     <div class="feature-text">
-                        <h3>Pips/円建て両対応</h3>
-                        <p>Pips表示と円建て表示をワンクリックで切り替え。実際の収益を正確に把握できます。</p>
+                        <h3>Pips/円建て両対応の切替表示</h3>
+                        <p>Pips表示で純粋なトレード技術を評価し、円建て表示で実際の収益を正確に把握。ロット数の影響を受けずに技術向上を測りながら、実際の収支も確認できる二刀流の分析が可能です。</p>
                     </div>
                 </li>
                 <li>
                     <span class="feature-check">✓</span>
                     <div class="feature-text">
-                        <h3>自動レポート生成</h3>
-                        <p>週次、月次、四半期、年次でレポートを自動生成。PDFエクスポートも可能。</p>
+                        <h3>4種類の自動レポート生成</h3>
+                        <p>週次、月次、四半期、年次の4パターンでレポートを自動生成。短期的な調整から長期的な成長確認まで、目的に応じた振り返りが可能。PDFエクスポートで記録の保存も簡単です。</p>
                     </div>
                 </li>
                 <li>
                     <span class="feature-check">✓</span>
                     <div class="feature-text">
-                        <h3>グラフィカル表示</h3>
-                        <p>月別パフォーマンス、累積損益、通貨ペア別分析を美しいグラフで視覚化。</p>
+                        <h3>美しいグラフで視覚的に理解</h3>
+                        <p>月別パフォーマンス、累積損益、通貨ペア別分析を直感的なグラフで視覚化。数字だけでは分からない傾向やパターンを発見し、成長の軌跡を実感できます。</p>
                     </div>
                 </li>
                 <li>
                     <span class="feature-check">✓</span>
                     <div class="feature-text">
-                        <h3>通貨ペア別分析</h3>
-                        <p>どの通貨ペアが得意で、どれが苦手かを明確化。トレード戦略の最適化に活用。</p>
+                        <h3>通貨ペア別・時間帯別の詳細分析</h3>
+                        <p>どの通貨ペアが得意で、どの時間帯・曜日が勝率が高いかを明確化。自分の強みを活かし、弱点を避けるトレード戦略の最適化に活用できます。データドリブンな意思決定をサポートします。</p>
                     </div>
                 </li>
                 <li>
                     <span class="feature-check">✓</span>
                     <div class="feature-text">
-                        <h3>時間帯分析</h3>
-                        <p>勝率の高い時間帯、曜日を特定。最適なトレードタイミングを見つけられます。</p>
+                        <h3>フィルター機能で深掘り分析</h3>
+                        <p>期間、通貨ペア、売買方向などで絞り込んで分析。「ロングは得意だけどショートが苦手」「特定の通貨ペアで負けが多い」といった具体的な課題を発見し、ピンポイントで改善できます。</p>
                     </div>
                 </li>
             </ul>
         </section>
         
         <section class="cta-section">
-            <h2 class="cta-title">データで勝つトレードを始めよう</h2>
-            <p>2026年3月のリリースに向けて、開発を進めています</p>
-            <a href="index.html#contact" class="cta-btn">最新情報を受け取る</a>
+            <h2 class="cta-title">データ分析で、トレードを次のレベルへ</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 10px;">統計・レポート・グラフの3つの角度から、あなたの成長をサポート</p>
+            <p style="opacity: 0.9;">「なんとなく」のトレードを卒業し、データに基づいた改善サイクルを確立しましょう</p>
+            <a href="index.html#contact" class="cta-btn">2026年3月リリース予定 - 最新情報を受け取る</a>
         </section>
     </main>
 </body>
