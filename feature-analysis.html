@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>統計分析機能 - Trading Complete</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .back-btn {
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .main-content {
+            padding: 120px 20px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .feature-icon-large {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .feature-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+        
+        .content-section {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .screenshot-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .screenshot-placeholder {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+        
+        .screenshot-caption {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .stat-title {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+        
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4ade80;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features-list li {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: start;
+            backdrop-filter: blur(10px);
+        }
+        
+        .feature-check {
+            color: #4ade80;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .feature-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        
+        .feature-text p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .toggle-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            padding: 5px;
+            display: inline-flex;
+            margin-top: 20px;
+        }
+        
+        .toggle-btn {
+            padding: 10px 30px;
+            border-radius: 45px;
+            background: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .toggle-btn.active {
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 30px;
+            margin-top: 80px;
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(74, 222, 128, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            h1 { font-size: 2rem; }
+            .section-title { font-size: 1.5rem; }
+            .screenshot-placeholder { height: 250px; }
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span>📊</span>
+                <span>Trading Complete</span>
+            </div>
+            <a href="index.html" class="back-btn">← トップに戻る</a>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="feature-header">
+            <div class="feature-icon-large">📊</div>
+            <h1>統計分析機能</h1>
+            <p class="feature-subtitle">データに基づいた改善で、勝率アップを実現</p>
+        </div>
+        
+        <section class="content-section">
+            <h2 class="section-title">📸 画面イメージ</h2>
+            
+            <div class="screenshot-container">
+                <div class="screenshot-placeholder">
+                    [統計ダッシュボードのスクリーンショット]
+                </div>
+                <p class="screenshot-caption">統計ダッシュボード - 重要指標を一目で把握</p>
+            </div>
+            
+            <div class="screenshot-container">
+                <div class="screenshot-placeholder">
+                    [月次レポート画面のスクリーンショット]
+                </div>
+                <p class="screenshot-caption">月次レポート - 詳細な分析結果を自動生成</p>
+            </div>
+            
+            <div class="screenshot-container">
+                <div class="screenshot-placeholder">
+                    [チャート表示画面のスクリーンショット]
+                </div>
+                <p class="screenshot-caption">パフォーマンスチャート - 成長を視覚的に確認</p>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 class="section-title">📈 分析可能な指標</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-title">勝率</div>
+                    <div class="stat-value">65.3%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💹</div>
+                    <div class="stat-title">リスクリワード比</div>
+                    <div class="stat-value">1:2.4</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-title">プロフィットファクター</div>
+                    <div class="stat-value">2.15</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📉</div>
+                    <div class="stat-title">最大ドローダウン</div>
+                    <div class="stat-value">-8.2%</div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <p>表示切替：</p>
+                <div class="toggle-container">
+                    <button class="toggle-btn active">Pips表示</button>
+                    <button class="toggle-btn">円建て表示</button>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 class="section-title">🚀 主要機能</h2>
+            <ul class="features-list">
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>リアルタイム統計</h3>
+                        <p>総トレード数、勝敗数、勝率、平均獲得Pips、連勝・連敗記録など、重要な統計を自動計算。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>Pips/円建て両対応</h3>
+                        <p>Pips表示と円建て表示をワンクリックで切り替え。実際の収益を正確に把握できます。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>自動レポート生成</h3>
+                        <p>週次、月次、四半期、年次でレポートを自動生成。PDFエクスポートも可能。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>グラフィカル表示</h3>
+                        <p>月別パフォーマンス、累積損益、通貨ペア別分析を美しいグラフで視覚化。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>通貨ペア別分析</h3>
+                        <p>どの通貨ペアが得意で、どれが苦手かを明確化。トレード戦略の最適化に活用。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>時間帯分析</h3>
+                        <p>勝率の高い時間帯、曜日を特定。最適なトレードタイミングを見つけられます。</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="cta-section">
+            <h2 class="cta-title">データで勝つトレードを始めよう</h2>
+            <p>2026年3月のリリースに向けて、開発を進めています</p>
+            <a href="index.html#contact" class="cta-btn">最新情報を受け取る</a>
+        </section>
+    </main>
+</body>
+</html>
