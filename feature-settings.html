@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>設定機能 - Trading Complete</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 50px;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .back-btn {
+            padding: 10px 25px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .main-content {
+            padding: 120px 20px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .feature-icon-large {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .feature-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+        
+        .content-section {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .screenshot-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 30px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .screenshot-placeholder {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+        
+        .screenshot-caption {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features-list li {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: start;
+            backdrop-filter: blur(10px);
+        }
+        
+        .feature-check {
+            color: #4ade80;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .feature-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        
+        .feature-text p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+        
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .setting-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .setting-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .theme-toggle {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .theme-option {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            flex: 1;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .theme-option:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 30px;
+            margin-top: 80px;
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(74, 222, 128, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            header { padding: 15px 20px; }
+            h1 { font-size: 2rem; }
+            .section-title { font-size: 1.5rem; }
+            .screenshot-placeholder { height: 250px; }
+            .settings-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span>📊</span>
+                <span>Trading Complete</span>
+            </div>
+            <a href="index.html" class="back-btn">← トップに戻る</a>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="feature-header">
+            <div class="feature-icon-large">⚙️</div>
+            <h1>設定機能</h1>
+            <p class="feature-subtitle">あなた好みにカスタマイズして、最適な環境を構築</p>
+        </div>
+        
+        <section class="content-section">
+            <h2 class="section-title">📸 画面イメージ</h2>
+            
+            <div class="screenshot-container">
+                <div class="screenshot-placeholder">
+                    [設定画面のスクリーンショット]
+                </div>
+                <p class="screenshot-caption">設定画面 - シンプルで分かりやすい設定項目</p>
+            </div>
+            
+            <div class="screenshot-container">
+                <div class="screenshot-placeholder">
+                    [テーマ切替画面のスクリーンショット]
+                </div>
+                <p class="screenshot-caption">テーマ切替 - ワンクリックで見た目を変更</p>
+            </div>
+            
+            <div class="screenshot-container">
+                <div class="screenshot-placeholder">
+                    [データ管理画面のスクリーンショット]
+                </div>
+                <p class="screenshot-caption">データ管理 - エクスポート・インポートも簡単</p>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 class="section-title">🎨 テーマ設定</h2>
+            <div class="theme-toggle">
+                <div class="theme-option">
+                    <div>🌙</div>
+                    <h3>ダークモード</h3>
+                    <p>目に優しい暗めのテーマ</p>
+                </div>
+                <div class="theme-option">
+                    <div>☀️</div>
+                    <h3>ライトモード</h3>
+                    <p>明るく見やすいテーマ</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 class="section-title">⚙️ 設定カテゴリー</h2>
+            <div class="settings-grid">
+                <div class="setting-card">
+                    <div class="setting-icon">🎯</div>
+                    <h3>目標設定</h3>
+                    <p>月間目標、年間目標を設定してモチベーション維持</p>
+                </div>
+                <div class="setting-card">
+                    <div class="setting-icon">🎨</div>
+                    <h3>表示設定</h3>
+                    <p>通貨表示形式、日付形式などをカスタマイズ</p>
+                </div>
+                <div class="setting-card">
+                    <div class="setting-icon">💾</div>
+                    <h3>データ管理</h3>
+                    <p>バックアップ、復元、データクリア機能</p>
+                </div>
+                <div class="setting-card">
+                    <div class="setting-icon">🔔</div>
+                    <h3>通知設定</h3>
+                    <p>リマインダーやアラート設定（将来実装）</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2 class="section-title">🚀 主要機能</h2>
+            <ul class="features-list">
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>目標管理</h3>
+                        <p>月間・年間の目標を3つまで設定可能。達成状況をヘッダーに常時表示し、モチベーションを維持。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>テーマ切替</h3>
+                        <p>ダークモード/ライトモードをワンクリックで切替。時間帯や気分に合わせて最適な表示を選択。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>データエクスポート</h3>
+                        <p>全データをJSON形式でエクスポート。別のデバイスへの移行やバックアップに活用。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>データインポート</h3>
+                        <p>JSONファイルからデータを復元。機種変更時もスムーズにデータ移行が可能。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>初期化機能</h3>
+                        <p>選択したデータのみ、または全データをクリア。新しいスタートを切りたい時に便利。</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="feature-check">✓</span>
+                    <div class="feature-text">
+                        <h3>表示カスタマイズ</h3>
+                        <p>日付形式、通貨表示、小数点桁数など、細かい表示設定を自由に調整可能。</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="cta-section">
+            <h2 class="cta-title">自分だけの最適環境を作ろう</h2>
+            <p>2026年3月のリリースに向けて、開発を進めています</p>
+            <a href="index.html#contact" class="cta-btn">最新情報を受け取る</a>
+        </section>
+    </main>
+</body>
+</html>
