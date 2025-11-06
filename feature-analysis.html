@@ -108,55 +108,11 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
-        .screenshot-placeholder {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px dashed rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            opacity: 0.7;
-        }
-        
         .screenshot-caption {
             text-align: center;
             margin-top: 15px;
             font-size: 0.95rem;
             opacity: 0.9;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .stat-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 25px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .stat-icon {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-        
-        .stat-title {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            opacity: 0.9;
-        }
-        
-        .stat-value {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #4ade80;
         }
         
         .features-list {
@@ -244,39 +200,15 @@
             box-shadow: 0 10px 30px rgba(74, 222, 128, 0.4);
         }
         
-        .stats-grid-6col {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 12px;
-        }
-        
         @media (max-width: 768px) {
             header { padding: 15px 20px; }
             h1 { font-size: 2rem; }
             .section-title { font-size: 1.5rem; }
-            .screenshot-placeholder { height: 250px; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .stats-grid-6col { 
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
         
-        @media (max-width: 480px) {
-            .stats-grid-6col { 
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-            .stat-card {
-                padding: 12px !important;
-            }
-            .stat-icon {
-                font-size: 1.3rem !important;
-            }
-            .stat-title {
-                font-size: 0.75rem !important;
-            }
-            .stat-value {
-                font-size: 1.2rem !important;
+        @media (max-width: 600px) {
+            .content-section div[style*="grid-template-columns: repeat(4, 1fr)"] {
+                grid-template-columns: repeat(2, 1fr) !important;
             }
         }
     </style>
@@ -323,176 +255,57 @@
         
         <section class="content-section">
             <h2 class="section-title">📈 分析可能な主要指標</h2>
-            <p style="margin-bottom: 20px; line-height: 1.8; opacity: 0.95;">
-                全期間統計18項目で年間の総合パフォーマンスを把握。期間別統計では、Pips統計と円建て統計（各12項目）を切り替えて詳細分析が可能です。
+            <p style="margin-bottom: 30px; line-height: 1.8; opacity: 0.95;">
+                全期間統計18項目、期間別統計12項目（Pips/円建て切替可能）で、あらゆる角度からトレードパフォーマンスを分析できます。
             </p>
             
-            <h3 style="font-size: 1.3rem; margin: 40px 0 20px; opacity: 0.95;">📊 全期間統計（18項目）</h3>
-            
-            <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
-                <div class="stat-card">
-                    <div class="stat-icon">📝</div>
-                    <div class="stat-title">総トレード数</div>
-                    <div class="stat-value">50</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🎯</div>
-                    <div class="stat-title">勝敗</div>
-                    <div class="stat-value">34勝16敗</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">📊</div>
-                    <div class="stat-title">勝率（純損益）</div>
-                    <div class="stat-value">66.0%</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🔥</div>
-                    <div class="stat-title">最大連勝</div>
-                    <div class="stat-value">7回</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">❄️</div>
-                    <div class="stat-title">最大連敗</div>
-                    <div class="stat-value">3回</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">💰</div>
-                    <div class="stat-title">利益額（円）</div>
-                    <div class="stat-value">¥620,450</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">📈</div>
-                    <div class="stat-title">利益率</div>
-                    <div class="stat-value">45.3%</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">✅</div>
-                    <div class="stat-title">平均利益（円）</div>
-                    <div class="stat-value">¥18,249</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">❌</div>
-                    <div class="stat-title">平均損失（円）</div>
-                    <div class="stat-value">¥13,469</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">📉</div>
-                    <div class="stat-title">最大DD（円）</div>
-                    <div class="stat-value">¥70,385</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🎲</div>
-                    <div class="stat-title">総獲得（pips）</div>
-                    <div class="stat-value">+73.1</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">⬆️</div>
-                    <div class="stat-title">最大獲得（pips）</div>
-                    <div class="stat-value">+48.0</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">⬇️</div>
-                    <div class="stat-title">最大損失（pips）</div>
-                    <div class="stat-value">-28.0</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">📊</div>
-                    <div class="stat-title">平均利益（pips）</div>
-                    <div class="stat-value">+15.2</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">📉</div>
-                    <div class="stat-title">平均損失（pips）</div>
-                    <div class="stat-value">-8.5</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">💹</div>
-                    <div class="stat-title">R:R（Pips）</div>
-                    <div class="stat-value">1.79</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🎯</div>
-                    <div class="stat-title">PF（円）</div>
-                    <div class="stat-value">2.12</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">💡</div>
-                    <div class="stat-title">期待値（円）</div>
-                    <div class="stat-value">¥8,099</div>
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; margin-bottom: 30px;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 15px; opacity: 0.95;">📊 全期間統計（18項目）</h3>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; opacity: 0.9; font-size: 0.95rem;">
+                    <div>✓ 総トレード数</div>
+                    <div>✓ 勝敗</div>
+                    <div>✓ 勝率（純損益）</div>
+                    <div>✓ 最大連勝</div>
+                    <div>✓ 最大連敗</div>
+                    <div>✓ 利益額（円）</div>
+                    <div>✓ 利益率</div>
+                    <div>✓ 平均利益（円）</div>
+                    <div>✓ 平均損失（円）</div>
+                    <div>✓ 最大DD（円）</div>
+                    <div>✓ 総獲得（pips）</div>
+                    <div>✓ 最大獲得（pips）</div>
+                    <div>✓ 最大損失（pips）</div>
+                    <div>✓ 平均利益（pips）</div>
+                    <div>✓ 平均損失（pips）</div>
+                    <div>✓ R:R（Pips）</div>
+                    <div>✓ PF（円）</div>
+                    <div>✓ 期待値（円）</div>
                 </div>
             </div>
 
-            <h3 style="font-size: 1.3rem; margin: 60px 0 20px; opacity: 0.95;">📅 期間別統計（Pips統計12項目）</h3>
-            <p style="margin-bottom: 15px; opacity: 0.85;">週次・月次・四半期・年次から選択可能。技術力を純粋に評価します。</p>
-            <div class="stats-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
-                <div class="stat-card">
-                    <div class="stat-icon">📝</div>
-                    <div class="stat-title">総トレード数</div>
-                    <div class="stat-value">6</div>
+            <div style="background: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; margin-bottom: 30px;">
+                <h3 style="font-size: 1.3rem; margin-bottom: 15px; opacity: 0.95;">📅 期間別統計（12項目）</h3>
+                <p style="opacity: 0.85; margin-bottom: 20px;">週次・月次・四半期・年次から期間を選択し、Pips統計と円建て統計をワンクリックで切り替え可能</p>
+                
+                <h4 style="font-size: 1.05rem; margin: 20px 0 12px; opacity: 0.95;">🔵 Pips統計（12項目）</h4>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; opacity: 0.9; font-size: 0.95rem; margin-bottom: 30px;">
+                    <div>✓ 総トレード数</div>
+                    <div>✓ 勝敗</div>
+                    <div>✓ 勝率（Pips）</div>
+                    <div>✓ 総獲得Pips</div>
+                    <div>✓ 平均保有時間</div>
+                    <div>✓ リスクリワード</div>
+                    <div>✓ 最大連勝</div>
+                    <div>✓ 最大連敗</div>
+                    <div>✓ 平均利益pips</div>
+                    <div>✓ 平均損失pips</div>
+                    <div>✓ 最大獲得pips</div>
+                    <div>✓ 最大損失pips</div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🎯</div>
-                    <div class="stat-title">勝敗</div>
-                    <div class="stat-value">4勝2敗</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">📊</div>
-                    <div class="stat-title">勝率（Pips）</div>
-                    <div class="stat-value">66.7%</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">📈</div>
-                    <div class="stat-title">総獲得Pips</div>
-                    <div class="stat-value">+6.7</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">⏱️</div>
-                    <div class="stat-title">平均保有時間</div>
-                    <div class="stat-value" style="font-size: 1.5rem;">2日21時間</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">💹</div>
-                    <div class="stat-title">リスクリワード</div>
-                    <div class="stat-value">0.78</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">🔥</div>
-                    <div class="stat-title">最大連勝</div>
-                    <div class="stat-value">3回</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">❄️</div>
-                    <div class="stat-title">最大連敗</div>
-                    <div class="stat-value">1回</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">✅</div>
-                    <div class="stat-title">平均利益pips</div>
-                    <div class="stat-value">+10.5</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">❌</div>
-                    <div class="stat-title">平均損失pips</div>
-                    <div class="stat-value">-5.2</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">⬆️</div>
-                    <div class="stat-title">最大獲得pips</div>
-                    <div class="stat-value">+15.0</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon">⬇️</div>
-                    <div class="stat-title">最大損失pips</div>
-                    <div class="stat-value">-8.0</div>
-                </div>
-            </div>
-
-            <div style="background: rgba(255, 255, 255, 0.08); padding: 25px; border-radius: 15px; margin-top: 40px;">
-                <h4 style="font-size: 1.1rem; margin-bottom: 15px; opacity: 0.95;">🟢 円建て統計にも切り替え可能（12項目）</h4>
-                <p style="opacity: 0.85; line-height: 1.7; margin-bottom: 15px;">
-                    ボタン一つでPips統計から円建て統計に切り替えられます。円建て統計では以下の項目を確認できます：
-                </p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; opacity: 0.9; font-size: 0.95rem;">
+                
+                <h4 style="font-size: 1.05rem; margin: 20px 0 12px; opacity: 0.95;">🟢 円建て統計にも切り替え可能（12項目）</h4>
+                <p style="opacity: 0.85; margin-bottom: 12px;">ボタン一つでPips統計から円建て統計に切り替えられます。円建て統計では以下の項目を確認できます：</p>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; opacity: 0.9; font-size: 0.95rem;">
                     <div>✓ 円建て登録済</div>
                     <div>✓ 勝率（純損益）</div>
                     <div>✓ 総損益</div>
