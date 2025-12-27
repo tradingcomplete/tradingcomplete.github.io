@@ -37,6 +37,42 @@
         .mockup-shadow {
             box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
         }
+        .slider {
+            position: relative;
+            width: 100%;
+        }
+        .slide {
+            width: 100%;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+        .slider-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .dot.active {
+            background: #fbbf24;
+        }
+        .dot:hover {
+            background: rgba(255, 255, 255, 0.8);
+        }
     </style>
 </head>
 <body class="bg-brand-dark text-brand-text font-sans antialiased">
@@ -79,7 +115,22 @@
             </div>
 
             <div class="mt-16 relative mx-auto max-w-3xl mockup-shadow rounded-lg overflow-hidden border border-gray-800">
-                <img src="images/dashboard.png" alt="Trading Complete ダッシュボード" class="w-full">
+                <div class="slider">
+                    <img src="images/slide-entry.png" alt="新規エントリー" class="slide active">
+                    <img src="images/slide-trades.png" alt="トレード記録" class="slide">
+                    <img src="images/slide-weekly.png" alt="週間プレビュー" class="slide">
+                    <img src="images/slide-report.png" alt="分析レポート" class="slide">
+                    <img src="images/slide-chart.png" alt="振り返り・グラフ" class="slide">
+                    <img src="images/slide-calendar.png" alt="月次カレンダー" class="slide">
+                </div>
+                <div class="slider-dots">
+                    <span class="dot active" onclick="goToSlide(0)"></span>
+                    <span class="dot" onclick="goToSlide(1)"></span>
+                    <span class="dot" onclick="goToSlide(2)"></span>
+                    <span class="dot" onclick="goToSlide(3)"></span>
+                    <span class="dot" onclick="goToSlide(4)"></span>
+                    <span class="dot" onclick="goToSlide(5)"></span>
+                </div>
             </div>
         </div>
     </header>
@@ -215,6 +266,34 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                dots[i].classList.remove('active');
+            });
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
+
+        setInterval(nextSlide, 3000);
+    </script>
 
 </body>
 </html>
