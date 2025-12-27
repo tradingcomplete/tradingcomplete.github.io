@@ -3,356 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trading Complete - プロフェッショナルFXトレード管理システム</title>
-    
-    <!-- SEO対策 -->
-    <meta name="description" content="Trading Completeは、トレード記録・分析・収支管理を一元化する国産トレーディングジャーナル。月額1,980円で始められる本格派ツール。2026年3月リリース予定。">
-    <meta name="keywords" content="FX,トレード管理,確定申告,Trading Complete,トレーディング">
-    <meta property="og:title" content="Trading Complete - すべてのトレードを、この一つで">
-    <meta property="og:description" content="複数FX業者対応・トレード分析・確定申告サポート搭載の統合トレード管理システム">
-    <meta property="og:image" content="https://tradingcomplete.com/og-image.png">
-    <meta property="og:url" content="https://tradingcomplete.com">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@Compana_Doppio">
-    
-    <!-- ファビコン -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
-    
+    <title>Trading Complete | FXトレーダーのための統合管理システム</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            accent: '#fbbf24',
+                            text: '#e2e8f0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Arial', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'Meiryo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .hero-bg {
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
         }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            min-height: 100vh;
-            overflow-x: hidden;
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out;
         }
-        
-        /* プロ感のあるヘッダー */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 50px;
-            background: rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            animation: slideDown 0.5s ease-out;
-        }
-        
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        /* メインコンテンツ */
-        .hero {
-            padding: 150px 20px 100px;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: fadeInUp 0.8s ease-out;
-        }
-        
-        .subtitle {
-            font-size: 1.8rem;
-            margin-bottom: 3rem;
-            opacity: 0.95;
-            animation: fadeInUp 0.8s ease-out 0.2s backwards;
-        }
-        
-        .release-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px 40px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
-            border: 2px solid rgba(255,255,255,0.5);
-            border-radius: 50px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            margin-bottom: 4rem;
-            animation: fadeInUp 0.8s ease-out 0.4s backwards, pulse 2s infinite;
-            backdrop-filter: blur(10px);
-        }
-        
-        .status-dot {
-            width: 10px;
-            height: 10px;
-            background: #4ade80;
-            border-radius: 50%;
-            animation: blink 2s infinite;
-        }
-        
-        /* 機能カード */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 900px;
-            margin: 4rem auto;
-            padding: 0 20px;
-        }
-        
-        .feature-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            padding: 30px;
-            text-align: left;
-            transition: all 0.3s ease;
-            animation: fadeInUp 0.8s ease-out backwards;
-            cursor: default;
-        }
-        
-        .feature-card:nth-child(1) { animation-delay: 0.5s; }
-        .feature-card:nth-child(2) { animation-delay: 0.6s; }
-        .feature-card:nth-child(3) { animation-delay: 0.7s; }
-        .feature-card:nth-child(4) { animation-delay: 0.8s; }
-        .feature-card:nth-child(5) { animation-delay: 0.9s; }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-        
-        .feature-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-        
-        .feature-desc {
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-        
-        /* CTA セクション */
-        .cta-section {
-            text-align: center;
-            padding: 80px 20px;
-            background: rgba(0, 0, 0, 0.2);
-            margin-top: 100px;
-        }
-        
-        .cta-title {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 18px 40px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #1DA1F2, #1a8cd8);
-            color: white;
-            box-shadow: 0 4px 15px rgba(29, 161, 242, 0.4);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(29, 161, 242, 0.5);
-        }
-        
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-        
-        /* フッター */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            opacity: 0.8;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        /* アニメーション */
-        @keyframes slideDown {
-            from { transform: translateY(-100%); }
-            to { transform: translateY(0); }
-        }
-        
         @keyframes fadeInUp {
-            from { 
-                opacity: 0; 
-                transform: translateY(30px);
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-        }
-        
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        
-        /* レスポンシブ */
-        @media (max-width: 768px) {
-            header { padding: 15px 20px; }
-            h1 { font-size: 2.5rem; }
-            .subtitle { font-size: 1.3rem; }
-            .release-badge { font-size: 1.1rem; padding: 12px 30px; }
-            .features-grid { grid-template-columns: 1fr; }
-            .cta-title { font-size: 1.5rem; }
+        .mockup-shadow {
+            box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
-<body>
-    <!-- ヘッダー -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span>📊</span>
-                <span>Trading Complete</span>
+<body class="bg-brand-dark text-brand-text font-sans antialiased">
+
+    <nav class="fixed w-full z-50 bg-brand-dark/90 backdrop-blur border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <span class="text-xl font-bold tracking-wider text-white">Trading Complete</span>
+                <a href="https://lin.ee/IL5usJM" target="_blank" class="bg-[#06C755] text-white px-4 py-2 rounded-full font-bold text-sm hover:bg-[#05b04c] transition duration-300">
+                    LINE登録
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-bg min-h-screen flex items-center justify-center pt-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div class="fade-in-up">
+                <span class="inline-block py-1 px-3 rounded-full bg-gray-800 border border-gray-700 text-sm mb-6 text-brand-accent">
+                    2026.03 Coming Soon
+                </span>
+                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-white">
+                    すべてのトレードを、<br>
+                    <span class="text-brand-accent">この一つで。</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+                    複数のFX業者も、複雑な収支計算も、もう迷わない。<br>
+                    日々の記録から確定申告準備まで。<br>
+                    トレーダーのための統合管理システム。
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#features" class="px-8 py-3 rounded-lg border border-gray-600 hover:border-white transition text-white">
+                        機能を見る
+                    </a>
+                    <a href="#waitlist" class="px-8 py-3 rounded-lg bg-brand-accent text-brand-dark font-bold hover:bg-yellow-300 transition shadow-lg shadow-yellow-500/20">
+                        リリース通知を受け取る
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-16 relative mx-auto max-w-3xl mockup-shadow rounded-lg overflow-hidden border border-gray-800">
+                <img src="images/dashboard.png" alt="Trading Complete ダッシュボード" class="w-full">
             </div>
         </div>
     </header>
-    
-    <!-- ヒーローセクション -->
-    <main class="hero">
-        <h1>Trading Complete</h1>
-        <p class="subtitle">すべてのトレードを、この一つで。</p>
-        
-        <div class="release-badge">
-            <span class="status-dot"></span>
-            <span>2026年3月 リリース予定</span>
-        </div>
-        
-        <!-- 機能カード -->
-        <div class="features-grid" id="features">
-            <a href="feature-trade.html" class="feature-card" style="text-decoration: none; color: inherit;">
-                <div class="feature-icon">✅</div>
-                <div class="feature-title">トレード記録</div>
-                <div class="feature-desc">新規エントリーから決済まで完全管理。チャート画像3枚まで保存、振り返りノート機能搭載。</div>
-                <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.7;">詳細を見る →</div>
-            </a>
-            
-            <a href="feature-analysis.html" class="feature-card" style="text-decoration: none; color: inherit;">
-                <div class="feature-icon">📊</div>
-                <div class="feature-title">統計分析</div>
-                <div class="feature-desc">勝率、リスクリワード比、月次レポート自動生成。Pips/円建て両方の統計に対応。</div>
-                <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.7;">詳細を見る →</div>
-            </a>
-            
-            <a href="feature-expense.html" class="feature-card" style="text-decoration: none; color: inherit;">
-                <div class="feature-icon">💰</div>
-                <div class="feature-title">収支管理</div>
-                <div class="feature-desc">経費登録、月次・四半期・年次締め処理。確定申告に必要なデータを一元管理。</div>
-                <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.7;">詳細を見る →</div>
-            </a>
-            
-            <a href="feature-notes.html" class="feature-card" style="text-decoration: none; color: inherit;">
-                <div class="feature-icon">📝</div>
-                <div class="feature-title">相場ノート</div>
-                <div class="feature-desc">日々の相場観察を記録。カレンダー表示で振り返りやすく、週間プレビュー機能付き。</div>
-                <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.7;">詳細を見る →</div>
-            </a>
-            
-            <a href="feature-csv.html" class="feature-card" style="text-decoration: none; color: inherit;">
-                <div class="feature-icon">📈</div>
-                <div class="feature-title">CSV出力</div>
-                <div class="feature-desc">トレード記録、経費、年間サマリーをCSV形式で出力。確定申告や分析に便利。</div>
-                <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.7;">詳細を見る →</div>
-            </a>
-            
-            <a href="feature-settings.html" class="feature-card" style="text-decoration: none; color: inherit;">
-                <div class="feature-icon">⚙️</div>
-                <div class="feature-title">設定</div>
-                <div class="feature-desc">目標設定、テーマ切替、データ管理など各種カスタマイズ可能。自分好みに調整できます。</div>
-                <div style="margin-top: 15px; font-size: 0.9rem; opacity: 0.7;">詳細を見る →</div>
-            </a>
-        </div>
-    </main>
-    
-    <!-- CTAセクション -->
-    <section class="cta-section" id="contact">
-        <h2 class="cta-title">🚀 最新情報をいち早くゲット</h2>
-        <div class="cta-buttons">
-            <a href="https://twitter.com/Compana_Doppio" target="_blank" class="btn btn-primary">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-                 (Twitter) でフォロー
-            </a>
+
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-16">
+                こんな「面倒」を抱えていませんか？
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl bg-gray-800/50 border border-gray-700">
+                    <div class="text-3xl mb-4">📝</div>
+                    <h3 class="text-xl font-bold mb-3 text-white">記録がバラバラ</h3>
+                    <p class="text-gray-400 text-sm">複数の業者を使っているため、トータルの損益がすぐに見えない。</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-800/50 border border-gray-700">
+                    <div class="text-3xl mb-4">🧾</div>
+                    <h3 class="text-xl font-bold mb-3 text-white">確定申告が憂鬱</h3>
+                    <p class="text-gray-400 text-sm">年間の計算や経費の集計に、毎年多くの時間を奪われている。</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-gray-800/50 border border-gray-700">
+                    <div class="text-3xl mb-4">📉</div>
+                    <h3 class="text-xl font-bold mb-3 text-white">分析できない</h3>
+                    <p class="text-gray-400 text-sm">ただトレードするだけで、勝率やリスクリワードの推移を把握できていない。</p>
+                </div>
+            </div>
         </div>
     </section>
-    
-    <!-- フッター -->
-    <footer>
-        <p>&copy; 2025 Trading Complete by Compana. All rights reserved.</p>
-        <p style="margin-top: 10px; font-size: 0.9rem;">FXトレード管理の新スタンダードを目指して</p>
+
+    <section id="features" class="py-20 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Trading Completeの解決策</h2>
+                <p class="text-gray-400">「記録・分析・申告」をワンストップで。</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-bold text-white mb-4">💰 円建て損益の完全自動化</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        エントリーと決済を入力するだけ。システムが自動で円建て損益を計算します。
+                        複数の通貨ペア、複数の業者を横断しても、あなたの「本当の利益」が一目でわかります。
+                    </p>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> 円建て統計（総損益・純利益）</li>
+                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> 勝率・リスクリワード自動算出</li>
+                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> 月次・年次レポート生成</li>
+                    </ul>
+                </div>
+                <div class="order-1 md:order-2 bg-gray-800 h-64 rounded-lg flex items-center justify-center border border-gray-700">
+                    <span class="text-gray-600">Analytics UI Preview</span>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+                <div class="bg-gray-800 h-64 rounded-lg flex items-center justify-center border border-gray-700">
+                    <span class="text-gray-600">Tax/Export UI Preview</span>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4">🧾 確定申告をスムーズに</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        日々の経費管理機能と、Excel対応のCSV出力機能を搭載。
+                        締め処理することで慌てることなく、数クリックで税務処理に必要なデータを出力できます。
+                    </p>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> 経費カテゴリ管理</li>
+                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> Excel互換CSVエクスポート</li>
+                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> カレンダー表示で損益が一目瞭然</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h3 class="text-2xl font-bold text-white mb-4">📓 環境認識の為の相場ノート</h3>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        チャート画像（最大3枚）や日々の気づきをリッチテキストで保存。
+                        「なんとなく」のトレードを排除し、論理的なトレードスキルを構築します。
+                    </p>
+                    <ul class="space-y-2 text-gray-300 text-sm">
+                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> カレンダープレビュー表示での振り返り</li>
+                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> リッチエディター機能で見やすく整理</li>
+                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> アノマリー・月メモでファンダメンタルズに特化</li>
+                    </ul>
+                </div>
+                <div class="order-1 md:order-2 bg-gray-800 h-64 rounded-lg flex items-center justify-center border border-gray-700">
+                    <span class="text-gray-600">Journal UI Preview</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h3 class="text-xl font-bold mb-8 text-white">堅牢性へのこだわり</h3>
+            <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+                <span class="px-4 py-2 bg-gray-800 rounded-full text-sm text-gray-300 border border-gray-700">🔒 データ一貫性100%</span>
+                <span class="px-4 py-2 bg-gray-800 rounded-full text-sm text-gray-300 border border-gray-700">💾 完全バックアップ対応</span>
+                <span class="px-4 py-2 bg-gray-800 rounded-full text-sm text-gray-300 border border-gray-700">📱 マルチデバイス対応</span>
+                <span class="px-4 py-2 bg-gray-800 rounded-full text-sm text-gray-300 border border-gray-700">⚡ インストール不要</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="waitlist" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-brand-accent/10"></div>
+        <div class="max-w-3xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6 text-white">2026年3月、公開。</h2>
+            <p class="text-lg text-gray-300 mb-10">
+                現在、正式リリースに向けた最終調整を行っています。<br>
+                事前登録して、リリース通知と最新情報を受け取りましょう。
+            </p>
+            
+            <a href="https://lin.ee/IL5usJM" target="_blank" class="inline-block px-10 py-4 rounded-lg bg-[#06C755] text-white font-bold text-lg hover:bg-[#05b04c] transition shadow-lg">
+                📱 公式LINEで通知を受け取る
+            </a>
+            <p class="mt-4 text-xs text-gray-500">※ 開発進捗やリリース情報をお届けします</p>
+        </div>
+    </section>
+
+    <footer class="bg-black py-8 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <span class="font-bold text-lg text-white">Trading Complete</span>
+                <p class="text-xs text-gray-500 mt-1">Developed by Compana</p>
+            </div>
+            <div class="flex gap-6 text-sm text-gray-400">
+                <a href="https://x.com/Compana_Doppio" target="_blank" class="hover:text-brand-accent">X (@Compana_Doppio)</a>
+                <a href="https://x.com/Compana_Doppio" target="_blank" class="hover:text-brand-accent">お問い合わせ (DM)</a>
+            </div>
+            <div class="text-xs text-gray-600 mt-4 md:mt-0">
+                &copy; 2025-2026 Compana. All rights reserved.
+            </div>
+        </div>
     </footer>
-    
-    <!-- スムーススクロール -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+
 </body>
 </html>
