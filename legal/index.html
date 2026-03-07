@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>利用規約・プライバシーポリシー | Trading Complete</title>
+    <meta name="description" content="Trading Completeの利用規約およびプライバシーポリシーです。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            darker: '#0a0f1e',
+                            mid: '#1e293b',
+                            accent: '#fbbf24',
+                            text: '#e2e8f0',
+                            muted: '#94a3b8',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.8;
+        }
+        .glow-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #fbbf24 50%, transparent 100%);
+            opacity: 0.3;
+        }
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #fbbf24;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(251,191,36,0.15);
+        }
+        h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #e2e8f0;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        p { margin-bottom: 1rem; color: #cbd5e1; }
+        ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #cbd5e1; }
+        ul li { margin-bottom: 0.35rem; }
+        ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1rem; color: #cbd5e1; }
+        ol li { margin-bottom: 0.35rem; }
+        a { color: #fbbf24; }
+        a:hover { text-decoration: underline; }
+        .tab-btn {
+            transition: all 0.2s;
+        }
+        .tab-btn.active {
+            background-color: #fbbf24;
+            color: #0f172a;
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+</head>
+<body>
+
+    <!-- ナビゲーション -->
+    <nav class="border-b border-white/5 bg-black/30 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3 text-brand-text hover:text-brand-accent transition-colors">
+                <img src="images/logo.png" alt="TC" class="w-8 h-8 rounded-lg" onerror="this.style.display='none'">
+                <span class="font-bold text-lg tracking-tight">Trading Complete</span>
+            </a>
+            <a href="/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors">
+                ← トップに戻る
+            </a>
+        </div>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+
+        <!-- タイトル -->
+        <div class="mb-10">
+            <p class="text-brand-accent text-sm font-medium tracking-widest uppercase mb-3">Legal</p>
+            <h1 class="text-3xl sm:text-4xl font-black text-brand-text mb-2">利用規約・プライバシーポリシー</h1>
+            <div class="glow-line mt-6"></div>
+        </div>
+
+        <!-- タブ切り替え -->
+        <div class="flex gap-2 mb-10">
+            <button class="tab-btn active px-5 py-2 rounded-full text-sm font-medium border border-brand-accent" onclick="switchTab('terms')">
+                利用規約
+            </button>
+            <button class="tab-btn px-5 py-2 rounded-full text-sm font-medium border border-white/20 text-brand-muted" onclick="switchTab('privacy')">
+                プライバシーポリシー
+            </button>
+        </div>
+
+        <!-- ===== 利用規約 ===== -->
+        <div id="tab-terms" class="tab-content active">
+
+            <p class="text-brand-muted text-sm mb-8">制定日：2026年3月8日</p>
+
+            <p>この利用規約（以下「本規約」）は、コンパナ（以下「当方」）が提供するWebサービス「Trading Complete」（以下「本サービス」）の利用条件を定めるものです。本サービスをご利用になる前に、必ず本規約をお読みください。</p>
+
+            <h2>第1条（規約への同意）</h2>
+            <p>ユーザーは、本サービスに登録または利用を開始した時点で、本規約の全内容に同意したものとみなします。</p>
+
+            <h2>第2条（サービスの内容）</h2>
+            <p>本サービスは、FXトレードの記録・分析・収支管理を支援するWebアプリケーションです。主な機能は以下のとおりです。</p>
+            <ul>
+                <li>トレード記録・分析機能</li>
+                <li>相場ノート機能</li>
+                <li>収支管理・CSV出力機能</li>
+                <li>クラウドデータ同期機能（Proプラン以上）</li>
+                <li>その他当方が提供する機能</li>
+            </ul>
+
+            <h2>第3条（アカウント登録）</h2>
+            <ol>
+                <li>本サービスの利用にはアカウント登録が必要です。</li>
+                <li>ユーザーは正確な情報を登録する義務を負います。</li>
+                <li>アカウントの管理はユーザー自身の責任において行うものとします。</li>
+                <li>第三者へのアカウントの譲渡・貸与は禁止します。</li>
+                <li>アカウントの不正利用が判明した場合、当方はアカウントを停止または削除できるものとします。</li>
+            </ol>
+
+            <h2>第4条（料金・支払い）</h2>
+            <ol>
+                <li>Freeプランは無料でご利用いただけます。</li>
+                <li>有料プラン（Pro・Premium）の料金は、サービス内に表示する金額（税込）とします。</li>
+                <li>支払いはクレジットカードによる自動更新方式です。決済処理はStripeが行い、カード情報は当方のサーバーには保存されません。</li>
+                <li>料金は毎月または毎年の契約更新日に自動決済されます。</li>
+                <li>当方は料金を変更する場合、事前にユーザーへ通知します。</li>
+            </ol>
+
+            <h2>第5条（解約・返金）</h2>
+            <ol>
+                <li>ユーザーはいつでもサービス内の「プラン管理」から解約できます。</li>
+                <li>解約後は契約期間終了日まで有料機能を継続してご利用いただけます。</li>
+                <li>期間終了後は自動的にFreeプランに移行します。</li>
+                <li>サービスの性質上、決済済みの料金の返金は原則として行いません。ただし、当方の重大な過失によりサービスが利用できなかった場合はこの限りではありません。</li>
+            </ol>
+
+            <h2>第6条（禁止事項）</h2>
+            <p>ユーザーは以下の行為を行ってはなりません。</p>
+            <ul>
+                <li>法令または公序良俗に違反する行為</li>
+                <li>当方または第三者の知的財産権・プライバシー・名誉を侵害する行為</li>
+                <li>本サービスの運営を妨害する行為（不正アクセス、過度な負荷をかける行為等）</li>
+                <li>他のユーザーになりすます行為</li>
+                <li>本サービスのリバースエンジニアリング、改ざん、複製等</li>
+                <li>その他当方が不適切と判断する行為</li>
+            </ul>
+
+            <h2>第7条（知的財産権）</h2>
+            <p>本サービスに関する著作権その他一切の知的財産権は当方に帰属します。ユーザーが本サービスに入力・記録したデータの著作権はユーザーに帰属します。</p>
+
+            <h2>第8条（サービスの変更・停止）</h2>
+            <ol>
+                <li>当方はユーザーへの事前通知なく、本サービスの内容を変更・追加・削除できるものとします。</li>
+                <li>メンテナンスや障害等によりサービスが一時停止する場合があります。</li>
+                <li>当方はサービス停止・変更によって生じた損害について、責任を負いません。</li>
+            </ol>
+
+            <h2>第9条（データの取り扱い）</h2>
+            <ol>
+                <li>ユーザーのデータはプライバシーポリシーに従って取り扱います。</li>
+                <li>アカウントを削除した場合、ユーザーデータは一定期間後に削除されます。</li>
+                <li>当方はバックアップに努めますが、データの完全な保全を保証するものではありません。重要なデータはCSV出力機能等でバックアップすることをお勧めします。</li>
+            </ol>
+
+            <h2>第10条（免責事項）</h2>
+            <ol>
+                <li>本サービスは現状有姿で提供されます。特定目的への適合性・完全性・正確性を保証するものではありません。</li>
+                <li>本サービスはFXトレードの投資成果を保証するものではありません。投資はご自身の判断と責任で行ってください。</li>
+                <li>当方は、本サービスの利用によって生じた損害について、当方の故意または重大な過失による場合を除き、責任を負いません。</li>
+            </ol>
+
+            <h2>第11条（規約の変更）</h2>
+            <p>当方は必要に応じて本規約を変更できます。重要な変更を行う場合は、サービス内または登録メールアドレスへの通知をもって告知します。変更後の利用規約に同意できない場合は、サービスの利用を停止してください。</p>
+
+            <h2>第12条（準拠法・管轄裁判所）</h2>
+            <p>本規約は日本法に準拠します。本サービスに関する紛争については、当方の所在地を管轄する裁判所を第一審の専属的合意管轄裁判所とします。</p>
+
+            <p class="text-brand-muted text-sm mt-10">制定日：2026年3月8日</p>
+
+        </div>
+
+        <!-- ===== プライバシーポリシー ===== -->
+        <div id="tab-privacy" class="tab-content">
+
+            <p class="text-brand-muted text-sm mb-8">制定日：2026年3月8日</p>
+
+            <p>コンパナ（以下「当方」）は、「Trading Complete」（以下「本サービス」）において収集するユーザーの個人情報の取り扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」）を定めます。</p>
+
+            <h2>第1条（収集する情報）</h2>
+            <p>本サービスでは以下の情報を収集します。</p>
+
+            <h3>1. ユーザーが提供する情報</h3>
+            <ul>
+                <li>メールアドレス（アカウント登録時）</li>
+                <li>パスワード（ハッシュ化して保存）</li>
+                <li>ユーザー名・プロフィール情報</li>
+                <li>トレード記録・相場ノート・収支データ等（ユーザーが入力したデータ）</li>
+            </ul>
+
+            <h3>2. 自動的に収集される情報</h3>
+            <ul>
+                <li>IPアドレス・ブラウザ情報・デバイス情報</li>
+                <li>アクセス日時・閲覧ページ・操作ログ</li>
+                <li>Google Analyticsによるアクセス解析データ（匿名）</li>
+            </ul>
+
+            <h3>3. 決済情報</h3>
+            <p>クレジットカード情報はStripeが直接収集・管理します。当方のサーバーにはカード番号等の決済情報は保存されません。当方が保持するのは、StripeのCustomer IDおよびSubscription IDのみです。</p>
+
+            <h2>第2条（情報の利用目的）</h2>
+            <ul>
+                <li>本サービスの提供・維持・改善</li>
+                <li>ユーザーサポート・お問い合わせへの対応</li>
+                <li>サービスに関する重要なお知らせの送信</li>
+                <li>利用規約違反の調査・対応</li>
+                <li>サービスの利用状況の分析（匿名化した形で行います）</li>
+            </ul>
+
+            <h2>第3条（第三者への提供）</h2>
+            <p>当方は以下の場合を除き、ユーザーの個人情報を第三者に提供しません。</p>
+            <ul>
+                <li>ユーザーの同意がある場合</li>
+                <li>法令に基づき開示が必要な場合</li>
+                <li>人の生命・身体・財産の保護のために必要な場合</li>
+            </ul>
+
+            <h2>第4条（業務委託先（サブプロセッサー））</h2>
+            <p>本サービスは以下のサービスを利用しており、必要な範囲でデータが処理されます。</p>
+            <ul>
+                <li><strong>Supabase（米国）</strong>：認証・データベース・ファイルストレージ</li>
+                <li><strong>Stripe（米国）</strong>：決済処理・サブスクリプション管理</li>
+                <li><strong>Google Analytics（米国）</strong>：アクセス解析（匿名化・集計データのみ）</li>
+                <li><strong>GitHub Pages（米国）</strong>：Webホスティング</li>
+            </ul>
+            <p>各サービスのプライバシーポリシーに従ってデータが取り扱われます。</p>
+
+            <h2>第5条（Cookieの使用）</h2>
+            <p>本サービスはCookieおよびローカルストレージを使用します。</p>
+            <ul>
+                <li><strong>認証情報の保持</strong>：ログイン状態の維持のために使用</li>
+                <li><strong>アプリ設定の保存</strong>：テーマ設定等のローカル保存</li>
+                <li><strong>アクセス解析</strong>：Google AnalyticsによるCookie（匿名）</li>
+            </ul>
+            <p>ブラウザの設定によりCookieを無効にできますが、一部機能が正常に動作しなくなる場合があります。</p>
+
+            <h2>第6条（データの保存期間）</h2>
+            <ul>
+                <li>アカウントが有効な期間中、ユーザーデータを保持します。</li>
+                <li>アカウント削除後は速やかにデータを削除します。ただし、法令上の保存義務がある場合を除きます。</li>
+            </ul>
+
+            <h2>第7条（セキュリティ）</h2>
+            <p>当方は収集した情報を適切に保護するため、以下の対策を講じています。</p>
+            <ul>
+                <li>SSL/TLS暗号化通信</li>
+                <li>Supabase Row Level Security（RLS）によるデータ分離</li>
+                <li>パスワードのハッシュ化保存</li>
+                <li>セッションタイムアウト管理</li>
+            </ul>
+
+            <h2>第8条（ユーザーの権利）</h2>
+            <p>ユーザーは以下の権利を有します。</p>
+            <ul>
+                <li><strong>開示・訂正</strong>：保有する個人情報の開示・訂正を求める権利</li>
+                <li><strong>削除</strong>：アカウント削除によりデータを削除する権利</li>
+                <li><strong>データエクスポート</strong>：CSV出力機能によりデータをダウンロードする権利</li>
+            </ul>
+            <p>これらのご要望は、下記お問い合わせ先までご連絡ください。</p>
+
+            <h2>第9条（未成年者の利用）</h2>
+            <p>本サービスは18歳以上のユーザーを対象としています。18歳未満の方が利用する場合は、保護者の同意を得てください。</p>
+
+            <h2>第10条（プライバシーポリシーの変更）</h2>
+            <p>当方は必要に応じて本ポリシーを変更できます。重要な変更を行う場合は、サービス内または登録メールアドレスへの通知をもって告知します。</p>
+
+            <h2>第11条（お問い合わせ）</h2>
+            <p>個人情報の取り扱いに関するお問い合わせは以下までご連絡ください。</p>
+            <ul>
+                <li>メール：<a href="mailto:tradingcomplete.jp@gmail.com">tradingcomplete.jp@gmail.com</a></li>
+                <li>X（旧Twitter）：<a href="https://x.com/Compana_Doppio" target="_blank" rel="noopener">@Compana_Doppio</a></li>
+            </ul>
+
+            <p class="text-brand-muted text-sm mt-10">制定日：2026年3月8日</p>
+
+        </div>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="border-t border-white/5 mt-16">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-brand-muted text-sm">© 2026 Trading Complete. All rights reserved.</p>
+                <div class="flex items-center gap-6 text-sm text-brand-muted">
+                    <a href="/trading-complete/" class="hover:text-brand-accent transition-colors">アプリを開く</a>
+                    <a href="/tokutei/" class="hover:text-brand-accent transition-colors">特定商取引法</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(tab) {
+            // コンテンツ切り替え
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.getElementById('tab-' + tab).classList.add('active');
+
+            // ボタンスタイル切り替え
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active', 'text-brand-darker', 'border-brand-accent');
+                btn.classList.add('text-brand-muted', 'border-white/20');
+            });
+            event.target.classList.add('active');
+            event.target.classList.remove('text-brand-muted', 'border-white/20');
+            event.target.classList.add('border-brand-accent');
+
+            // URLハッシュ更新
+            history.replaceState(null, '', '#' + tab);
+        }
+
+        // ページ読み込み時にハッシュに応じてタブを切り替え
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = location.hash.replace('#', '');
+            if (hash === 'privacy') {
+                document.querySelector('[onclick="switchTab(\'privacy\')"]').click();
+            }
+        });
+    </script>
+
+</body>
+</html>
