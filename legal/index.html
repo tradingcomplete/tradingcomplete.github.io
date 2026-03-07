@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>利用規約・プライバシーポリシー | Trading Complete</title>
-    <meta name="description" content="Trading Completeの利用規約およびプライバシーポリシーです。">
+    <meta name="description" content="Trading Completeの利用規約およびプライバシーポリシーページです。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -37,54 +37,50 @@
             background-color: #0f172a;
             color: #e2e8f0;
             font-family: 'Noto Sans JP', sans-serif;
-            line-height: 1.8;
         }
         .glow-line {
             height: 1px;
             background: linear-gradient(90deg, transparent 0%, #fbbf24 50%, transparent 100%);
             opacity: 0.3;
         }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        .tab-btn.active {
+            background-color: #fbbf24;
+            color: #0a0f1e;
+            border-color: #fbbf24;
+            font-weight: 700;
+        }
         h2 {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #fbbf24;
             margin-top: 2.5rem;
             margin-bottom: 0.75rem;
             padding-bottom: 0.5rem;
-            border-bottom: 1px solid rgba(251,191,36,0.15);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
         }
         h3 {
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: #e2e8f0;
             margin-top: 1.5rem;
             margin-bottom: 0.5rem;
         }
-        p { margin-bottom: 1rem; color: #cbd5e1; }
-        ul { list-style: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #cbd5e1; }
-        ul li { margin-bottom: 0.35rem; }
-        ol { list-style: decimal; padding-left: 1.5rem; margin-bottom: 1rem; color: #cbd5e1; }
-        ol li { margin-bottom: 0.35rem; }
+        p { margin-bottom: 1rem; line-height: 1.8; color: #cbd5e1; }
+        ul, ol { margin-bottom: 1rem; padding-left: 1.5rem; color: #cbd5e1; }
+        li { margin-bottom: 0.4rem; line-height: 1.8; }
         a { color: #fbbf24; }
         a:hover { text-decoration: underline; }
-        .tab-btn {
-            transition: all 0.2s;
-        }
-        .tab-btn.active {
-            background-color: #fbbf24;
-            color: #0f172a;
-        }
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
     </style>
 </head>
 <body>
 
     <!-- ナビゲーション -->
-    <nav class="border-b border-white/5 bg-black/30 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+    <nav class="border-b border-white/5 bg-brand-darker/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
             <a href="/" class="flex items-center gap-3 text-brand-text hover:text-brand-accent transition-colors">
-                <img src="images/logo.png" alt="TC" class="w-8 h-8 rounded-lg" onerror="this.style.display='none'">
+                <img src="/images/logo.png" alt="TC" class="w-8 h-8 rounded-lg" onerror="this.style.display='none'">
                 <span class="font-bold text-lg tracking-tight">Trading Complete</span>
             </a>
             <a href="/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors">
@@ -96,7 +92,6 @@
     <!-- メインコンテンツ -->
     <main class="max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
 
-        <!-- タイトル -->
         <div class="mb-10">
             <p class="text-brand-accent text-sm font-medium tracking-widest uppercase mb-3">Legal</p>
             <h1 class="text-3xl sm:text-4xl font-black text-brand-text mb-2">利用規約・プライバシーポリシー</h1>
@@ -105,10 +100,10 @@
 
         <!-- タブ切り替え -->
         <div class="flex gap-2 mb-10">
-            <button class="tab-btn active px-5 py-2 rounded-full text-sm font-medium border border-brand-accent" onclick="switchTab('terms')">
+            <button id="btn-terms" class="tab-btn active px-5 py-2 rounded-full text-sm font-medium border border-brand-accent" onclick="switchTab('terms')">
                 利用規約
             </button>
-            <button class="tab-btn px-5 py-2 rounded-full text-sm font-medium border border-white/20 text-brand-muted" onclick="switchTab('privacy')">
+            <button id="btn-privacy" class="tab-btn px-5 py-2 rounded-full text-sm font-medium border border-white/20 text-brand-muted" onclick="switchTab('privacy')">
                 プライバシーポリシー
             </button>
         </div>
@@ -301,7 +296,7 @@
             <h2>第11条（お問い合わせ）</h2>
             <p>個人情報の取り扱いに関するお問い合わせは以下までご連絡ください。</p>
             <ul>
-                <li>メール：<a href="/cdn-cgi/l/email-protection#7a0e081b1e13141d1915170a161f0e1f54100a3a1d171b131654191517"><span class="__cf_email__" data-cfemail="46323427222f282125292b362a233223682c3606212b272f2a6825292b">[email&#160;protected]</span></a></li>
+                <li>メール：<a href="mailto:tradingcomplete.jp@gmail.com">tradingcomplete.jp@gmail.com</a></li>
                 <li>X（旧Twitter）：<a href="https://x.com/Compana_Doppio" target="_blank" rel="noopener">@Compana_Doppio</a></li>
             </ul>
 
@@ -317,31 +312,42 @@
             <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
                 <p class="text-brand-muted text-sm">© 2026 Trading Complete. All rights reserved.</p>
                 <div class="flex items-center gap-6 text-sm text-brand-muted">
-                    <a href="/trading-complete/" class="hover:text-brand-accent transition-colors">アプリを開く</a>
+                    <a href="https://app.tradingcomplete.com" class="hover:text-brand-accent transition-colors">アプリを開く</a>
                     <a href="/tokutei.html" class="hover:text-brand-accent transition-colors">特定商取引法</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         function switchTab(tab) {
             // コンテンツ切り替え
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(function(el) {
+                el.classList.remove('active');
+            });
             document.getElementById('tab-' + tab).classList.add('active');
 
             // ボタンスタイル切り替え
-            document.querySelectorAll('.tab-btn').forEach(btn => {
-                btn.classList.remove('active', 'text-brand-darker', 'border-brand-accent');
-                btn.classList.add('text-brand-muted', 'border-white/20');
+            document.querySelectorAll('.tab-btn').forEach(function(btn) {
+                btn.classList.remove('active');
+                btn.classList.add('text-brand-muted');
             });
-            event.target.classList.add('active');
-            event.target.classList.remove('text-brand-muted', 'border-white/20');
-            event.target.classList.add('border-brand-accent');
+            var activeBtn = document.getElementById('btn-' + tab);
+            activeBtn.classList.add('active');
+            activeBtn.classList.remove('text-brand-muted');
 
             // URLハッシュ更新
             history.replaceState(null, '', '#' + tab);
         }
 
         // ページ読み込み時にハッシュに応じてタブを切り替え
-        window.addEventListener('DOMC
+        window.addEventListener('DOMContentLoaded', function() {
+            var hash = window.location.hash.replace('#', '');
+            if (hash === 'privacy') {
+                switchTab('privacy');
+            }
+        });
+    </script>
+
+</body>
+</html>
