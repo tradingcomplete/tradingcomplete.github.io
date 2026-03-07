@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特定商取引法に基づく表記 | Trading Complete</title>
+    <meta name="description" content="Trading Completeの特定商取引法に基づく表記ページです。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            darker: '#0a0f1e',
+                            mid: '#1e293b',
+                            accent: '#fbbf24',
+                            text: '#e2e8f0',
+                            muted: '#94a3b8',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .glow-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, #fbbf24 50%, transparent 100%);
+            opacity: 0.3;
+        }
+        table { border-collapse: collapse; width: 100%; }
+        th, td {
+            padding: 16px 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            vertical-align: top;
+            line-height: 1.8;
+        }
+        th {
+            width: 200px;
+            min-width: 140px;
+            color: #94a3b8;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        td { color: #e2e8f0; }
+        tr:last-child th, tr:last-child td { border-bottom: none; }
+        @media (max-width: 640px) {
+            th { width: 110px; min-width: 110px; font-size: 13px; padding: 12px 12px 12px 0; }
+            td { font-size: 14px; padding: 12px 0 12px 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ナビゲーション -->
+    <nav class="border-b border-white/5 bg-brand-darker/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-3 text-brand-text hover:text-brand-accent transition-colors">
+                <img src="images/logo.png" alt="TC" class="w-8 h-8 rounded-lg" onerror="this.style.display='none'">
+                <span class="font-bold text-lg tracking-tight">Trading Complete</span>
+            </a>
+            <a href="/" class="text-sm text-brand-muted hover:text-brand-accent transition-colors">
+                ← トップに戻る
+            </a>
+        </div>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <main class="max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+
+        <!-- タイトル -->
+        <div class="mb-12">
+            <p class="text-brand-accent text-sm font-medium tracking-widest uppercase mb-3">Legal</p>
+            <h1 class="text-3xl sm:text-4xl font-black text-brand-text mb-4">特定商取引法に基づく表記</h1>
+            <div class="glow-line mt-6"></div>
+        </div>
+
+        <!-- テーブル -->
+        <div class="bg-brand-mid/40 border border-white/8 rounded-2xl overflow-hidden">
+            <table>
+                <tbody>
+
+                    <tr>
+                        <th>販売業者</th>
+                        <td>
+                            コンパナ<br>
+                            <span class="text-brand-muted text-sm">（屋号設定後に更新予定）</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>所在地</th>
+                        <td>
+                            〒XXX-XXXX<br>
+                            ［バーチャルオフィス住所を記載予定］<br>
+                            <span class="text-brand-muted text-sm">※ リリース前に正式住所に更新予定</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>電話番号</th>
+                        <td>
+                            請求があれば遅滞なく開示します。<br>
+                            <span class="text-brand-muted text-sm">（お問い合わせよりご請求ください）</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>メールアドレス</th>
+                        <td>
+                            <a href="mailto:tradingcomplete.jp@gmail.com" class="text-brand-accent hover:underline">
+                                tradingcomplete.jp@gmail.com
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>サービスURL</th>
+                        <td>
+                            <a href="https://tradingcomplete.com" class="text-brand-accent hover:underline">
+                                https://tradingcomplete.com
+                            </a>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>サービス名</th>
+                        <td>Trading Complete</td>
+                    </tr>
+
+                    <tr>
+                        <th>販売価格</th>
+                        <td>
+                            <div class="space-y-1">
+                                <div><span class="text-brand-muted text-sm">Freeプラン：</span>無料</div>
+                                <div><span class="text-brand-muted text-sm">Proプラン月額：</span>¥1,980（税込）</div>
+                                <div><span class="text-brand-muted text-sm">Proプラン年額：</span>¥19,800（税込）</div>
+                                <div><span class="text-brand-muted text-sm">Premiumプラン月額：</span>¥2,980（税込）</div>
+                                <div><span class="text-brand-muted text-sm">Premiumプラン年額：</span>¥29,800（税込）</div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>支払方法</th>
+                        <td>
+                            クレジットカード（Visa・Mastercard・American Express・JCB）<br>
+                            <span class="text-brand-muted text-sm">※ 決済処理はStripeを利用しています。カード情報は当サービスのサーバーには保存されません。</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>支払時期</th>
+                        <td>
+                            月額プランの場合：申し込み時に初回決済。以降、毎月同日に自動更新。<br>
+                            年額プランの場合：申し込み時に一括決済。以降、毎年同日に自動更新。
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>サービス提供時期</th>
+                        <td>決済完了後、即時にご利用いただけます。</td>
+                    </tr>
+
+                    <tr>
+                        <th>返品・キャンセル</th>
+                        <td>
+                            サービスの性質上、決済完了後の返金は原則としてお受けしておりません。<br><br>
+                            サブスクリプションはいつでも解約可能です。解約後は契約期間の終了日までサービスをご利用いただけます。期間終了後は自動的にFreeプランに移行します。<br><br>
+                            <span class="text-brand-muted text-sm">解約はサービス内の「プラン管理」よりお手続きください。</span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>動作環境</th>
+                        <td>
+                            インターネット接続環境が必要です。<br>
+                            推奨ブラウザ：Google Chrome・Safari・Firefox・Microsoft Edge（各最新版）<br>
+                            対応デバイス：PC・タブレット・スマートフォン
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>お問い合わせ</th>
+                        <td>
+                            メール：<a href="mailto:tradingcomplete.jp@gmail.com" class="text-brand-accent hover:underline">tradingcomplete.jp@gmail.com</a><br>
+                            X（旧Twitter）：<a href="https://x.com/Compana_Doppio" target="_blank" rel="noopener" class="text-brand-accent hover:underline">@Compana_Doppio</a><br>
+                            <span class="text-brand-muted text-sm">お問い合わせへの回答は、通常3営業日以内を目安にご返信いたします。</span>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 更新日 -->
+        <p class="text-brand-muted text-sm text-right mt-6">最終更新日：2026年3月8日</p>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="border-t border-white/5 mt-16">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <p class="text-brand-muted text-sm">© 2026 Trading Complete. All rights reserved.</p>
+                <div class="flex items-center gap-6 text-sm text-brand-muted">
+                    <a href="/trading-complete/" class="hover:text-brand-accent transition-colors">アプリを開く</a>
+                    <a href="/privacy/" class="hover:text-brand-accent transition-colors">プライバシーポリシー</a>
+                    <a href="/terms/" class="hover:text-brand-accent transition-colors">利用規約</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
