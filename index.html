@@ -81,9 +81,15 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <span class="text-xl font-bold tracking-wider text-white">Trading Complete</span>
-                <a href="https://lin.ee/IL5usJM" target="_blank" class="bg-[#06C755] text-white px-4 py-2 rounded-full font-bold text-sm hover:bg-[#05b04c] transition duration-300">
-                    LINE登録
-                </a>
+                <div class="flex items-center gap-3">
+                    <!-- TODO: Stripe審査通過後にhrefをapp.tradingcomplete.comに差し替え -->
+                    <a href="#" class="hidden md:inline-block border border-brand-accent text-brand-accent px-4 py-2 rounded-full font-bold text-sm hover:bg-brand-accent hover:text-brand-dark transition duration-300">
+                        アプリを開く
+                    </a>
+                    <a href="https://lin.ee/IL5usJM" target="_blank" class="bg-[#06C755] text-white px-4 py-2 rounded-full font-bold text-sm hover:bg-[#05b04c] transition duration-300">
+                        LINE登録
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
@@ -521,7 +527,7 @@
                     </div>
                     <div class="flex items-start gap-4">
                         <span class="text-brand-accent text-xl mt-0.5 flex-shrink-0">✓</span>
-                        <p>記録のストレスをなくし、検証と勉強の<span class="text-white font-medium">「時間（時短）」を生み出すために、約60,000行のコードを構築</span></p>
+                        <p>記録のストレスをなくし、検証と勉強の<span class="text-white font-medium">「時間（時短）」を生み出すために、約60,000行のコードをソロで構築</span></p>
                     </div>
                 </div>
                 <p class="mt-10 text-center text-sm text-gray-500">— Compana（個人開発者・FXトレーダー 7年）</p>
@@ -548,6 +554,10 @@
                         <li class="flex items-start gap-2"><span class="text-brand-accent">✓</span> 分析・画像含む全機能を体験</li>
                         <li class="flex items-start gap-2"><span class="text-brand-accent">✓</span> まずは「記録する習慣」を</li>
                     </ul>
+                    <!-- TODO: Stripe審査通過後にhrefをapp.tradingcomplete.comのURLに差し替え -->
+                    <a href="#" class="mt-6 block text-center py-3 rounded-lg border border-gray-600 text-gray-300 font-bold hover:border-white hover:text-white transition">
+                        無料ではじめる
+                    </a>
                 </div>
 
                 <!-- Proプラン（強調） -->
@@ -561,6 +571,10 @@
                         <li class="flex items-start gap-2"><span class="text-brand-accent">✓</span> クラウド同期・マルチデバイス</li>
                         <li class="flex items-start gap-2"><span class="text-brand-accent">✓</span> 確定申告CSV出力まで完全網羅</li>
                     </ul>
+                    <!-- TODO: Stripe審査通過後にhrefをStripe決済URLに差し替え -->
+                    <a href="#" class="mt-6 block text-center py-3 rounded-lg bg-brand-accent text-brand-dark font-black hover:bg-yellow-400 transition">
+                        Proプランを選ぶ
+                    </a>
                 </div>
 
                 <!-- Premiumプラン（近日公開） -->
