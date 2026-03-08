@@ -233,34 +233,34 @@
             <!-- タイムライン横線（PC） -->
             <div class="hidden md:block relative mb-8">
                 <div class="absolute top-5 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-accent via-brand-accent to-yellow-300 opacity-60"></div>
-                <div class="grid grid-cols-4 gap-4 relative">
+                <div class="grid grid-cols-4 gap-4 relative items-stretch">
                     <div class="flex flex-col items-center">
-                        <div class="w-4 h-4 rounded-full bg-brand-accent mb-6 shadow-lg shadow-yellow-500/50"></div>
-                        <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 text-center w-full">
+                        <div class="w-4 h-4 rounded-full bg-brand-accent mb-6 shadow-lg shadow-yellow-500/50 flex-shrink-0"></div>
+                        <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 text-center w-full flex-1 flex flex-col justify-center">
                             <p class="text-2xl mb-3">📈</p>
                             <p class="text-brand-accent font-bold mb-2">【1週間後】</p>
                             <p class="text-gray-300 text-sm leading-relaxed">チェックリスト効果で「無駄なエントリー」が激減する</p>
                         </div>
                     </div>
                     <div class="flex flex-col items-center">
-                        <div class="w-4 h-4 rounded-full bg-brand-accent mb-6 shadow-lg shadow-yellow-500/50"></div>
-                        <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 text-center w-full">
+                        <div class="w-4 h-4 rounded-full bg-brand-accent mb-6 shadow-lg shadow-yellow-500/50 flex-shrink-0"></div>
+                        <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 text-center w-full flex-1 flex flex-col justify-center">
                             <p class="text-2xl mb-3">📊</p>
                             <p class="text-brand-accent font-bold mb-2">【1ヶ月後】</p>
                             <p class="text-gray-300 text-sm leading-relaxed">統計データから、自分の「勝ちパターン」と「負けパターン」が明確になる</p>
                         </div>
                     </div>
                     <div class="flex flex-col items-center">
-                        <div class="w-4 h-4 rounded-full bg-brand-accent mb-6 shadow-lg shadow-yellow-500/50"></div>
-                        <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 text-center w-full">
+                        <div class="w-4 h-4 rounded-full bg-brand-accent mb-6 shadow-lg shadow-yellow-500/50 flex-shrink-0"></div>
+                        <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 text-center w-full flex-1 flex flex-col justify-center">
                             <p class="text-2xl mb-3">💹</p>
                             <p class="text-brand-accent font-bold mb-2">【3ヶ月後】</p>
                             <p class="text-gray-300 text-sm leading-relaxed">データに基づく判断が習慣化し、勝率が目に見えて向上する</p>
                         </div>
                     </div>
                     <div class="flex flex-col items-center">
-                        <div class="w-4 h-4 rounded-full bg-brand-accent mb-6 shadow-lg shadow-yellow-500/50 ring-4 ring-yellow-500/30"></div>
-                        <div class="rounded-xl p-5 text-center w-full border-2 border-brand-accent" style="background: rgba(251,191,36,0.08);">
+                        <div class="w-4 h-4 rounded-full bg-brand-accent mb-6 shadow-lg shadow-yellow-500/50 ring-4 ring-yellow-500/30 flex-shrink-0"></div>
+                        <div class="rounded-xl p-5 text-center w-full flex-1 flex flex-col justify-center border-2 border-brand-accent" style="background: rgba(251,191,36,0.08);">
                             <p class="text-brand-accent font-bold mb-2">【1年後】</p>
                             <p class="text-white text-sm leading-relaxed font-medium">蓄積された記録が「お宝」に変わり、副業として成り立つレベルへ</p>
                         </div>
@@ -563,16 +563,18 @@
                     </ul>
                 </div>
 
-                <!-- Premiumプラン -->
-                <div class="bg-gray-800 border border-gray-700 rounded-2xl p-8 flex flex-col">
+                <!-- Premiumプラン（近日公開） -->
+                <div class="bg-gray-800 border border-gray-700 rounded-2xl p-8 flex flex-col relative opacity-60">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-600 text-gray-300 text-xs font-black px-4 py-1 rounded-full whitespace-nowrap">近日公開予定</div>
                     <p class="text-gray-400 font-bold mb-4">【Premiumプラン】</p>
                     <p class="text-4xl font-black text-white mb-1">¥2,980<span class="text-lg font-normal text-gray-400">/月</span></p>
                     <p class="text-gray-500 text-sm mb-6">¥29,800/年（2ヶ月分お得）</p>
-                    <ul class="space-y-2 text-gray-300 text-sm flex-1">
-                        <li class="flex items-start gap-2"><span class="text-brand-accent">✓</span> Proプランの全機能</li>
-                        <li class="flex items-start gap-2"><span class="text-brand-accent">✓</span> AIによるトレード改善提案（将来実装）</li>
-                        <li class="flex items-start gap-2"><span class="text-brand-accent">✓</span> 究極の成長支援プラン</li>
+                    <ul class="space-y-2 text-gray-400 text-sm flex-1">
+                        <li class="flex items-start gap-2"><span class="text-gray-500">✓</span> Proプランの全機能</li>
+                        <li class="flex items-start gap-2"><span class="text-gray-500">✓</span> AIによるトレード改善提案（開発中）</li>
+                        <li class="flex items-start gap-2"><span class="text-gray-500">✓</span> 究極の成長支援プラン</li>
                     </ul>
+                    <p class="text-xs text-gray-500 mt-4 text-center">※ リリース時期は未定です</p>
                 </div>
             </div>
 
