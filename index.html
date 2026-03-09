@@ -83,7 +83,7 @@
                 <span class="text-xl font-bold tracking-wider text-white">Trading Complete</span>
                 <div class="flex items-center gap-3">
                     <!-- TODO: Stripe審査通過後にhrefをapp.tradingcomplete.comに差し替え -->
-                    <a href="#" class="hidden md:inline-block border border-brand-accent text-brand-accent px-4 py-2 rounded-full font-bold text-sm hover:bg-brand-accent hover:text-brand-dark transition duration-300">
+                    <a href="#" class="inline-block border border-brand-accent text-brand-accent px-4 py-2 rounded-full font-bold text-sm hover:bg-brand-accent hover:text-brand-dark transition duration-300">
                         アプリを開く
                     </a>
                     <a href="https://lin.ee/IL5usJM" target="_blank" class="bg-[#06C755] text-white px-4 py-2 rounded-full font-bold text-sm hover:bg-[#05b04c] transition duration-300">
@@ -126,7 +126,7 @@
                 </div>
             </div>
 
-            <div class="mt-16 relative mx-auto mockup-shadow rounded-xl overflow-hidden border border-gray-700">
+            <div class="mt-8 md:mt-16 relative mx-auto mockup-shadow rounded-xl overflow-hidden border border-gray-700">
                 <div class="slider" style="aspect-ratio: 16/9;">
                     <img src="images/slide-hero.jpg" alt="Trading Complete" class="slide active" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
                     <img src="images/feature-checklist.jpg" alt="強制チェックリスト" class="slide" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
@@ -145,12 +145,12 @@
         </div>
     </header>
 
-    <section class="py-20 bg-gray-900">
+    <section class="py-10 md:py-20 bg-gray-900">
         <div class="max-w-5xl mx-auto px-4">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-16">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-16">
                 こんな「壁」にぶつかっていませんか？
             </h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 <div class="p-6 rounded-2xl bg-gray-800/50 border border-gray-700">
                     <div class="text-3xl mb-4">📝</div>
                     <h3 class="text-xl font-bold mb-3 text-white">記録がバラバラ</h3>
@@ -175,9 +175,9 @@
         </div>
     </section>
 
-    <section class="py-20 border-t border-gray-800 bg-gradient-to-b from-gray-900 to-brand-dark">
+    <section class="py-10 md:py-20 border-t border-gray-800 bg-gradient-to-b from-gray-900 to-brand-dark">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center mb-8 md:mb-16">
                 <span class="inline-block py-1 px-3 rounded-full bg-brand-accent/20 border border-brand-accent/40 text-sm mb-4 text-brand-accent">
                     🆕 成長支援機能
                 </span>
@@ -190,7 +190,7 @@
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                 <div class="p-6 rounded-2xl bg-gray-800/30 border border-gray-700 hover:border-brand-accent/50 transition">
                     <div class="text-3xl mb-4">💰</div>
                     <h3 class="text-lg font-bold mb-2 text-white">許容損失管理</h3>
@@ -229,85 +229,26 @@
     </section>
 
     <!-- タイムライン：1年後の未来 -->
-    <section class="py-20 border-t border-gray-800">
-        <div class="max-w-5xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">「記録してからトレード」が作る1年後の未来</h2>
-                <p class="text-gray-400">Trading Completeが約束するのは、記録アプリの枠を超えた「成長の階段」です。</p>
-            </div>
-
-            <!-- タイムライン横線（PC） -->
-            <div class="hidden md:block relative mb-8">
-                <div class="absolute top-5 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-accent via-brand-accent to-yellow-300 opacity-60"></div>
-                <div class="grid grid-cols-4 gap-4 relative items-stretch">
-                    <div class="flex flex-col items-center">
-                        <div class="w-4 h-4 rounded-full bg-brand-accent mb-6 shadow-lg shadow-yellow-500/50 flex-shrink-0"></div>
-                        <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 text-center w-full flex-1 flex flex-col justify-center">
-                            <p class="text-2xl mb-3">📈</p>
-                            <p class="text-brand-accent font-bold mb-2">【1週間後】</p>
-                            <p class="text-gray-300 text-sm leading-relaxed">チェックリスト効果で「無駄なエントリー」が激減する</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="w-4 h-4 rounded-full bg-brand-accent mb-6 shadow-lg shadow-yellow-500/50 flex-shrink-0"></div>
-                        <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 text-center w-full flex-1 flex flex-col justify-center">
-                            <p class="text-2xl mb-3">📊</p>
-                            <p class="text-brand-accent font-bold mb-2">【1ヶ月後】</p>
-                            <p class="text-gray-300 text-sm leading-relaxed">統計データから、自分の「勝ちパターン」と「負けパターン」が明確になる</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="w-4 h-4 rounded-full bg-brand-accent mb-6 shadow-lg shadow-yellow-500/50 flex-shrink-0"></div>
-                        <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 text-center w-full flex-1 flex flex-col justify-center">
-                            <p class="text-2xl mb-3">💹</p>
-                            <p class="text-brand-accent font-bold mb-2">【3ヶ月後】</p>
-                            <p class="text-gray-300 text-sm leading-relaxed">データに基づく判断が習慣化し、勝率が目に見えて向上する</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <div class="w-4 h-4 rounded-full bg-brand-accent mb-6 shadow-lg shadow-yellow-500/50 ring-4 ring-yellow-500/30 flex-shrink-0"></div>
-                        <div class="rounded-xl p-5 text-center w-full flex-1 flex flex-col justify-center border-2 border-brand-accent" style="background: rgba(251,191,36,0.08);">
-                            <p class="text-brand-accent font-bold mb-2">【1年後】</p>
-                            <p class="text-white text-sm leading-relaxed font-medium">蓄積された記録が「お宝」に変わり、副業として成り立つレベルへ</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- スマホ用縦並び -->
-            <div class="md:hidden space-y-4">
-                <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 flex gap-4 items-start">
-                    <span class="text-2xl">📈</span>
-                    <div><p class="text-brand-accent font-bold mb-1">【1週間後】</p><p class="text-gray-300 text-sm">チェックリスト効果で「無駄なエントリー」が激減する</p></div>
-                </div>
-                <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 flex gap-4 items-start">
-                    <span class="text-2xl">📊</span>
-                    <div><p class="text-brand-accent font-bold mb-1">【1ヶ月後】</p><p class="text-gray-300 text-sm">統計データから、自分の「勝ちパターン」と「負けパターン」が明確になる</p></div>
-                </div>
-                <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 flex gap-4 items-start">
-                    <span class="text-2xl">💹</span>
-                    <div><p class="text-brand-accent font-bold mb-1">【3ヶ月後】</p><p class="text-gray-300 text-sm">データに基づく判断が習慣化し、勝率が目に見えて向上する</p></div>
-                </div>
-                <div class="rounded-xl p-5 flex gap-4 items-start border-2 border-brand-accent" style="background: rgba(251,191,36,0.08);">
-                    <span class="text-2xl">🏆</span>
-                    <div><p class="text-brand-accent font-bold mb-1">【1年後】</p><p class="text-white text-sm font-medium">蓄積された記録が「お宝」に変わり、副業として成り立つレベルへ</p></div>
-                </div>
+    <section class="py-10 md:py-20 border-t border-gray-800">
+        <div class="w-full max-w-5xl mx-auto px-4">
+            <div class="rounded-xl overflow-hidden">
+                <img src="images/timeline.jpg" alt="「記録してからトレード」が作る1年後の未来" class="w-full">
             </div>
         </div>
     </section>
 
-    <section id="features" class="py-20 border-t border-gray-800">
+    <section id="features" class="py-10 md:py-20 border-t border-gray-800">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-16">
+            <div class="text-center mb-8 md:mb-16">
                 <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">基本機能</h2>
                 <p class="text-gray-400">記録・分析・確定申告準備をワンストップで。</p>
             </div>
 
             <!-- チェックリスト機能 -->
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+            <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center mb-10 md:mb-20">
                 <div class="order-2 md:order-1">
                     <span class="inline-block text-xs font-bold text-brand-accent border border-brand-accent rounded-full px-3 py-1 mb-4">独自機能 01</span>
-                    <h3 class="text-2xl font-bold text-white mb-4">🔒 強制チェックリスト</h3>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">🔒 強制チェックリスト</h3>
                     <p class="text-gray-400 mb-4 leading-relaxed">
                         3つの根拠がないと、エントリーできない。<br>
                         感覚トレードを物理的にブロック。
@@ -325,13 +266,13 @@
             </div>
 
             <!-- リスク管理機能 -->
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+            <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center mb-10 md:mb-20">
                 <div class="rounded-lg overflow-hidden border border-gray-700">
                     <img src="images/feature-risk.jpg" alt="リスク管理自動判定" class="w-full">
                 </div>
                 <div>
                     <span class="inline-block text-xs font-bold text-brand-accent border border-brand-accent rounded-full px-3 py-1 mb-4">独自機能 02</span>
-                    <h3 class="text-2xl font-bold text-white mb-4">🚦 リスクの自動判定</h3>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">🚦 リスクの自動判定</h3>
                     <p class="text-gray-400 mb-4 leading-relaxed">
                         あなたの資金を「色」で守る。<br>
                         エントリー前の「最後の砦」。
@@ -345,10 +286,10 @@
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+            <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center mb-10 md:mb-20">
                 <div class="order-2 md:order-1">
                     <span class="inline-block text-xs font-bold text-brand-accent border border-brand-accent rounded-full px-3 py-1 mb-4">独自機能 03</span>
-                    <h3 class="text-2xl font-bold text-white mb-4">📅 振り返りカレンダー</h3>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">📅 振り返りカレンダー</h3>
                     <p class="text-gray-400 mb-4 leading-relaxed">
                         あなたの成長を「色」で可視化する。<br>
                         日別損益を一目で把握し、月のリズムを掴む。
@@ -365,13 +306,13 @@
             </div>
 
             <!-- 手法別パフォーマンス分析 -->
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+            <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center mb-10 md:mb-20">
                 <div class="rounded-lg overflow-hidden border border-gray-700">
                     <img src="images/feature-analysis.jpg" alt="手法別パフォーマンス分析" class="w-full">
                 </div>
                 <div>
                     <span class="inline-block text-xs font-bold text-brand-accent border border-brand-accent rounded-full px-3 py-1 mb-4">独自機能 04</span>
-                    <h3 class="text-2xl font-bold text-white mb-4">📊 手法別パフォーマンス分析</h3>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">📊 手法別パフォーマンス分析</h3>
                     <p class="text-gray-400 mb-4 leading-relaxed">
                         どの手法が自分に合っているか。<br>
                         「感覚」ではなく「データ」で証明する。
@@ -384,9 +325,9 @@
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+            <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center mb-10 md:mb-20">
                 <div class="order-2 md:order-1">
-                    <h3 class="text-2xl font-bold text-white mb-4">💰 円建て「純損益」の一元管理</h3>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">💰 円建て「純損益」の一元管理</h3>
                     <p class="text-gray-400 mb-6 leading-relaxed">
                         実際の円建て損益・スワップ・手数料を記録すれば、システムがあなたの「純損益（手残り）」を自動計算。複数の通貨ペアや複数の業者をまたいでも、結局トータルで「本当はいくら儲かっているのか」が一目でわかります。
                     </p>
@@ -401,12 +342,12 @@
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+            <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center mb-10 md:mb-20">
                 <div class="rounded-lg overflow-hidden border border-gray-700">
                     <img src="images/feature-tax.jpg" alt="確定申告・経費管理画面" class="w-full">
                 </div>
                 <div>
-                    <h3 class="text-2xl font-bold text-white mb-4">🧾 確定申告サポート</h3>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">🧾 確定申告サポート</h3>
                     <p class="text-gray-400 mb-4 leading-relaxed">
                         憂鬱な作業をワンストップでゼロへ。<br>
                         トレード記録の延長線上で、税務データ作成を極限まで自動化。
@@ -419,9 +360,9 @@
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
                 <div class="order-2 md:order-1">
-                    <h3 class="text-2xl font-bold text-white mb-4">📓 相場ノート＆アノマリー</h3>
+                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">📓 相場ノート＆アノマリー</h3>
                     <p class="text-gray-400 mb-4 leading-relaxed">
                         木を見て、森も見る。<br>
                         「なぜ負けたか」の背景（相場環境）まで記録できるのはTCだけ。
@@ -440,7 +381,7 @@
     </section>
 
     <!-- 比較テーブル -->
-    <section class="py-20 border-t border-gray-800">
+    <section class="py-10 md:py-20 border-t border-gray-800">
         <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">なぜ、Trading Completeなのか？</h2>
@@ -506,7 +447,7 @@
         </div>
     </section>
 
-    <section class="py-20 bg-gray-900 border-t border-gray-800">
+    <section class="py-10 md:py-20 bg-gray-900 border-t border-gray-800">
         <div class="max-w-4xl mx-auto px-4">
             <div class="text-center mb-12">
                 <p class="text-brand-accent text-sm font-medium tracking-widest uppercase mb-3">Developer Story</p>
@@ -519,7 +460,7 @@
                 <div class="space-y-6 text-gray-300 leading-relaxed">
                     <div class="flex items-start gap-4">
                         <span class="text-brand-accent text-xl mt-0.5 flex-shrink-0">✓</span>
-                        <p>金の積み立てで得た500万円を「聖杯探し」と「感情トレード」で溶かしかけ、<span class="text-white font-medium">家庭崩壊の危機に直面</span></p>
+                        <p>金の積み立てで得た500万円を「聖杯探し」と「感情トレード」で溶かし、<span class="text-white font-medium">家庭崩壊の危機に直面</span></p>
                     </div>
                     <div class="flex items-start gap-4">
                         <span class="text-brand-accent text-xl mt-0.5 flex-shrink-0">✓</span>
@@ -540,7 +481,7 @@
         <div class="max-w-5xl mx-auto px-4">
             <div class="text-center mb-4">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">成長できる環境は、ここにある。</h2>
-                <p class="text-gray-400">2026年3月末公開。このシステムは成長を約束しない。圧倒的に成長できる「環境」を提供する。</p>
+                <p class="text-gray-400">2026年3月公開。このシステムは成長を約束しない。圧倒的に成長できる「環境」を提供する。</p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6 mt-12 mb-14">
