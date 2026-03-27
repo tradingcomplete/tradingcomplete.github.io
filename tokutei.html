@@ -121,9 +121,13 @@
                     <tr>
                         <th>メールアドレス</th>
                         <td>
-                            <a href="/cdn-cgi/l/email-protection#f084829194999e97939f9d809c958495de9a80b0979d91999cde939f9d" class="text-brand-accent hover:underline">
-                                <span class="__cf_email__" data-cfemail="1165637075787f76727e7c617d7465743f7b6151767c70787d3f727e7c">[email&#160;protected]</span>
-                            </a>
+                            <span id="email-display"></span>
+                            <script>
+                                var u = 'tradingcomplete.jp';
+                                var d = 'gmail.com';
+                                var el = document.getElementById('email-display');
+                                el.innerHTML = '<a href="mailto:' + u + '@' + d + '" class="text-brand-accent hover:underline">' + u + '@' + d + '</a>';
+                            </script>
                         </td>
                     </tr>
 
@@ -132,7 +136,8 @@
                         <td>
                             <a href="https://tradingcomplete.com" class="text-brand-accent hover:underline">
                                 https://tradingcomplete.com
-                            </a>
+                            </a><br>
+                            <span class="text-brand-muted text-sm">【正式公開準備中】</span>
                         </td>
                     </tr>
 
