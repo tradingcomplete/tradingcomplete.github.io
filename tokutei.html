@@ -202,7 +202,13 @@
                     <tr>
                         <th>お問い合わせ</th>
                         <td>
-                            メール：<a href="/cdn-cgi/l/email-protection#f185839095989f96929e9c819d948594df9b81b1969c90989ddf929e9c" class="text-brand-accent hover:underline"><span class="__cf_email__" data-cfemail="0175736065686f66626e6c716d6475642f6b7141666c60686d2f626e6c">[email&#160;protected]</span></a><br>
+                            メール：<span id="email-contact"></span>
+                            <script>
+                                var u2 = 'tradingcomplete.jp';
+                                var d2 = 'gmail.com';
+                                var el2 = document.getElementById('email-contact');
+                                el2.innerHTML = '<a href="mailto:' + u2 + '@' + d2 + '" class="text-brand-accent hover:underline">' + u2 + '@' + d2 + '</a>';
+                            </script><br>
                             X（旧Twitter）：<a href="https://x.com/Compana_Doppio" target="_blank" rel="noopener" class="text-brand-accent hover:underline">@Compana_Doppio</a><br>
                             <span class="text-brand-muted text-sm">お問い合わせへの回答は、通常3営業日以内を目安にご返信いたします。</span>
                         </td>
