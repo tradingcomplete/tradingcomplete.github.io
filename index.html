@@ -3,7 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trading Complete | トレーダーのためのトレード記録・分析SaaS</title>
+    <title>Trading Complete | FXトレード記録・分析SaaS | 記録を規律に変える</title>
+    <meta name="description" content="Trading Completeは、FXトレーダーのための本格的な記録・分析SaaS。エントリー前に3つの根拠を強制入力、感覚トレードを物理的にブロックする独自機能を搭載。Studio Compana運営。2026年夏リリース予定。">
+    <meta name="keywords" content="FXトレード記録,FX記録SaaS,Trading Complete,Studio Compana,トレード分析,トレード日記,FXジャーナル,副業FX,FX記録アプリ,確定申告,手法別分析,チェックリスト,リスク管理,規律,トレードルール">
+    <meta name="author" content="Studio Compana">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://tradingcomplete.com/">
+    
+    <!-- Favicon / App Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="apple-touch-icon" href="/logo.png">
+    
+    <!-- Open Graph / Facebook / LINE -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tradingcomplete.com/">
+    <meta property="og:title" content="Trading Complete | FXトレード記録・分析SaaS | 記録を規律に変える">
+    <meta property="og:description" content="エントリー前に3つの根拠を強制入力。感覚トレードを物理的にブロックする独自機能を搭載した、日本初の本格FX記録SaaS。Studio Compana運営。2026年夏リリース予定。">
+    <meta property="og:image" content="https://tradingcomplete.com/images/slide-hero.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Trading Complete">
+    <meta property="og:locale" content="ja_JP">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@Compana_Doppio">
+    <meta name="twitter:creator" content="@Compana_Doppio">
+    <meta name="twitter:title" content="Trading Complete | FXトレード記録・分析SaaS">
+    <meta name="twitter:description" content="エントリー前に3つの根拠を強制入力。感覚トレードを物理的にブロックする独自機能を搭載した、日本初の本格FX記録SaaS。">
+    <meta name="twitter:image" content="https://tradingcomplete.com/images/slide-hero.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -73,14 +102,833 @@
         .dot:hover {
             background: rgba(255, 255, 255, 0.8);
         }
+    
+        /* === 新ヒーロー統合: フォント統一 === */
+        body {
+            font-family: "Noto Sans JP", system-ui, "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            font-feature-settings: "palt";
+        }
+        .mono {
+            font-family: "JetBrains Mono", ui-monospace, monospace;
+        }
+        
+        /* === 新ヒーロー: 既存ナビ(fixed)との共存のため上部余白を追加 === */
+        .hero-section {
+            padding-top: 64px; /* 既存ナビの高さぶん */
+        }
+
     </style>
+
+    <!-- Google Fonts (新ヒーロー用) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- SEO: 構造化データ (Organization + SoftwareApplication) -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Studio Compana",
+  "alternateName": "Trading Complete",
+  "url": "https://tradingcomplete.com",
+  "logo": "https://tradingcomplete.com/logo.png",
+  "description": "FXトレーダーのための本格的な記録・分析SaaS「Trading Complete」を開発・運営。",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "名古屋市中村区",
+    "addressRegion": "愛知県",
+    "addressCountry": "JP"
+  },
+  "sameAs": ["https://tradingcomplete.com"]
+}
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Trading Complete",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web",
+  "offers": [
+    {"@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "JPY"},
+    {"@type": "Offer", "name": "Pro", "price": "1980", "priceCurrency": "JPY"},
+    {"@type": "Offer", "name": "Premium", "price": "2980", "priceCurrency": "JPY"}
+  ]
+}
+</script>
+    <!-- SEO: FAQ構造化データ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "データは安全ですか?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SupabaseのRow Level Security(RLS)により、あなたのデータは他のユーザーから完全に分離・保護されています。画像はユーザーごとに非公開バケットで管理され、署名付きURLで自分だけがアクセス可能。エクスポート機能で手元にバックアップを取ることもできます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "スマホで使えますか?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "PC・タブレット・スマホの完全レスポンシブ対応です。ブラウザからアクセスするだけで、インストールは不要です。クラウド同期により、どのデバイスからでも同じデータにアクセスできます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "FX以外にも対応していますか?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "通貨ペアや商品名は自由にカスタマイズできます。ゴールド(XAUUSD)やビットコイン、株価指数など、お好みの銘柄を登録してご利用いただけます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "無料プランに制限はありますか?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "無料プランでは累計50トレードまで記録できます。分析・チャート・画像保存など全機能をご利用いただけます。トレード数無制限にはProプラン(月額1,980円)へのアップグレードが必要です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "確定申告に本当に使えますか?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Trading Completeは記録・集計ツールであり、税務アドバイスは行いません。ただし、年間トレード損益や経費データをExcel互換のCSV形式で出力できるため、確定申告の準備作業を大幅に効率化できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "いつでも解約できますか?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい、いつでも解約できます。マイページのプラン管理からワンクリックで解約可能です。契約期間の縛りや違約金は一切ありません。解約後も、契約期間の終了日までは有料プランの機能をご利用いただけます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "解約したら、今までの記録はどうなりますか?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "解約後もデータは保持されます。自動的にFreeプランに移行し、過去の記録はそのまま閲覧可能です。エクスポート機能でいつでもバックアップを取ることもできます。Freeプラン移行後は新規記録が累計50件までに制限され、クラウド同期は停止しますが、再度有料プランに加入すれば全機能が再開されます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "クレジットカード情報の取り扱いは安全ですか?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "カード情報はTCには一切保存されません。決済はPayPalまたはfincode(GMOペイメントゲートウェイ)という信頼性の高い決済代行サービスを通じて、SSL暗号化通信で直接処理されます。TCは決済ステータスのみを受け取る仕組みです。"
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- 新ヒーロー(Pattern C)用CSS -->
+    <style>
+    :root {
+    --ink-900: #0a0f1e;
+    --ink-800: #0f172a;
+    --ink-700: #1e293b;
+    --ink-600: #293548;
+    --ink-500: #3a475d;
+    --line: rgba(226, 232, 240, 0.08);
+    --line-strong: rgba(226, 232, 240, 0.14);
+    --text: #e2e8f0;
+    --text-dim: #94a3b8;
+    --text-dimmer: #64748b;
+    --gold: #fbbf24;
+    --gold-hover: #f59e0b;
+    --gold-deep: #b45309;
+    --danger: #ef4444;
+    --ok: #10b981;
+  }
+
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--ink-800);
+    color: var(--text);
+    font-family: "Noto Sans JP", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "palt";
+  }
+  .mono { font-family: "JetBrains Mono", ui-monospace, monospace; font-feature-settings: normal; }
+
+  /* ========== PATTERN SWITCHER ========== */
+  
+  
+  
+  
+  
+
+  /* patterns container — only one visible at a time */
+  
+  
+
+  /* ========== SHARED PRIMITIVES ========== */
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Navigation bar shared base */
+  .navbar {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(15, 23, 42, 0.72);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .brand {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none; color: inherit;
+  }
+  .brand-mark {
+    width: 30px; height: 30px;
+    display: grid; place-items: center;
+    background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+    border-radius: 7px;
+    color: var(--ink-900);
+    font-weight: 900; font-size: 14px;
+    font-family: "JetBrains Mono", monospace;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.15) inset, 0 4px 12px rgba(251,191,36,0.25);
+  }
+  .brand-text { line-height: 1.15; }
+  .brand-name { font-weight: 700; font-size: 15px; letter-spacing: -0.01em; }
+  .brand-company {
+    font-size: 10px; color: var(--text-dimmer);
+    letter-spacing: 0.08em; font-weight: 500;
+  }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a {
+    color: var(--text-dim); text-decoration: none;
+    font-size: 14px; font-weight: 500;
+    transition: color 0.15s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta { display: flex; align-items: center; gap: 12px; }
+  @media (max-width: 900px) { .nav-links { display: none; } }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    font-family: inherit; font-weight: 700;
+    text-decoration: none; cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+  .btn-sm { padding: 8px 14px; font-size: 13px; border-radius: 8px; }
+  .btn-md { padding: 12px 20px; font-size: 14px; border-radius: 10px; }
+  .btn-lg { padding: 16px 28px; font-size: 15px; border-radius: 12px; }
+
+  .btn-gold { background: var(--gold); color: var(--ink-900); }
+  .btn-gold:hover { background: var(--gold-hover); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(251,191,36,0.28); }
+  .btn-ghost { background: transparent; color: var(--text); border-color: var(--line-strong); }
+  .btn-ghost:hover { border-color: rgba(226,232,240,0.28); background: rgba(226,232,240,0.03); }
+  .btn-outline { background: transparent; color: var(--text); border-color: var(--text-dim); }
+  .btn-outline:hover { border-color: var(--text); background: rgba(226,232,240,0.04); }
+
+  /* Badge bar */
+  .badges { display: flex; flex-wrap: wrap; gap: 8px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 12px;
+    font-size: 12px; font-weight: 500;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    background: rgba(30, 41, 59, 0.4);
+    color: var(--text-dim);
+    letter-spacing: 0.01em;
+  }
+  .badge-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold);
+  }
+  .badge.primary {
+    background: rgba(251, 191, 36, 0.08);
+    border-color: rgba(251, 191, 36, 0.25);
+    color: #fde68a;
+  }
+
+  /* Gold accent text */
+  .gold { color: var(--gold); }
+  .accent-underline {
+    background-image: linear-gradient(transparent 70%, rgba(251,191,36,0.18) 70%);
+  }
+
+  /* Trust signals row */
+  .trust-row {
+    display: flex; flex-wrap: wrap;
+    gap: 24px 40px;
+    padding: 20px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 10px;
+  }
+  .trust-item svg { width: 14px; height: 14px; flex-shrink: 0; color: var(--gold); opacity: 0.85; }
+
+  /* Slider (shared logic, styled per pattern) */
+  .slider { position: relative; width: 100%; }
+  .slider-frame {
+    position: relative; aspect-ratio: 16/9; width: 100%;
+    background: var(--ink-700);
+    overflow: hidden;
+  }
+  .slider-slide {
+    position: absolute; inset: 0;
+    opacity: 0; transition: opacity 0.5s ease;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .slider-slide.active { opacity: 1; }
+  .slider-dots { display: flex; gap: 8px; justify-content: center; margin-top: 20px; }
+  .slider-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--ink-600); border: none;
+    cursor: pointer; padding: 0;
+    transition: all 0.2s;
+  }
+  .slider-dot.active { background: var(--gold); width: 24px; border-radius: 4px; }
+
+  /* Slide placeholder (since we don't have real images) */
+  .ui-placeholder {
+    width: 100%; height: 100%;
+    background:
+      linear-gradient(135deg, rgba(251,191,36,0.04), transparent),
+      #0a0f1e;
+    display: grid;
+    grid-template-rows: 36px 1fr;
+    border: 1px solid var(--line);
+  }
+  .ui-topbar {
+    display: flex; align-items: center; gap: 8px;
+    padding: 0 12px;
+    border-bottom: 1px solid var(--line);
+    background: rgba(15,23,42,0.6);
+  }
+  .ui-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .ui-body { padding: 16px; display: grid; gap: 10px; }
+
+
+/* ========================================================
+   HERO SECTION (旧: PATTERN C - Workspace)
+   ======================================================== */
+  /* ========================================================
+     PATTERN C — Workspace / Productivity SaaS
+     (dev-tools / journaling-app aesthetic — no financial cues)
+     ======================================================== */
+  .hero-section {
+    background: var(--ink-800);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: -260px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle at center,
+      rgba(251,191,36,0.08) 0%,
+      transparent 55%);
+    pointer-events: none;
+  }
+  .hero-section::after {
+    content: "";
+    position: absolute;
+    bottom: -200px; left: -200px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle at center,
+      rgba(148,163,184,0.04) 0%,
+      transparent 55%);
+    pointer-events: none;
+  }
+  .hero-section .hero {
+    position: relative;
+    padding: 72px 0 40px;
+  }
+  .hero-section .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 12px; font-weight: 500;
+    color: var(--text-dim);
+    padding: 6px 12px;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    background: rgba(30, 41, 59, 0.4);
+    margin-bottom: 28px;
+  }
+  .hero-section .eyebrow .chev { color: var(--gold); }
+  .hero-section h1.headline {
+    font-size: clamp(40px, 5.2vw, 68px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin: 0 0 28px;
+    max-width: 18ch;
+  }
+  .hero-section .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+    gap: 56px;
+    align-items: start;
+  }
+  @media (max-width: 1024px) {
+    .hero-section .hero-grid { grid-template-columns: 1fr; gap: 40px; align-items: start; }
+  }
+  .hero-section .sublede {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-dim);
+    margin: 0 0 32px;
+    max-width: 44ch;
+  }
+  .hero-section .sublede strong { color: var(--text); font-weight: 700; }
+  .hero-section .sublede .emph { color: var(--gold); font-weight: 700; }
+  .hero-section .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 36px; }
+
+  /* Pillar row — what TC is, in 3 plain-language cards (no numbers) */
+  .hero-section .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 900px) {
+    .hero-section .pillars { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 640px) {
+    .hero-section .pillars { grid-template-columns: 1fr; }
+  }
+  .hero-section .pillar {
+    padding: 14px 16px;
+    background: rgba(30, 41, 59, 0.35);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    transition: border-color 0.2s;
+  }
+  .hero-section .pillar:hover { border-color: rgba(251,191,36,0.3); }
+  .hero-section .pillar-icon {
+    width: 28px; height: 28px;
+    display: grid; place-items: center;
+    background: rgba(251,191,36,0.12);
+    color: var(--gold);
+    border-radius: 7px;
+    margin-bottom: 10px;
+  }
+  .hero-section .pillar-icon svg { width: 16px; height: 16px; }
+  .hero-section .pillar-title {
+    font-size: 13px; font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .hero-section .pillar-desc {
+    font-size: 11.5px; line-height: 1.6;
+    color: var(--text-dim);
+  }
+
+  /* Bento product composition — replaces the slider for pattern C */
+  .hero-section .bento {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 86px;
+    gap: 10px;
+    position: relative;
+  }
+  .hero-section .bento-card {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid var(--line-strong);
+    border-radius: 12px;
+    padding: 14px;
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(8px);
+  }
+  .hero-section .bento-label {
+    font-size: 10px; letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-dimmer);
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .hero-section .bento-label svg { width: 11px; height: 11px; color: var(--gold); }
+  .hero-section .bento-big { grid-column: span 6; grid-row: span 4; }
+  .hero-section .bento-checklist { grid-column: span 3; grid-row: span 4; }
+  .hero-section .bento-tag { grid-column: span 3; grid-row: span 4; }
+  .hero-section .bento-streak { grid-column: span 6; grid-row: span 4; }
+
+  /* ========================================================
+     AI TEASER CARD (Premium preview, fills left-column void)
+     ======================================================== */
+  .ai-teaser {
+    position: relative;
+    border-radius: 12px;
+    padding: 18px 18px 16px;
+    background:
+      radial-gradient(120% 80% at 0% 0%, rgba(251,191,36,0.09) 0%, transparent 55%),
+      linear-gradient(180deg, rgba(20,26,42,0.92) 0%, rgba(15,20,34,0.96) 100%);
+    border: 1px solid rgba(251,191,36,0.35);
+    box-shadow:
+      0 0 0 1px rgba(251,191,36,0.08) inset,
+      0 20px 48px -28px rgba(251,191,36,0.25),
+      0 8px 24px -12px rgba(0,0,0,0.5);
+    overflow: hidden;
+  }
+  /* Gold gradient edge highlight */
+  .ai-teaser::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 12px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(251,191,36,0.55) 0%, rgba(251,191,36,0.08) 35%, transparent 60%, rgba(251,191,36,0.15) 100%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .ai-teaser-badge {
+    position: absolute;
+    top: 14px; right: 14px;
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 4px 9px 4px 7px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #1a1100;
+    font-size: 9.5px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(251,191,36,0.35);
+    z-index: 2;
+  }
+
+  .ai-teaser-header { margin-bottom: 12px; padding-right: 82px; }
+  .ai-teaser-kicker {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 6px;
+    font-family: "JetBrains Mono", monospace;
+  }
+  .ai-teaser-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .ai-teaser-sub {
+    font-size: 11.5px;
+    color: var(--text-dim);
+    line-height: 1.55;
+  }
+
+  /* Blurred preview surface */
+  .ai-teaser-preview {
+    position: relative;
+    border-radius: 8px;
+    background: rgba(15,23,42,0.6);
+    border: 1px solid rgba(251,191,36,0.18);
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  .ai-teaser-preview-inner { position: relative; }
+
+  .ai-preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid rgba(251,191,36,0.12);
+  }
+  .ai-avatar {
+    width: 18px; height: 18px;
+    border-radius: 5px;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #fbbf24 0%, #b45309 100%);
+    color: #1a1100;
+    flex-shrink: 0;
+  }
+
+  .ai-preview-blur {
+    display: grid; gap: 6px;
+    position: relative;
+  }
+  .ai-blur-row {
+    display: flex; align-items: center; gap: 7px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    background: rgba(15,23,42,0.5);
+    border: 1px solid rgba(226,232,240,0.04);
+    font-size: 10.5px;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  .ai-blur-dot {
+    width: 6px; height: 6px; border-radius: 999px;
+    flex-shrink: 0;
+    box-shadow: 0 0 8px currentColor;
+  }
+  .ai-blur-strong {
+    filter: blur(4.5px);
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Gold lock overlay (centered) */
+  .ai-lock-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    pointer-events: none;
+  }
+  .ai-lock-icon {
+    width: 36px; height: 36px;
+    border-radius: 999px;
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #fbbf24 0%, #b45309 100%);
+    color: #1a1100;
+    box-shadow:
+      0 0 0 4px rgba(251,191,36,0.12),
+      0 0 0 8px rgba(251,191,36,0.05),
+      0 8px 20px rgba(251,191,36,0.3);
+  }
+
+  /* Footer */
+  .ai-teaser-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .ai-teaser-copy { flex: 1 1 auto; min-width: 0; }
+  .ai-teaser-tagline {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 3px;
+    line-height: 1.4;
+  }
+  .ai-teaser-meta {
+    font-size: 10.5px;
+    line-height: 1.4;
+  }
+  .ai-teaser-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 14px;
+    border-radius: 7px;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #1a1100;
+    font-size: 11.5px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    box-shadow: 0 4px 14px -4px rgba(251,191,36,0.45);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .ai-teaser-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px -4px rgba(251,191,36,0.6);
+  }
+
+  .hero-section .bento-scene {
+    font-size: 13px; font-weight: 700; color: var(--text);
+    margin-bottom: 2px;
+  }
+  .hero-section .bento-sub {
+    font-size: 11px; color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  /* Shared slider frame override: pattern C uses bento instead */
+  .hero-section .slider-wrap { display: none; }
+
+  /* ========================================================
+     SHARED UI PLACEHOLDER VARIANTS (for 5 slides)
+     ======================================================== */
+  .ui-placeholder[data-slide="1"] .ui-body { grid-template-columns: 1fr 1fr; grid-template-rows: auto 1fr; }
+  .ui-chart {
+    border-radius: 6px;
+    background: linear-gradient(180deg, rgba(251,191,36,0.06), transparent);
+    border: 1px solid var(--line);
+    position: relative;
+    overflow: hidden;
+    min-height: 120px;
+  }
+  .ui-chart svg { width: 100%; height: 100%; display: block; }
+  .ui-row-skeleton {
+    display: grid; grid-template-columns: 1fr 60px 60px 60px 80px;
+    gap: 10px; align-items: center;
+    padding: 8px 10px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.02);
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px;
+  }
+  .ui-pair { color: var(--text); font-weight: 700; }
+  .ui-pnl-up { color: var(--ok); }
+  .ui-pnl-down { color: var(--danger); }
+  .ui-kpi {
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: rgba(30,41,59,0.3);
+  }
+  .ui-kpi-label { font-size: 9px; color: var(--text-dimmer); letter-spacing: 0.1em; text-transform: uppercase; }
+  .ui-kpi-val { font-family: "JetBrains Mono", monospace; font-weight: 700; font-size: 18px; color: var(--text); margin-top: 4px; }
+  .ui-kpi-val.up { color: var(--ok); }
+  .ui-kpi-val.gold { color: var(--gold); }
+
+  /* Checklist placeholder */
+  .ui-checklist-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--line);
+    font-size: 11px;
+  }
+  .ui-check {
+    width: 16px; height: 16px; border-radius: 4px;
+    background: var(--gold);
+    display: grid; place-items: center;
+    flex-shrink: 0;
+  }
+  .ui-check.empty { background: transparent; border: 1.5px solid var(--text-dimmer); }
+  .ui-check svg { width: 10px; height: 10px; color: var(--ink-900); }
+
+  /* Calendar placeholder */
+  .ui-calendar {
+    display: grid; grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+  }
+  .ui-cal-cell {
+    aspect-ratio: 1; border-radius: 3px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--line);
+    display: grid; place-items: center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; color: var(--text-dimmer);
+    position: relative;
+  }
+  .ui-cal-cell.win { background: rgba(16,185,129,0.15); border-color: rgba(16,185,129,0.3); color: var(--text); }
+  .ui-cal-cell.loss { background: rgba(239,68,68,0.15); border-color: rgba(239,68,68,0.3); color: var(--text); }
+  .ui-cal-cell.today { border-color: var(--gold); }
+
+  .caption {
+    position: absolute; top: 16px; left: 16px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10px; letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-dimmer);
+    z-index: 2;
+  }
+  .caption .num { color: var(--gold); }
+
+  /* Tweaks panel */
+  .tweaks {
+    position: fixed; right: 16px; bottom: 16px;
+    width: 280px;
+    background: rgba(10, 15, 30, 0.94);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--line-strong);
+    border-radius: 14px;
+    padding: 16px;
+    z-index: 1000;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    display: none;
+    font-size: 12px;
+  }
+  .tweaks.open { display: block; }
+  .tweaks-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 14px;
+    font-weight: 700; font-size: 13px;
+  }
+  .tweaks-close {
+    background: transparent; border: none; color: var(--text-dim);
+    cursor: pointer; font-size: 16px; line-height: 1;
+  }
+  .tweak-row { margin-bottom: 14px; }
+  .tweak-label {
+    font-size: 11px; color: var(--text-dim);
+    letter-spacing: 0.04em; margin-bottom: 6px;
+    display: flex; justify-content: space-between;
+  }
+  .tweak-label .val { font-family: "JetBrains Mono", monospace; color: var(--gold); }
+  .tweak-row input[type=range] { width: 100%; accent-color: var(--gold); }
+  .tweak-row input[type=color] {
+    width: 100%; height: 32px; border: 1px solid var(--line);
+    border-radius: 6px; background: transparent; cursor: pointer;
+  }
+  .tweak-row select, .tweak-row input[type=text] {
+    width: 100%; background: rgba(30,41,59,0.6);
+    border: 1px solid var(--line-strong); color: var(--text);
+    padding: 6px 8px; border-radius: 6px; font-family: inherit; font-size: 12px;
+  }
+
+  /* ========== MOBILE ========== */
+  @media (max-width: 640px) {
+    .container { padding: 0 32px; }
+
+    .hero-section .hero { padding: 48px 0; }
+
+    /* スマホで各カード・セクションに十分な左右余白を確保 */
+    .hero-section .hero-grid { padding: 0 8px; }
+    .hero-section h1.headline { padding: 0 8px; }
+    .hero-section .sublede { padding: 0 8px; }
+    .hero-section .cta-row { padding: 0 8px; }
+    .hero-section .badges { padding: 0 8px; }
+  }
+
+  /* タブレット(641px〜900px)でもパディング調整 */
+  @media (max-width: 900px) and (min-width: 641px) {
+    .container { padding: 0 36px; }
+  }
+    </style>
+
 </head>
 <body class="bg-brand-dark text-brand-text font-sans antialiased">
 
-    <nav class="fixed w-full z-50 bg-brand-dark/90 backdrop-blur border-b border-gray-800">
+    <nav class="fixed w-full z-50 bg-brand-dark/95 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <span class="text-xl font-bold tracking-wider text-white">Trading Complete</span>
+                <a href="#hero" class="text-xl font-bold tracking-wider text-white hover:text-brand-accent transition">Trading Complete</a>
+                
+                <!-- デスクトップ版: セクションリンク(md以上で表示) -->
+                <div class="hidden lg:flex items-center gap-6 text-sm text-gray-400">
+                    <a href="#your-growth" class="hover:text-white transition">成長ストーリー</a>
+                    <a href="#features" class="hover:text-white transition">機能</a>
+                    <a href="#faq" class="hover:text-white transition">FAQ</a>
+                    <a href="#waitlist" class="hover:text-white transition">料金</a>
+                </div>
+
+                <!-- 右側ボタン -->
                 <div class="flex items-center gap-2">
                     <!-- TODO: 決済審査通過後にhrefをapp.tradingcomplete.comに差し替え -->
                     <a href="#" class="whitespace-nowrap border border-brand-accent text-brand-accent px-3 py-1.5 md:px-4 md:py-2 rounded-full font-bold text-xs md:text-sm hover:bg-brand-accent hover:text-brand-dark transition duration-300">
@@ -94,86 +942,516 @@
         </div>
     </nav>
 
-    <header class="hero-bg min-h-screen flex items-center justify-center pt-16">
-        <div class="w-full">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <div class="fade-in-up">
-                <div class="flex flex-wrap justify-center gap-2 mb-6">
-                    <span class="inline-block py-1 px-3 rounded-full bg-gray-800 border border-gray-700 text-sm text-brand-accent">
-                        2026 Coming Soon
-                    </span>
-                    <span class="inline-block py-1 px-3 rounded-full bg-gray-800 border border-gray-700 text-sm text-white">
-                        記録しても勝てないあなたへ。
-                    </span>
+    <header class="hero-section" id="hero">
+  <div class="container hero">
+    <div class="hero-grid">
+      <!-- LEFT -->
+      <div>
+        <span class="eyebrow">
+          <span class="chev">✦</span>
+          日本初の本格 FX 記録 SaaS
+        </span>
+
+        <h1 class="headline">
+          すべてのトレードを、<br><span class="gold">これ一つで。</span>
+        </h1>
+
+        <p class="sublede">
+          記録するだけのツールは、もういらない。<br>
+          <strong>記録 → 分析 → 気づき → 成長。</strong><br>
+          トレーダーのための、本格的な記録・分析SaaS。<br>
+          <span class="emph">記録を規律に変える、唯一のシステム。</span>
+        </p>
+
+        <div class="cta-row">
+          <a href="#features" class="btn btn-outline btn-md">機能を見る</a>
+          <a href="https://lin.ee/IL5usJM" class="btn btn-gold btn-md">
+            早期アクセスに登録
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+          </a>
+        </div>
+
+        <div class="badges" style="margin-bottom: 24px;">
+          <span class="badge">2026年夏リリース予定</span>
+          <span class="badge">Studio Compana 運営</span>
+        </div>
+
+        <div class="pillars" style="margin-top: 8px">
+          <!-- Card 1: Trade record -->
+          <div class="pillar">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px">
+              <div class="pillar-icon" style="margin-bottom:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><path d="M14 2v6h6M8 13h8M8 17h5"></path></svg></div>
+              <div>
+                <div class="pillar-title" style="margin-bottom:2px">トレード記録</div>
+                <div style="font-size:10px; color:var(--text-dimmer)">カード一覧で全トレードを一望</div>
+              </div>
+            </div>
+            <div style="display:grid; gap:5px">
+              <!-- Trade 1: USD/JPY LONG / NY / GMO -->
+              <div style="padding:6px 8px; border-radius:5px; background:rgba(15,23,42,0.6); border:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; gap:6px">
+                <div style="display:flex; gap:6px; align-items:center; min-width:0; flex-wrap:nowrap; overflow:hidden">
+                  <span class="mono" style="font-size:10px; color:var(--text); font-weight:700; flex-shrink:0; margin-right:2px">USD/JPY</span>
+                  <span class="mono" style="font-size:8px; padding:3px 7px; border-radius:4px; background:#22c55e; color:#0a0f1e; font-weight:800; letter-spacing:0.06em; flex-shrink:0; line-height:1">LONG</span>
+                  <span class="mono" style="font-size:8px; padding:3px 7px; border-radius:4px; background:#a855f7; color:#fff; font-weight:800; letter-spacing:0.06em; flex-shrink:0; line-height:1">NY</span>
+                  <span class="mono" style="font-size:8px; padding:3px 7px; border-radius:4px; background:transparent; color:#c084fc; font-weight:600; letter-spacing:0.02em; flex-shrink:0; line-height:1; border:1px solid rgba(168,85,247,0.4)">GMO</span>
                 </div>
-                <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-white">
-                    すべてのトレードを、<br>
-                    <span class="text-brand-accent">これ一つで。</span>
-                </h1>
-                <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-                    記録するだけのツールは、もういらない。<br>
-                    <strong class="text-white">記録 → 分析 → 気づき → 成長</strong><br>
-                    トレーダーのためのトレード記録・分析システム。<br>
-                    <span class="text-brand-accent font-bold">「記録」を「規律」に変える、唯一のシステム。</span>
-                </p>
-                
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="#features" class="px-8 py-3 rounded-lg border border-gray-600 hover:border-white transition text-white">
-                        機能を見る
-                    </a>
-                    <a href="#waitlist" class="px-8 py-3 rounded-lg bg-brand-accent text-brand-dark font-bold hover:bg-yellow-300 transition shadow-lg shadow-yellow-500/20">
-                        リリース通知を受け取る
-                    </a>
+                <span class="mono" style="font-size:10px; padding:2px 6px; border-radius:3px; background:rgba(34,197,94,0.18); color:#4ade80; font-weight:700; flex-shrink:0; line-height:1">+50.2 Pips</span>
+              </div>
+              <!-- Trade 2: EUR/USD SHORT / LDN / XM -->
+              <div style="padding:6px 8px; border-radius:5px; background:rgba(15,23,42,0.6); border:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; gap:6px">
+                <div style="display:flex; gap:6px; align-items:center; min-width:0; flex-wrap:nowrap; overflow:hidden">
+                  <span class="mono" style="font-size:10px; color:var(--text); font-weight:700; flex-shrink:0; margin-right:2px">EUR/USD</span>
+                  <span class="mono" style="font-size:8px; padding:3px 7px; border-radius:4px; background:#ef4444; color:#fff; font-weight:800; letter-spacing:0.06em; flex-shrink:0; line-height:1">SHORT</span>
+                  <span class="mono" style="font-size:8px; padding:3px 7px; border-radius:4px; background:#3b82f6; color:#fff; font-weight:800; letter-spacing:0.06em; flex-shrink:0; line-height:1">LDN</span>
+                  <span class="mono" style="font-size:8px; padding:3px 7px; border-radius:4px; background:transparent; color:#93c5fd; font-weight:600; letter-spacing:0.02em; flex-shrink:0; line-height:1; border:1px solid rgba(59,130,246,0.4)">XM</span>
+                </div>
+                <span class="mono" style="font-size:10px; padding:2px 6px; border-radius:3px; background:rgba(239,68,68,0.18); color:#f87171; font-weight:700; flex-shrink:0; line-height:1">-23.5 Pips</span>
+              </div>
+              <!-- Trade 3: GBP/JPY LONG / TKY / DMM -->
+              <div style="padding:6px 8px; border-radius:5px; background:rgba(15,23,42,0.6); border:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; gap:6px">
+                <div style="display:flex; gap:6px; align-items:center; min-width:0; flex-wrap:nowrap; overflow:hidden">
+                  <span class="mono" style="font-size:10px; color:var(--text); font-weight:700; flex-shrink:0; margin-right:2px">GBP/JPY</span>
+                  <span class="mono" style="font-size:8px; padding:3px 7px; border-radius:4px; background:#22c55e; color:#0a0f1e; font-weight:800; letter-spacing:0.06em; flex-shrink:0; line-height:1">LONG</span>
+                  <span class="mono" style="font-size:8px; padding:3px 7px; border-radius:4px; background:#f97316; color:#fff; font-weight:800; letter-spacing:0.06em; flex-shrink:0; line-height:1">TKY</span>
+                  <span class="mono" style="font-size:8px; padding:3px 7px; border-radius:4px; background:transparent; color:#fdba74; font-weight:600; letter-spacing:0.02em; flex-shrink:0; line-height:1; border:1px solid rgba(249,115,22,0.4)">DMM</span>
+                </div>
+                <span class="mono" style="font-size:10px; padding:2px 6px; border-radius:3px; background:rgba(34,197,94,0.18); color:#4ade80; font-weight:700; flex-shrink:0; line-height:1">+120.0 Pips</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Market notes -->
+          <div class="pillar">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px">
+              <div class="pillar-icon" style="margin-bottom:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"></path></svg></div>
+              <div>
+                <div class="pillar-title" style="margin-bottom:2px">相場ノート</div>
+                <div style="font-size:10px; color:var(--text-dimmer)">検索+月メモで相場観を蓄積</div>
+              </div>
+            </div>
+            <div style="padding:5px 8px; border-radius:5px; background:rgba(15,23,42,0.6); border:1px solid var(--line); display:flex; align-items:center; gap:6px; margin-bottom:6px">
+              <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--text-dimmer); flex-shrink:0"><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.35-4.35"></path></svg>
+              <span style="font-size:9.5px; color:var(--text-dimmer)">ノートを検索...</span>
+            </div>
+            <div style="padding:7px 9px; border-radius:5px; background:rgba(15,23,42,0.6); border:1px solid var(--line)">
+              <div class="mono" style="font-size:8.5px; color:var(--text-dimmer); margin-bottom:3px">2026/04/15 · USD/JPY 方針メモ</div>
+              <div style="font-size:10px; color:var(--text); line-height:1.45; margin-bottom:4px">152.40のレジスタンス意識。<br>NY時間のブレイクに注意。</div>
+              <div style="display:inline-flex; align-items:center; gap:5px; font-size:9.5px; color:var(--text-dim)">
+                <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--gold); flex-shrink:0"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="M21 15l-5-5L5 21"></path></svg>
+                スクショ 3枚添付
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Tax prep -->
+          <div class="pillar">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px">
+              <div class="pillar-icon" style="margin-bottom:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"></rect><path d="M8 7h8M8 11h8M8 15h5"></path></svg></div>
+              <div>
+                <div class="pillar-title" style="margin-bottom:2px">確定申告準備</div>
+                <div style="font-size:10px; color:var(--text-dimmer)">年間損益+経費を自動集計、CSV出力対応</div>
+              </div>
+            </div>
+            <div style="display:grid; gap:5px">
+              <div style="display:flex; justify-content:space-between; align-items:baseline; padding:5px 8px; border-radius:4px; background:rgba(15,23,42,0.5); border:1px solid var(--line)">
+                <span style="font-size:9.5px; color:var(--text-dim)">年間損益</span>
+                <span class="mono" style="font-size:11.5px; color:var(--gold); font-weight:700">+¥1,248,000</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:baseline; padding:5px 8px; border-radius:4px; background:rgba(15,23,42,0.5); border:1px solid var(--line)">
+                <span style="font-size:9.5px; color:var(--text-dim)">経費合計</span>
+                <span class="mono" style="font-size:11.5px; color:var(--text); font-weight:700">¥185,400</span>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:baseline; padding:5px 8px; border-radius:4px; background:rgba(251,191,36,0.08); border:1px solid rgba(251,191,36,0.25)">
+                <span style="font-size:9.5px; color:var(--text-dim)">課税対象所得</span>
+                <span class="mono" style="font-size:11.5px; color:var(--gold); font-weight:700">+¥1,062,600</span>
+              </div>
+            </div>
+            <div style="margin-top:8px; display:inline-flex; align-items:center; gap:5px; padding:3px 8px; border-radius:11px; background:rgba(226,232,240,0.04); border:1px solid var(--line); font-size:9.5px; color:var(--text-dim)">
+              <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><path d="M14 2v6h6"></path></svg>
+              CSV出力対応
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Teaser Card: Premium preview (fills left-column void) -->
+        <div class="ai-teaser" style="margin-top:20px">
+          <!-- Premium gold corner badge -->
+          <div class="ai-teaser-badge">
+            <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="currentColor" stroke-width="2.2" style="flex-shrink:0"><path d="M12 2l2.39 4.84 5.34.78-3.86 3.77.91 5.32L12 14.2l-4.78 2.51.91-5.32L4.27 7.62l5.34-.78L12 2z"></path></svg>
+            <span>Premium</span>
+          </div>
+
+          <!-- Header -->
+          <div class="ai-teaser-header">
+            <div class="ai-teaser-kicker">
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--gold)"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path></svg>
+              <span>COMING SOON · 2026.09</span>
+            </div>
+            <div class="ai-teaser-title">AIトレードコーチ</div>
+            <div class="ai-teaser-sub">月次パフォーマンスをClaudeが分析、<br>あなた専用の改善提案を生成。</div>
+          </div>
+
+          <!-- Blurred preview surface -->
+          <div class="ai-teaser-preview">
+            <div class="ai-teaser-preview-inner">
+              <!-- Preview header (not blurred — shows what kind of content) -->
+              <div class="ai-preview-header">
+                <div style="display:flex; align-items:center; gap:6px">
+                  <div class="ai-avatar">
+                    <svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 2l2.39 4.84 5.34.78-3.86 3.77.91 5.32L12 14.2l-4.78 2.51.91-5.32L4.27 7.62l5.34-.78L12 2z"></path></svg>
+                  </div>
+                  <span class="mono" style="font-size:9.5px; color:var(--text); font-weight:600">AIコーチ · 月次レビュー</span>
+                </div>
+                <span class="mono" style="font-size:8.5px; color:var(--text-dimmer)">2026/04</span>
+              </div>
+
+              <!-- Blurred content (actual AI output, obscured) -->
+              <div class="ai-preview-blur">
+                <div class="ai-blur-row ai-blur-strong">
+                  <span class="ai-blur-dot" style="background:#22c55e"></span>
+                  <span>東京セッションの勝率72%は安定しています</span>
+                </div>
+                <div class="ai-blur-row ai-blur-strong">
+                  <span class="ai-blur-dot" style="background:#fbbf24"></span>
+                  <span>NY時間を控えると月¥14,000の改善見込み</span>
+                </div>
+                <div class="ai-blur-row ai-blur-strong">
+                  <span class="ai-blur-dot" style="background:#f87171"></span>
+                  <span>木金曜の勝率が45%に落ちています</span>
+                </div>
+              </div>
+
+              <!-- Gold lock overlay -->
+              <div class="ai-lock-overlay">
+                <div class="ai-lock-icon">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 018 0v4"></path></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Footer: copy + CTA -->
+          <div class="ai-teaser-footer">
+            <div class="ai-teaser-copy">
+              <div class="ai-teaser-tagline">記録を続けるほど、AIの提案が鋭くなる。</div>
+              <div class="ai-teaser-meta">
+                <span class="mono" style="color:var(--gold); font-weight:700">Premium ¥2,980/月</span>
+                <span style="color:var(--text-dimmer); margin:0 6px">·</span>
+                <span style="color:var(--text-dim)">2026年9月リリース</span>
+              </div>
+            </div>
+            <a href="https://lin.ee/IL5usJM" target="_blank" rel="noopener" class="ai-teaser-cta">
+              早期アクセスに登録
+              <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" style="flex-shrink:0"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: bento product composition (no frame chrome, no live status) -->
+      <div>
+        <div class="bento">
+          <!-- Big: Monthly calendar -->
+          <div class="bento-card bento-big">
+            <div class="bento-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M8 3v4M16 3v4M3 10h18"></path></svg>
+              月次カレンダー
+            </div>
+            <div class="bento-scene">2026年4月</div>
+            <div class="bento-sub" style="margin-top:2px">日別損益を一目で確認</div>
+            <div id="mini-cal-grid" style="display:grid; grid-template-columns: repeat(7, 1fr); gap:3px; margin-top:12px"></div>
+            <script>
+              (function(){
+                // April 2026 — Apr 1 is Wednesday. Weekends mostly untraded.
+                // Amounts in thousands (positive=profit, negative=loss, null=untraded).
+                // Scale: alpha mapped from |amt| / 35 (max)
+                const days = [
+                  null, null, null,                    // Sun–Tue before Apr 1
+                  {d:1,  a:  2, c:1},                  // Wed
+                  {d:2,  a:  8, c:2},                  // Thu
+                  {d:3,  a: -3, c:1},                  // Fri
+                  null,                                // Sat
+                  null,                                // Sun
+                  null,                                // Mon (rest)
+                  null,                                // Tue
+                  {d:8,  a:  3, c:1},                  // Wed
+                  null,                                // Thu
+                  {d:10, a:  2, c:1},                  // Fri
+                  null, null,                          // weekend (11,12 sat/sun — note: 4/12 2026 is Sunday)
+                  {d:13, a:  4, c:1},                  // Mon
+                  null,                                // Tue
+                  null,                                // Wed
+                  null,                                // Thu
+                  {d:17, a:  6, c:1},                  // Fri  — +6k / 1件
+                  null, null,                          // weekend
+                  {d:20, a:  1, c:1},                  // Mon  — +1k / 1件
+                  {d:21, a: -5, c:1},                  // Tue  — -5k / 1件
+                  null,                                // Wed
+                  null,                                // Thu
+                  null,                                // Fri
+                  null, null,                          // weekend
+                  {d:27, a: -5, c:1},                  // Mon  — -5k / 1件
+                  null,                                // Tue
+                  {d:29, a: 35, c:3, today:true},      // Wed  — +35k / 3件 (biggest)
+                  null,                                // Thu
+                ];
+                const MAX = 35;
+                const grid = document.getElementById('mini-cal-grid');
+                const frag = document.createDocumentFragment();
+                days.forEach((day) => {
+                  const cell = document.createElement('div');
+                  if (!day) {
+                    cell.style.cssText = 'aspect-ratio:1; background:rgba(15,23,42,0.35); border:1px solid rgba(30,41,59,0.5); border-radius:3px';
+                    frag.appendChild(cell);
+                    return;
+                  }
+                  const mag = Math.min(Math.abs(day.a) / MAX, 1);
+                  // smooth alpha ramp: 0.18 floor → 0.75 ceiling
+                  const bgAlpha = (0.18 + mag * 0.57).toFixed(2);
+                  const bdAlpha = Math.min(Number(bgAlpha) + 0.15, 0.9).toFixed(2);
+                  const isWin = day.a > 0;
+                  const rgb = isWin ? '34,197,94' : '239,68,68';
+                  const txtColor = isWin ? '#4ade80' : '#f87171';
+                  const sign = isWin ? '+' : '';
+                  const amtText = `${sign}${day.a}k`;
+                  const todayBorder = day.today ? `border:2px solid var(--gold)` : `border:1px solid rgba(${rgb},${bdAlpha})`;
+                  cell.style.cssText = `aspect-ratio:1; background:rgba(${rgb},${bgAlpha}); ${todayBorder}; border-radius:3px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0px; padding:2px 0; font-family:'JetBrains Mono',monospace; line-height:1`;
+                  cell.innerHTML = `
+                    <div style="font-size:10px; color:var(--text); font-weight:${day.today ? 700 : 600}">${day.d}</div>
+                    <div style="font-size:10px; color:${txtColor}; font-weight:800; margin-top:2px">${amtText}</div>
+                    <div style="font-size:8px; color:rgba(226,232,240,0.6); margin-top:1px">${day.c}件</div>
+                  `;
+                  frag.appendChild(cell);
+                });
+                grid.appendChild(frag);
+              })();
+            </script>
+            <div style="margin-top:12px; font-size:11px; color:var(--text-dim); line-height:1.5; border-top:1px solid var(--line); padding-top:10px">
+              赤が続いたら、それは<span style="color:var(--gold); font-weight:700">「休む勇気」</span>を持つサイン。
+            </div>
+          </div>
+
+          <!-- Checklist (3 required) — TC's core differentiator: the gate before recording -->
+          <div class="bento-card bento-checklist">
+            <div class="bento-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg>
+              チェックリスト (3つ必須)
+            </div>
+            <div style="font-size:10.5px; color:var(--text-dim); line-height:1.5; margin-bottom:10px">エントリー前に根拠を言語化しないと、記録できない</div>
+            <div style="display:grid; gap:7px">
+              <div>
+                <div style="font-size:10px; color:var(--text-dim); margin-bottom:3px; font-weight:500">エントリー価格の根拠</div>
+                <div style="padding:7px 9px; border-radius:5px; background:rgba(15,23,42,0.6); border:1px solid var(--line); font-size:10px; color:var(--text-dimmer); line-height:1.4; min-height:26px">例:レンジのブレイク / 例:移動平均線からの反発</div>
+              </div>
+              <div>
+                <div style="font-size:10px; color:var(--text-dim); margin-bottom:3px; font-weight:500">損切り価格の根拠</div>
+                <div style="padding:7px 9px; border-radius:5px; background:rgba(15,23,42,0.6); border:1px solid var(--line); font-size:10px; color:var(--text-dimmer); line-height:1.4; min-height:26px">例:直近の安値・高値 / 例:総資金の2%</div>
+              </div>
+              <div>
+                <div style="font-size:10px; color:var(--text-dim); margin-bottom:3px; font-weight:500">利確目標価格の根拠</div>
+                <div style="padding:7px 9px; border-radius:5px; background:rgba(15,23,42,0.6); border:1px solid var(--line); font-size:10px; color:var(--text-dimmer); line-height:1.4; min-height:26px">例:リスクリワード比率1:2 / 例:直近の安値・高値</div>
+              </div>
+            </div>
+            <div style="margin-top:10px; padding:8px 10px; border-radius:5px; background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.45); text-align:center; font-size:11px; font-weight:700; color:#f87171; letter-spacing:0.02em">
+              トレードプラン: 0/3
+            </div>
+          </div>
+
+          <!-- Risk management card (matches TC's real risk ui) -->
+          <div class="bento-card bento-tag">
+            <div class="bento-label">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              リスク管理
+            </div>
+            <div style="font-size:10.5px; color:var(--text-dim); margin-bottom:8px">許容損失: <span style="color:var(--text); font-weight:600" class="mono">200,000円</span></div>
+            <div style="display:grid; gap:5px">
+              <div style="display:flex; justify-content:space-between; align-items:center; padding:6px 8px; border-radius:5px; background:rgba(34,197,94,0.14); border:1px solid rgba(34,197,94,0.35)">
+                <div style="display:flex; align-items:center; gap:6px">
+                  <svg viewBox="0 0 24 24" width="11" height="11" fill="none" stroke="#22c55e" stroke-width="3"><path d="M5 12l5 5L20 7"></path></svg>
+                  <span style="font-size:10.5px; color:#4ade80; font-weight:600">適正範囲内</span>
+                </div>
+                <div style="font-size:11px; font-weight:700; color:var(--text)" class="mono">1.0 ロット</div>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; padding:6px 8px; border-radius:5px; background:rgba(234,179,8,0.14); border:1px solid rgba(234,179,8,0.35)">
+                <div style="display:flex; align-items:center; gap:6px; min-width:0">
+                  <span style="color:#eab308; font-size:11px">⚠</span>
+                  <span style="font-size:10px; color:#facc15; font-weight:600; line-height:1.2">適正の2.0倍<br><span style="font-size:9px; color:var(--text-dim); font-weight:400">許容損失超過の可能性</span></span>
+                </div>
+                <div style="font-size:11px; font-weight:700; color:var(--text); white-space:nowrap" class="mono">10 ロット</div>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; padding:6px 8px; border-radius:5px; background:rgba(239,68,68,0.15); border:1px solid rgba(239,68,68,0.4)">
+                <div style="display:flex; align-items:center; gap:6px; min-width:0">
+                  <span style="color:#ef4444; font-size:11px">🚨</span>
+                  <span style="font-size:10px; color:#f87171; font-weight:600; line-height:1.2">適正の4.0倍<br><span style="font-size:9px; color:var(--text-dim); font-weight:400">大幅な許容損失超過</span></span>
+                </div>
+                <div style="font-size:11px; font-weight:700; color:var(--text); white-space:nowrap" class="mono">20 ロット</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Full analytics grid — 18 cells, 6×3, mirrors real TC 総合統計 -->
+          <div class="bento-card bento-streak">
+            <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px; gap:12px; flex-wrap:wrap">
+              <div class="bento-label" style="margin-bottom:0">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"></path><path d="M7 14l4-4 4 4 5-6"></path></svg>
+                総合統計 · 2026年
+              </div>
+              <div style="font-size:10px; color:var(--text-dimmer)" class="mono">12件のトレード</div>
+            </div>
+            <div style="display:grid; grid-template-columns: repeat(6, 1fr); gap:5px" id="stats-grid"></div>
+            <script>
+              (function(){
+                const cells = [
+                  // row 1
+                  {k:'総トレード数',     v:'12',        c:'plain'},
+                  {k:'勝敗',             v:'9勝3敗',    c:'plain'},
+                  {k:'勝率 (純損益)',    v:'75.0%',     c:'gold'},
+                  {k:'最大連勝',         v:'7回',       c:'plain'},
+                  {k:'最大連敗',         v:'1回',       c:'plain'},
+                  {k:'利益額 (円)',      v:'¥250,949',  c:'gold'},
+                  // row 2
+                  {k:'利益率 (%)',       v:'25.1%',     c:'gold'},
+                  {k:'平均利益 (円)',    v:'¥38,039',   c:'plain'},
+                  {k:'平均損失 (円)',    v:'¥5,109',    c:'plain'},
+                  {k:'最大DD (円)',      v:'¥5,184',    c:'plain'},
+                  {k:'最大獲得 (pips)',  v:'1000.0',    c:'plain'},
+                  {k:'最大損失 (pips)',  v:'43.2',      c:'loss'},
+                  // row 3
+                  {k:'総獲得 (pips)',    v:'+1898.4',   c:'gold'},
+                  {k:'平均利益 (pips)',  v:'223.6',     c:'plain'},
+                  {k:'平均損失 (pips)',  v:'38.0',      c:'plain'},
+                  {k:'R:R (Pips)',       v:'5.88',      c:'plain'},
+                  {k:'PF (円)',          v:'17.37',     c:'plain'},
+                  {k:'期待値 (円)',      v:'¥20,912',   c:'gold'},
+                ];
+                const cmap = {
+                  gold:  'color:var(--gold)',
+                  loss:  'color:#f87171',
+                  plain: 'color:var(--text)'
+                };
+                const grid = document.getElementById('stats-grid');
+                const frag = document.createDocumentFragment();
+                cells.forEach(c => {
+                  const cell = document.createElement('div');
+                  cell.style.cssText = 'padding:9px 10px; border-radius:6px; background:rgba(15,23,42,0.55); border:1px solid var(--line); text-align:center';
+                  cell.innerHTML = `
+                    <div style="font-size:9.5px; color:var(--text-dim); margin-bottom:5px; letter-spacing:0.02em">${c.k}</div>
+                    <div class="mono" style="font-size:14px; font-weight:800; line-height:1; ${cmap[c.c]}">${c.v}</div>
+                  `;
+                  frag.appendChild(cell);
+                });
+                grid.appendChild(frag);
+              })();
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Trust signals -->
+    <div class="trust-row" style="margin-top: 36px;">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        愛知県名古屋市拠点 Studio Compana 運営
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 018 0v3"></path></svg>
+        Supabase 基盤の暗号化ストレージ
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg>
+        特商法・プライバシーポリシー整備済み
+      </div>
+    </div>
+  </div>
+</header>
+
+    <section class="py-16 md:py-24 bg-gray-900 relative overflow-hidden">
+        <!-- 微妙な赤系グロー(痛みのイメージ、控えめ) -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(239,68,68,0.04) 0%, transparent 70%);"></div>
+
+        <div class="max-w-6xl mx-auto px-4 relative">
+            <!-- ヘッダー -->
+            <div class="text-center mb-12 md:mb-16">
+                <p class="text-red-400 text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-4">The Problem</p>
+                <h2 class="text-2xl md:text-4xl font-black text-white leading-tight mb-4">
+                    その悩み、あなただけじゃない。
+                </h2>
+                <p class="text-gray-400 text-sm md:text-base">副業FXトレーダーが直面する、4つの壁。</p>
+            </div>
+
+            <!-- 4つの壁カード -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 mb-12">
+
+                <!-- 壁1: 記録がバラバラ -->
+                <div class="rounded-2xl p-6 md:p-7 transition-all hover:border-gray-600 relative overflow-hidden" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <!-- 番号バッジ -->
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="w-11 h-11 rounded-lg flex items-center justify-center" style="background: rgba(239,68,68,0.12); color: #f87171;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11H5a2 2 0 00-2 2v7a2 2 0 002 2h4M9 11V5a2 2 0 012-2h2a2 2 0 012 2v6M9 11h6m0 0v10m0-10h4a2 2 0 012 2v6a2 2 0 01-2 2h-4M19 11V7a2 2 0 00-2-2h-2"/></svg>
+                        </div>
+                        <span class="text-xs font-black tracking-[0.15em]" style="color: rgba(248,113,113,0.7); font-family: 'JetBrains Mono', monospace;">01</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-black mb-3 text-white leading-tight">記録がバラバラ</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        複数の業者・ノート・Excel。<br>
+                        バラバラの記録が<span class="text-white">「本当の損益」</span>を見えなくする。今月どれだけ稼いだのか、月末まで分からない。
+                    </p>
+                </div>
+
+                <!-- 壁2: 同じミスを繰り返す -->
+                <div class="rounded-2xl p-6 md:p-7 transition-all hover:border-gray-600 relative overflow-hidden" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="w-11 h-11 rounded-lg flex items-center justify-center" style="background: rgba(239,68,68,0.12); color: #f87171;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 2v6h-6M3 12a9 9 0 0115-6.7L21 8M3 22v-6h6M21 12a9 9 0 01-15 6.7L3 16"/></svg>
+                        </div>
+                        <span class="text-xs font-black tracking-[0.15em]" style="color: rgba(248,113,113,0.7); font-family: 'JetBrains Mono', monospace;">02</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-black mb-3 text-white leading-tight">同じミスを繰り返す</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        「今回もルール破った」「また感情で入った」<br>
+                        振り返りはしても、次のトレードで忘れる。<span class="text-white">ミスのループ</span>から抜け出せない。
+                    </p>
+                </div>
+
+                <!-- 壁3: 得意・不得意がわからない -->
+                <div class="rounded-2xl p-6 md:p-7 transition-all hover:border-gray-600 relative overflow-hidden" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="w-11 h-11 rounded-lg flex items-center justify-center" style="background: rgba(239,68,68,0.12); color: #f87171;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 6l-9.5 9.5-5-5L1 18M17 6h6v6"/></svg>
+                        </div>
+                        <span class="text-xs font-black tracking-[0.15em]" style="color: rgba(248,113,113,0.7); font-family: 'JetBrains Mono', monospace;">03</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-black mb-3 text-white leading-tight">得意・不得意がわからない</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        押し目買いは勝てているのか?NY時間は得意?苦手?<br>
+                        感覚で判断している限り、<span class="text-white">「自分の強み」</span>は永遠に見えない。
+                    </p>
+                </div>
+
+                <!-- 壁4: 確定申告が憂鬱 -->
+                <div class="rounded-2xl p-6 md:p-7 transition-all hover:border-gray-600 relative overflow-hidden" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <div class="flex items-center justify-between mb-5">
+                        <div class="w-11 h-11 rounded-lg flex items-center justify-center" style="background: rgba(239,68,68,0.12); color: #f87171;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+                        </div>
+                        <span class="text-xs font-black tracking-[0.15em]" style="color: rgba(248,113,113,0.7); font-family: 'JetBrains Mono', monospace;">04</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-black mb-3 text-white leading-tight">確定申告が憂鬱</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        確定申告の時期が近づくと、胃が痛む。<br>
+                        年間の損益、経費の集計、CSV出力。<span class="text-white">「来年こそは」</span>を毎年繰り返している。
+                    </p>
                 </div>
             </div>
 
-        </div>
-        <div class="max-w-6xl mx-auto px-4 mt-8 md:mt-12">
-            <div class="relative mockup-shadow rounded-xl overflow-hidden border border-gray-700">
-                <div class="slider" style="aspect-ratio: 16/9;">
-                    <img src="images/slide-hero.jpg" alt="Trading Complete" class="slide active" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
-                    <img src="images/feature-checklist.jpg" alt="強制チェックリスト" class="slide" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
-                    <img src="images/feature-risk.jpg" alt="リスク自動判定" class="slide" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
-                    <img src="images/feature-calendar.jpg" alt="振り返りカレンダー" class="slide" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
-                    <img src="images/feature-notes.jpg" alt="相場ノート" class="slide" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
-                </div>
-                <div class="slider-dots">
-                    <span class="dot active" onclick="goToSlide(0)"></span>
-                    <span class="dot" onclick="goToSlide(1)"></span>
-                    <span class="dot" onclick="goToSlide(2)"></span>
-                    <span class="dot" onclick="goToSlide(3)"></span>
-                    <span class="dot" onclick="goToSlide(4)"></span>
-                </div>
-            </div>
-        </div>
-        </div>
-    </header>
-
-    <section class="py-10 md:py-20 bg-gray-900">
-        <div class="max-w-5xl mx-auto px-4">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-16">
-                こんな「壁」にぶつかっていませんか？
-            </h2>
-            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                <div class="p-6 rounded-2xl bg-gray-800/50 border border-gray-700">
-                    <div class="text-3xl mb-4">📝</div>
-                    <h3 class="text-xl font-bold mb-3 text-white">記録がバラバラ</h3>
-                    <p class="text-gray-400 text-sm">複数の業者を使っているため、トータルの損益がすぐに見えない。</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-gray-800/50 border border-gray-700">
-                    <div class="text-3xl mb-4">🔄</div>
-                    <h3 class="text-xl font-bold mb-3 text-white">同じミスを繰り返す</h3>
-                    <p class="text-gray-400 text-sm">ルールを守れたか、手法が合っているか、振り返りができていない。</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-gray-800/50 border border-gray-700">
-                    <div class="text-3xl mb-4">📉</div>
-                    <h3 class="text-xl font-bold mb-3 text-white">得意・不得意がわからない</h3>
-                    <p class="text-gray-400 text-sm">手法別の勝率や、許容損失を守れているかが見えない。</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-gray-800/50 border border-gray-700">
-                    <div class="text-3xl mb-4">🧾</div>
-                    <h3 class="text-xl font-bold mb-3 text-white">確定申告が憂鬱</h3>
-                    <p class="text-gray-400 text-sm">年間の計算や経費の集計に、毎年多くの時間を奪われている。</p>
+            <!-- 締めメッセージ(希望への橋渡し) -->
+            <div class="text-center max-w-3xl mx-auto">
+                <div class="inline-block rounded-2xl px-6 md:px-10 py-6 md:py-8" style="background: linear-gradient(180deg, rgba(251,191,36,0.06) 0%, rgba(15,23,42,0.4) 100%); border: 1px solid rgba(251,191,36,0.25);">
+                    <p class="text-lg md:text-xl text-white font-bold leading-relaxed">
+                        でも、これは変えられる。<br>
+                        <span class="text-brand-accent">すべてを「ひとつのシステム」で解決できたら?</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -181,12 +1459,12 @@
 
 
     <!-- ===== TCの哲学セクション ===== -->
-    <section class="py-10 md:py-20 border-t border-gray-800" style="background: linear-gradient(180deg, #0f172a 0%, #0d1f0d 100%);">
+    <section class="py-16 md:py-24 border-t border-gray-800 relative overflow-hidden" style="background: linear-gradient(180deg, #0f172a 0%, #0b1224 100%);">
         <div class="max-w-5xl mx-auto px-4">
 
             <!-- 逆説宣言 -->
             <div class="text-center mb-12 md:mb-20">
-                <p class="text-brand-accent text-sm font-bold tracking-widest mb-4 uppercase">Trading Complete の哲学</p>
+                <p class="text-brand-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-4">Philosophy</p>
                 <h2 class="text-2xl md:text-4xl font-black text-white mb-6 leading-tight">
                     「簡単に記録できるツール」では、<br class="hidden md:block">
                     <span class="text-brand-accent">勝てない理由</span>がある。
@@ -260,26 +1538,26 @@
 
             <!-- TCの介入 -->
             <div class="mb-12 md:mb-20">
-                <div class="rounded-2xl border border-brand-accent/40 p-6 md:p-10" style="background: rgba(251,191,36,0.04);">
+                <div class="rounded-2xl p-6 md:p-10" style="background: linear-gradient(180deg, rgba(251,191,36,0.06) 0%, rgba(15,23,42,0.4) 100%); border: 1px solid rgba(251,191,36,0.3);">
                     <h3 class="text-center text-lg md:text-xl font-bold text-brand-accent mb-2">Trading Completeは、このループの「外」から介入する</h3>
                     <p class="text-center text-gray-400 text-sm mb-8">根拠のないトレードをいくら100回記録しても、マイナスが100回積み上がるだけ。<br>問題は「記録の効率」ではなく、「エントリーの質」だから。</p>
                     <div class="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-2 text-sm">
-                        <div class="text-center px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 w-full md:w-auto">
+                        <div class="text-center px-4 py-3 rounded-xl w-full md:w-auto" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
                             <p class="text-brand-accent font-bold mb-1">まず検証する</p>
                             <p class="text-gray-400 text-xs">エッジのある手法を確立</p>
                         </div>
                         <div class="text-brand-accent text-xl md:rotate-0 rotate-90">→</div>
-                        <div class="text-center px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 w-full md:w-auto">
+                        <div class="text-center px-4 py-3 rounded-xl w-full md:w-auto" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
                             <p class="text-brand-accent font-bold mb-1">ルールを言語化</p>
                             <p class="text-gray-400 text-xs">チェックリストに落とし込む</p>
                         </div>
                         <div class="text-brand-accent text-xl md:rotate-0 rotate-90">→</div>
-                        <div class="text-center px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 w-full md:w-auto">
+                        <div class="text-center px-4 py-3 rounded-xl w-full md:w-auto" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
                             <p class="text-brand-accent font-bold mb-1">規律ある実行</p>
                             <p class="text-gray-400 text-xs">ルール通りだけを記録</p>
                         </div>
                         <div class="text-brand-accent text-xl md:rotate-0 rotate-90">→</div>
-                        <div class="text-center px-4 py-3 rounded-xl bg-gray-800 border border-gray-700 w-full md:w-auto">
+                        <div class="text-center px-4 py-3 rounded-xl w-full md:w-auto" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
                             <p class="text-brand-accent font-bold mb-1">データで再検証</p>
                             <p class="text-gray-400 text-xs">意味のある分析ができる</p>
                         </div>
@@ -294,7 +1572,7 @@
 
             <!-- 選ぶ人・選ばない人 -->
             <div class="grid md:grid-cols-2 gap-6 mb-12 md:mb-16">
-                <div class="rounded-2xl border border-gray-700 p-6 bg-gray-800/30">
+                <div class="rounded-2xl p-6 md:p-7" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
                     <p class="text-gray-500 font-bold mb-4 text-sm">Trading Completeが合わない方</p>
                     <ul class="space-y-3 text-sm text-gray-400">
                         <li class="flex items-start gap-2"><span class="text-gray-600 mt-0.5">✕</span> 今のやり方で既に勝てている方</li>
@@ -303,7 +1581,7 @@
                         <li class="flex items-start gap-2"><span class="text-gray-600 mt-0.5">✕</span> 「聖杯（簡単に勝てる手法）」を探している方</li>
                     </ul>
                 </div>
-                <div class="rounded-2xl border border-brand-accent/50 p-6" style="background: rgba(251,191,36,0.05);">
+                <div class="rounded-2xl p-6 md:p-7" style="background: linear-gradient(180deg, rgba(251,191,36,0.08) 0%, rgba(15,23,42,0.6) 100%); border: 1px solid rgba(251,191,36,0.4);">
                     <p class="text-brand-accent font-bold mb-4 text-sm">Trading Completeが刺さる方</p>
                     <ul class="space-y-3 text-sm text-gray-200">
                         <li class="flex items-start gap-2"><span class="text-brand-accent mt-0.5">✓</span> 勝てていないが、記録が大事だと分かっている方</li>
@@ -330,205 +1608,338 @@
     </section>
     <!-- ===== /TCの哲学セクション ===== -->
 
-    <section class="py-10 md:py-20 border-t border-gray-800 bg-gradient-to-b from-gray-900 to-brand-dark">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-8 md:mb-16">
-                <span class="inline-block py-1 px-3 rounded-full bg-brand-accent/20 border border-brand-accent/40 text-sm mb-4 text-brand-accent">
-                    🆕 成長支援機能
-                </span>
-                <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
-                    「記録するだけ」で終わらせない
+
+<!-- ===== Your Growth / Before-After Timeline セクション ===== -->
+    <section id="your-growth" class="py-16 md:py-24 border-t border-gray-800 relative overflow-hidden">
+        <!-- 微妙なゴールドグロー -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(251,191,36,0.05) 0%, transparent 70%);"></div>
+
+        <div class="max-w-5xl mx-auto px-4 relative">
+            <!-- ヘッダー -->
+            <div class="text-center mb-12 md:mb-16">
+                <p class="text-brand-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-4">Your Growth</p>
+                <h2 class="text-2xl md:text-4xl font-black text-white leading-tight mb-4">
+                    記録を続けた、<br class="hidden md:block">
+                    <span class="text-brand-accent">1年の物語。</span>
                 </h2>
-                <p class="text-gray-400 max-w-2xl mx-auto">
-                    データを自動分析し、あなたの「気づき」を促します。<br>
-                    初心者でも「何を見ればいいか」がわかるシステム。
+                <p class="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
+                    使い続けた先にあるのは、変わった自分。<br>
+                    Day 1 から 1年後まで、あなたの成長は、こう積み重なります。
                 </p>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-                <div class="p-6 rounded-2xl bg-gray-800/30 border border-gray-700 hover:border-brand-accent/50 transition">
-                    <div class="text-3xl mb-4">💰</div>
-                    <h3 class="text-lg font-bold mb-2 text-white">許容損失管理</h3>
-                    <p class="text-gray-400 text-sm">1回の許容損失を設定。超過したら警告。資金を守る習慣がつく。</p>
+            <!-- タイムラインマイルストーン(6ステップ) -->
+            <div class="relative max-w-3xl mx-auto mb-12">
+                <!-- 縦線(装飾) -->
+                <div class="absolute left-6 md:left-8 top-2 bottom-2 w-px hidden md:block" style="background: linear-gradient(180deg, rgba(251,191,36,0.4) 0%, rgba(51,65,85,0.4) 100%);"></div>
+
+                <!-- Day 1 -->
+                <div class="flex gap-4 md:gap-6 mb-6">
+                    <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center relative z-10" style="background: rgba(15,23,42,0.9); border: 2px solid rgba(251,191,36,0.5);">
+                        <p class="text-xs md:text-sm font-black text-brand-accent leading-none">Day<br>1</p>
+                    </div>
+                    <div class="flex-1 rounded-xl p-4 md:p-5" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                        <h3 class="text-white font-bold text-base md:text-lg mb-2">まず、記録を始める。</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            「なんとなく」から脱出する最初の一歩。3つの根拠を入力するハードルに、戸惑う。
+                        </p>
+                    </div>
                 </div>
-                <div class="p-6 rounded-2xl bg-gray-800/30 border border-gray-700 hover:border-brand-accent/50 transition">
-                    <div class="text-3xl mb-4">📋</div>
-                    <h3 class="text-lg font-bold mb-2 text-white">手法別分析</h3>
-                    <p class="text-gray-400 text-sm">手法ごとの勝率・期待値を自動集計。得意な手法が見える。</p>
+
+                <!-- Week 1 -->
+                <div class="flex gap-4 md:gap-6 mb-6">
+                    <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center relative z-10" style="background: rgba(15,23,42,0.9); border: 2px solid rgba(251,191,36,0.5);">
+                        <p class="text-xs md:text-sm font-black text-brand-accent leading-none">Week<br>1</p>
+                    </div>
+                    <div class="flex-1 rounded-xl p-4 md:p-5" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                        <h3 class="text-white font-bold text-base md:text-lg mb-2">自分の失敗パターンが、見えてくる。</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            「またリベンジトレードしてる」「今回もなんとなくエントリーしてる」。記録した自分の行動に、気づき始める。
+                        </p>
+                    </div>
                 </div>
-                <div class="p-6 rounded-2xl bg-gray-800/30 border border-gray-700 hover:border-brand-accent/50 transition">
-                    <div class="text-3xl mb-4">✅</div>
-                    <h3 class="text-lg font-bold mb-2 text-white">ルール遵守率</h3>
-                    <p class="text-gray-400 text-sm">「ルール通りか」を記録。守れた時と守れなかった時の差が見える。</p>
+
+                <!-- Month 1 -->
+                <div class="flex gap-4 md:gap-6 mb-6">
+                    <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center relative z-10" style="background: rgba(15,23,42,0.9); border: 2px solid rgba(251,191,36,0.5);">
+                        <p class="text-xs md:text-sm font-black text-brand-accent leading-none">Month<br>1</p>
+                    </div>
+                    <div class="flex-1 rounded-xl p-4 md:p-5" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                        <h3 class="text-white font-bold text-base md:text-lg mb-2">得意な手法が、数字でわかる。</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            手法別パフォーマンス分析で、勝率・期待値が可視化される。感覚ではなく、<span class="text-white">データで自分を知る</span>。
+                        </p>
+                    </div>
                 </div>
-                <div class="p-6 rounded-2xl bg-gray-800/30 border border-gray-700 hover:border-brand-accent/50 transition">
-                    <div class="text-3xl mb-4">🔍</div>
-                    <h3 class="text-lg font-bold mb-2 text-white">決済判断の振り返り</h3>
-                    <p class="text-gray-400 text-sm">利確・損切り後にトレンドが続いたか記録。判断の精度が上がる。</p>
+
+                <!-- Month 3 -->
+                <div class="flex gap-4 md:gap-6 mb-6">
+                    <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center relative z-10" style="background: rgba(15,23,42,0.9); border: 2px solid rgba(251,191,36,0.7);">
+                        <p class="text-xs md:text-sm font-black text-brand-accent leading-none">Month<br>3</p>
+                    </div>
+                    <div class="flex-1 rounded-xl p-4 md:p-5" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(251,65,85,0.6);">
+                        <h3 class="text-white font-bold text-base md:text-lg mb-2">ルール遵守率が、可視化される。</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            守れた日と、守れなかった日の差。バッジとして、数字として、目に見える形で現れる。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Month 6 -->
+                <div class="flex gap-4 md:gap-6 mb-6">
+                    <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center relative z-10" style="background: rgba(15,23,42,0.9); border: 2px solid rgba(251,191,36,0.8);">
+                        <p class="text-xs md:text-sm font-black text-brand-accent leading-none">Month<br>6</p>
+                    </div>
+                    <div class="flex-1 rounded-xl p-4 md:p-5" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                        <h3 class="text-white font-bold text-base md:text-lg mb-2">感情に振り回されない、自分になっていく。</h3>
+                        <p class="text-sm text-gray-400 leading-relaxed">
+                            エントリー前に、自然と立ち止まれる。「この3つの根拠、本当に満たしてる?」と自問する癖がつく。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Year 1 -->
+                <div class="flex gap-4 md:gap-6">
+                    <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center relative z-10" style="background: linear-gradient(135deg, rgba(251,191,36,0.3) 0%, rgba(15,23,42,0.9) 100%); border: 2px solid #fbbf24;">
+                        <p class="text-xs md:text-sm font-black text-brand-accent leading-none">Year<br>1</p>
+                    </div>
+                    <div class="flex-1 rounded-xl p-4 md:p-5" style="background: linear-gradient(180deg, rgba(251,191,36,0.08) 0%, rgba(15,23,42,0.6) 100%); border: 1px solid rgba(251,191,36,0.4);">
+                        <h3 class="text-white font-black text-base md:text-lg mb-2">あなただけの「成長の軌跡」が、お宝になる。</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            過去の自分に勝つための、<span class="text-brand-accent font-bold">最強の武器</span>。同じ相場に出会ったとき、過去の記録があなたを導く。
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <!-- メインビジュアル -->
-            <div class="mt-12 max-w-5xl mx-auto">
-                <div class="rounded-xl overflow-hidden border border-gray-700">
-                    <img src="images/feature-hero.jpg" alt="Trading Complete - すべてのトレードを、この一つで。" class="w-full">
-                </div>
-            </div>
-
-            <div class="mt-12 text-center">
-                <p class="text-gray-500 text-sm">
-                    ※ これらの機能は、記録するほど精度が上がります
+            <!-- 締めメッセージ -->
+            <div class="text-center mb-10 max-w-2xl mx-auto">
+                <p class="text-sm md:text-base text-gray-400 leading-relaxed">
+                    この流れに、<span class="text-white font-bold">早い/遅い</span>はありません。<br>
+                    ただ、<span class="text-brand-accent font-bold">続けるか、やめるか</span>だけ。
                 </p>
             </div>
-        </div>
-    </section>
 
-    <!-- タイムライン：1年後の未来 -->
-    <section class="py-10 md:py-20 border-t border-gray-800">
-        <div class="w-full max-w-5xl mx-auto px-4">
-            <div class="rounded-xl overflow-hidden">
-                <img src="images/timeline.jpg" alt="「記録してからトレード」が作る1年後の未来" class="w-full">
+            <!-- 既存タイムライン画像(下に配置) -->
+            <div class="w-full max-w-5xl mx-auto">
+                <div class="rounded-2xl overflow-hidden" style="border: 1px solid rgba(51,65,85,0.6); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
+                    <img src="images/timeline.jpg" alt="「記録してからトレード」が作る1年後の未来" class="w-full">
+                </div>
             </div>
         </div>
     </section>
+    <!-- ===== /Your Growth セクション ===== -->
 
-    <section id="features" class="py-10 md:py-20 border-t border-gray-800">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center mb-8 md:mb-16">
-                <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">基本機能</h2>
-                <p class="text-gray-400">記録・分析・確定申告準備をワンストップで。</p>
+    <section id="features" class="py-16 md:py-24 border-t border-gray-800 relative overflow-hidden">
+        <!-- ゴールドグローエフェクト -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(251,191,36,0.05) 0%, transparent 65%);"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 relative">
+            <!-- ヘッダー -->
+            <div class="text-center mb-12 md:mb-20">
+                <p class="text-brand-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-4">Core Features</p>
+                <h2 class="text-2xl md:text-4xl font-black text-white mb-4 leading-tight">基本機能</h2>
+                <p class="text-gray-400 text-sm md:text-base">記録・分析・確定申告準備を、<span class="text-white font-bold">ワンストップ</span>で。</p>
             </div>
 
-            <!-- チェックリスト機能 -->
-            <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center mb-10 md:mb-20">
+            <!-- 機能01: 強制チェックリスト -->
+            <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-center mb-14 md:mb-24">
                 <div class="order-2 md:order-1">
-                    <span class="inline-block text-xs font-bold text-brand-accent border border-brand-accent rounded-full px-3 py-1 mb-4">独自機能 01</span>
-                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">🔒 強制チェックリスト</h3>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-bold tracking-[0.2em] mono" style="color: rgba(251,191,36,0.9); font-family: 'JetBrains Mono', monospace;">FEATURE 01</span>
+                        <div class="h-px flex-1" style="background: linear-gradient(90deg, rgba(251,191,36,0.4) 0%, transparent 100%);"></div>
+                    </div>
+                    <div class="flex items-start gap-3 mb-4">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-black text-white leading-tight pt-1">強制チェックリスト</h3>
+                    </div>
+                    <p class="text-gray-400 mb-5 leading-relaxed">
                         3つの根拠がないと、エントリーできない。<br>
-                        感覚トレードを物理的にブロック。
+                        <span class="text-white">感覚トレードを物理的にブロック</span>する、TCの中核機能。
                     </p>
-                    <ul class="space-y-2 text-gray-300 text-sm mb-4">
-                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> 理由1〜3を入力しないとエントリーできない</li>
-                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> シナリオと感情も記録 → 振り返りの精度が上がる</li>
-                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> あなたの「なんとなく」を許さない、鉄壁の門番</li>
+                    <ul class="space-y-2.5 text-gray-300 text-sm mb-5">
+                        <li class="flex items-start gap-2"><span class="text-brand-accent flex-shrink-0 mt-0.5">✓</span><span>理由1〜3を入力しないとエントリーできない</span></li>
+                        <li class="flex items-start gap-2"><span class="text-brand-accent flex-shrink-0 mt-0.5">✓</span><span>シナリオと感情も記録 → 振り返りの精度が上がる</span></li>
+                        <li class="flex items-start gap-2"><span class="text-brand-accent flex-shrink-0 mt-0.5">✓</span><span>あなたの「なんとなく」を許さない、鉄壁の門番</span></li>
                     </ul>
-                    <p class="text-sm text-gray-500">Excel: どんな数字でも入力できてしまう。<br>Trading Complete: 3つの根拠を言語化するまで、エントリーボタンは押せません。</p>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        Excel: どんな数字でも入力できてしまう。<br>
+                        <span class="text-brand-accent">Trading Complete: 3つの根拠を言語化するまで、エントリーボタンは押せません。</span>
+                    </p>
                 </div>
-                <div class="order-1 md:order-2 rounded-lg overflow-hidden border border-gray-700">
+                <div class="order-1 md:order-2 rounded-2xl overflow-hidden transition-all hover:scale-[1.02]" style="border: 1px solid rgba(51,65,85,0.6); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
                     <img src="images/feature-checklist.jpg" alt="チェックリスト機能" class="w-full">
                 </div>
             </div>
 
-            <!-- リスク管理機能 -->
-            <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center mb-10 md:mb-20">
-                <div class="rounded-lg overflow-hidden border border-gray-700">
+            <!-- 機能02: リスクの自動判定 -->
+            <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-center mb-14 md:mb-24">
+                <div class="rounded-2xl overflow-hidden transition-all hover:scale-[1.02]" style="border: 1px solid rgba(51,65,85,0.6); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
                     <img src="images/feature-risk.jpg" alt="リスク管理自動判定" class="w-full">
                 </div>
                 <div>
-                    <span class="inline-block text-xs font-bold text-brand-accent border border-brand-accent rounded-full px-3 py-1 mb-4">独自機能 02</span>
-                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">🚦 リスクの自動判定</h3>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-bold tracking-[0.2em] mono" style="color: rgba(251,191,36,0.9); font-family: 'JetBrains Mono', monospace;">FEATURE 02</span>
+                        <div class="h-px flex-1" style="background: linear-gradient(90deg, rgba(251,191,36,0.4) 0%, transparent 100%);"></div>
+                    </div>
+                    <div class="flex items-start gap-3 mb-4">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-black text-white leading-tight pt-1">リスクの自動判定</h3>
+                    </div>
+                    <p class="text-gray-400 mb-5 leading-relaxed">
                         あなたの資金を「色」で守る。<br>
-                        エントリー前の「最後の砦」。
+                        <span class="text-white">エントリー前の「最後の砦」</span>。
                     </p>
-                    <ul class="space-y-2 text-gray-300 text-sm mb-4">
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✅</span> 許容内（緑）：このまま進んでOK</li>
-                        <li class="flex items-center"><span class="text-yellow-400 mr-2">⚠️</span> 注意（黄）：ロット数を見直して</li>
-                        <li class="flex items-center"><span class="text-red-400 mr-2">🚨</span> 超過（赤）：エントリー禁止レベル</li>
+                    <ul class="space-y-2.5 text-gray-300 text-sm mb-5">
+                        <li class="flex items-start gap-2"><span class="text-green-400 flex-shrink-0 mt-0.5">●</span><span>許容内(緑)&nbsp;&nbsp;このまま進んでOK</span></li>
+                        <li class="flex items-start gap-2"><span class="text-yellow-400 flex-shrink-0 mt-0.5">●</span><span>注意(黄)&nbsp;&nbsp;ロット数を見直して</span></li>
+                        <li class="flex items-start gap-2"><span class="text-red-400 flex-shrink-0 mt-0.5">●</span><span>超過(赤)&nbsp;&nbsp;エントリー禁止レベル</span></li>
                     </ul>
-                    <p class="text-sm text-gray-500">ロット数を入力した瞬間、許容損失を超えていれば「赤」で警告。計算ミスも、感情的なロット超過も、システムが自動で防ぎます。もう、電卓を叩く必要はありません。</p>
+                    <p class="text-sm text-gray-500 leading-relaxed">
+                        ロット数を入力した瞬間、許容損失を超えていれば「赤」で警告。計算ミスも、感情的なロット超過も、システムが自動で防ぎます。<span class="text-brand-accent">もう、電卓を叩く必要はありません。</span>
+                    </p>
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center mb-10 md:mb-20">
+            <!-- 機能03: 振り返りカレンダー -->
+            <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-center mb-14 md:mb-24">
                 <div class="order-2 md:order-1">
-                    <span class="inline-block text-xs font-bold text-brand-accent border border-brand-accent rounded-full px-3 py-1 mb-4">独自機能 03</span>
-                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">📅 振り返りカレンダー</h3>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-bold tracking-[0.2em] mono" style="color: rgba(251,191,36,0.9); font-family: 'JetBrains Mono', monospace;">FEATURE 03</span>
+                        <div class="h-px flex-1" style="background: linear-gradient(90deg, rgba(251,191,36,0.4) 0%, transparent 100%);"></div>
+                    </div>
+                    <div class="flex items-start gap-3 mb-4">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-black text-white leading-tight pt-1">振り返りカレンダー</h3>
+                    </div>
+                    <p class="text-gray-400 mb-5 leading-relaxed">
                         あなたの成長を「色」で可視化する。<br>
-                        日別損益を一目で把握し、月のリズムを掴む。
+                        <span class="text-white">日別損益を一目で把握</span>し、月のリズムを掴む。
                     </p>
-                    <ul class="space-y-2 text-gray-300 text-sm mb-4">
-                        <li class="flex items-center"><span class="text-green-400 mr-2">✓</span>「緑」が増えていく達成感が、規律を守るモチベーションになる</li>
-                        <li class="flex items-center"><span class="text-red-400 mr-2">✓</span>「赤」が続く日は、チャートを見ずに休む勇気を</li>
-                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> 日付クリックで、その日のトレード一覧を瞬時に振り返り</li>
+                    <ul class="space-y-2.5 text-gray-300 text-sm">
+                        <li class="flex items-start gap-2"><span class="text-green-400 flex-shrink-0 mt-0.5">✓</span><span>「緑」が増えていく達成感が、規律を守るモチベーションになる</span></li>
+                        <li class="flex items-start gap-2"><span class="text-red-400 flex-shrink-0 mt-0.5">✓</span><span>「赤」が続く日は、チャートを見ずに<span class="text-white">休む勇気</span>を</span></li>
+                        <li class="flex items-start gap-2"><span class="text-brand-accent flex-shrink-0 mt-0.5">✓</span><span>日付クリックで、その日のトレード一覧を瞬時に振り返り</span></li>
                     </ul>
                 </div>
-                <div class="order-1 md:order-2 rounded-lg overflow-hidden border border-gray-700">
+                <div class="order-1 md:order-2 rounded-2xl overflow-hidden transition-all hover:scale-[1.02]" style="border: 1px solid rgba(51,65,85,0.6); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
                     <img src="images/feature-calendar.jpg" alt="月次カレンダー" class="w-full">
                 </div>
             </div>
 
-            <!-- 手法別パフォーマンス分析 -->
-            <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center mb-10 md:mb-20">
-                <div class="rounded-lg overflow-hidden border border-gray-700">
+            <!-- 機能04: 手法別パフォーマンス分析 -->
+            <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-center mb-14 md:mb-24">
+                <div class="rounded-2xl overflow-hidden transition-all hover:scale-[1.02]" style="border: 1px solid rgba(51,65,85,0.6); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
                     <img src="images/feature-analysis.jpg" alt="手法別パフォーマンス分析" class="w-full">
                 </div>
                 <div>
-                    <span class="inline-block text-xs font-bold text-brand-accent border border-brand-accent rounded-full px-3 py-1 mb-4">独自機能 04</span>
-                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">📊 手法別パフォーマンス分析</h3>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-bold tracking-[0.2em] mono" style="color: rgba(251,191,36,0.9); font-family: 'JetBrains Mono', monospace;">FEATURE 04</span>
+                        <div class="h-px flex-1" style="background: linear-gradient(90deg, rgba(251,191,36,0.4) 0%, transparent 100%);"></div>
+                    </div>
+                    <div class="flex items-start gap-3 mb-4">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-black text-white leading-tight pt-1">手法別パフォーマンス分析</h3>
+                    </div>
+                    <p class="text-gray-400 mb-5 leading-relaxed">
                         どの手法が自分に合っているか。<br>
-                        「感覚」ではなく「データ」で証明する。
+                        <span class="text-white">「感覚」ではなく「データ」で証明</span>する。
                     </p>
-                    <ul class="space-y-3 text-gray-300 text-sm">
-                        <li class="flex items-start"><span class="text-brand-accent mr-2 mt-0.5">✓</span>「ダウ理論」「フィボナッチ」など、手法ごとの勝率・損益・リスクリワードを自動集計</li>
-                        <li class="flex items-start"><span class="text-brand-accent mr-2 mt-0.5">✓</span> ルールを守れたか（遵守率）をバッジで追跡し、メンタルのブレを数値化</li>
-                        <li class="flex items-start"><span class="text-brand-accent mr-2 mt-0.5">✓</span> 自分が本当に勝てる「得意な手法」だけを残し、無駄な負け戦を排除する</li>
+                    <ul class="space-y-2.5 text-gray-300 text-sm">
+                        <li class="flex items-start gap-2"><span class="text-brand-accent flex-shrink-0 mt-0.5">✓</span><span>「ダウ理論」「フィボナッチ」など、手法ごとの勝率・損益・リスクリワードを自動集計</span></li>
+                        <li class="flex items-start gap-2"><span class="text-brand-accent flex-shrink-0 mt-0.5">✓</span><span>ルールを守れたか(遵守率)をバッジで追跡し、メンタルのブレを数値化</span></li>
+                        <li class="flex items-start gap-2"><span class="text-brand-accent flex-shrink-0 mt-0.5">✓</span><span>自分が本当に勝てる「得意な手法」だけを残し、無駄な負け戦を排除する</span></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center mb-10 md:mb-20">
+            <!-- 機能05: 円建て純損益 -->
+            <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-center mb-14 md:mb-24">
                 <div class="order-2 md:order-1">
-                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">💰 円建て「純損益」の一元管理</h3>
-                    <p class="text-gray-400 mb-6 leading-relaxed">
-                        実際の円建て損益・スワップ・手数料を記録すれば、システムがあなたの「純損益（手残り）」を自動計算。複数の通貨ペアや複数の業者をまたいでも、結局トータルで「本当はいくら儲かっているのか」が一目でわかります。
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-bold tracking-[0.2em] mono" style="color: rgba(251,191,36,0.9); font-family: 'JetBrains Mono', monospace;">FEATURE 05</span>
+                        <div class="h-px flex-1" style="background: linear-gradient(90deg, rgba(251,191,36,0.4) 0%, transparent 100%);"></div>
+                    </div>
+                    <div class="flex items-start gap-3 mb-4">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-black text-white leading-tight pt-1">円建て「純損益」の一元管理</h3>
+                    </div>
+                    <p class="text-gray-400 mb-5 leading-relaxed">
+                        実際の円建て損益・スワップ・手数料を記録すれば、システムがあなたの「純損益(手残り)」を自動計算。複数の通貨ペアや複数の業者をまたいでも、<span class="text-white">「本当はいくら儲かっているのか」が一目</span>でわかります。
                     </p>
-                    <ul class="space-y-2 text-gray-300 text-sm">
-                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> 円建て統計（総損益・純利益）を一覧表示</li>
-                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> 勝率・リスクリワード自動算出</li>
-                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> 月次・年次レポート生成</li>
+                    <ul class="space-y-2.5 text-gray-300 text-sm">
+                        <li class="flex items-start gap-2"><span class="text-brand-accent flex-shrink-0 mt-0.5">✓</span><span>円建て統計(総損益・純利益)を一覧表示</span></li>
+                        <li class="flex items-start gap-2"><span class="text-brand-accent flex-shrink-0 mt-0.5">✓</span><span>勝率・リスクリワード自動算出</span></li>
+                        <li class="flex items-start gap-2"><span class="text-brand-accent flex-shrink-0 mt-0.5">✓</span><span>月次・年次レポート生成</span></li>
                     </ul>
                 </div>
-                <div class="order-1 md:order-2 rounded-lg overflow-hidden border border-gray-700">
+                <div class="order-1 md:order-2 rounded-2xl overflow-hidden transition-all hover:scale-[1.02]" style="border: 1px solid rgba(51,65,85,0.6); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
                     <img src="images/feature-analytics.jpg" alt="円建て損益の分析画面" class="w-full">
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center mb-10 md:mb-20">
-                <div class="rounded-lg overflow-hidden border border-gray-700">
+            <!-- 機能06: 確定申告サポート -->
+            <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-center mb-14 md:mb-24">
+                <div class="rounded-2xl overflow-hidden transition-all hover:scale-[1.02]" style="border: 1px solid rgba(51,65,85,0.6); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
                     <img src="images/feature-tax.jpg" alt="確定申告・経費管理画面" class="w-full">
                 </div>
                 <div>
-                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">🧾 確定申告サポート</h3>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
-                        憂鬱な作業をワンストップでゼロへ。<br>
-                        トレード記録の延長線上で、税務データ作成を極限まで自動化。
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-bold tracking-[0.2em] mono" style="color: rgba(251,191,36,0.9); font-family: 'JetBrains Mono', monospace;">FEATURE 06</span>
+                        <div class="h-px flex-1" style="background: linear-gradient(90deg, rgba(251,191,36,0.4) 0%, transparent 100%);"></div>
+                    </div>
+                    <div class="flex items-start gap-3 mb-4">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-black text-white leading-tight pt-1">確定申告サポート</h3>
+                    </div>
+                    <p class="text-gray-400 mb-5 leading-relaxed">
+                        憂鬱な作業を、ワンストップでゼロへ。<br>
+                        <span class="text-white">トレード記録の延長線上で、税務データ作成を極限まで自動化</span>。
                     </p>
-                    <ul class="space-y-3 text-gray-300 text-sm">
-                        <li class="flex items-start"><span class="text-brand-accent mr-2 mt-0.5">✓</span> VPS代や書籍代など、日々の経費をカテゴリ別のアコーディオンUIでスマートに管理</li>
-                        <li class="flex items-start"><span class="text-brand-accent mr-2 mt-0.5">✓</span> 月次・四半期・年次の「締め処理」でデータを保護し、正確な年間収支を確定</li>
-                        <li class="flex items-start"><span class="text-brand-accent mr-2 mt-0.5">✓</span> 数クリックでExcel互換（BOM付きUTF-8）のCSVを出力し、税理士や申告ソフトへ即連携</li>
+                    <ul class="space-y-2.5 text-gray-300 text-sm">
+                        <li class="flex items-start gap-2"><span class="text-brand-accent flex-shrink-0 mt-0.5">✓</span><span>VPS代や書籍代など、日々の経費をカテゴリ別のアコーディオンUIでスマートに管理</span></li>
+                        <li class="flex items-start gap-2"><span class="text-brand-accent flex-shrink-0 mt-0.5">✓</span><span>月次・四半期・年次の「締め処理」でデータを保護し、正確な年間収支を確定</span></li>
+                        <li class="flex items-start gap-2"><span class="text-brand-accent flex-shrink-0 mt-0.5">✓</span><span>数クリックでExcel互換(BOM付きUTF-8)のCSVを出力し、税理士や申告ソフトへ即連携</span></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
+            <!-- 機能07: 相場ノート -->
+            <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
                 <div class="order-2 md:order-1">
-                    <h3 class="text-xl md:text-2xl font-bold text-white mb-3">📓 相場ノート＆アノマリー</h3>
-                    <p class="text-gray-400 mb-4 leading-relaxed">
+                    <div class="flex items-center gap-3 mb-5">
+                        <span class="text-xs font-bold tracking-[0.2em] mono" style="color: rgba(251,191,36,0.9); font-family: 'JetBrains Mono', monospace;">FEATURE 07</span>
+                        <div class="h-px flex-1" style="background: linear-gradient(90deg, rgba(251,191,36,0.4) 0%, transparent 100%);"></div>
+                    </div>
+                    <div class="flex items-start gap-3 mb-4">
+                        <div class="w-10 h-10 flex-shrink-0 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-black text-white leading-tight pt-1">相場ノート &amp; アノマリー</h3>
+                    </div>
+                    <p class="text-gray-400 mb-5 leading-relaxed">
                         木を見て、森も見る。<br>
-                        「なぜ負けたか」の背景（相場環境）まで記録できるのはTCだけ。
+                        <span class="text-white">「なぜ負けたか」の背景(相場環境)まで記録</span>できるのはTCだけ。
                     </p>
-                    <ul class="space-y-2 text-gray-300 text-sm">
-                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> テクニカルだけでなく、季節性（アノマリー）やファンダメンタルズを同じ画面で管理</li>
-                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> チャート画像（最大3枚）＋リッチテキストで相場環境を記録</li>
-                        <li class="flex items-center"><span class="text-brand-accent mr-2">✓</span> 過去の「似た相場」を瞬時に検索可能</li>
+                    <ul class="space-y-2.5 text-gray-300 text-sm">
+                        <li class="flex items-start gap-2"><span class="text-brand-accent flex-shrink-0 mt-0.5">✓</span><span>テクニカルだけでなく、季節性(アノマリー)やファンダメンタルズを同じ画面で管理</span></li>
+                        <li class="flex items-start gap-2"><span class="text-brand-accent flex-shrink-0 mt-0.5">✓</span><span>チャート画像(最大3枚)+リッチテキストで相場環境を記録</span></li>
+                        <li class="flex items-start gap-2"><span class="text-brand-accent flex-shrink-0 mt-0.5">✓</span><span>過去の「似た相場」を瞬時に検索可能</span></li>
                     </ul>
                 </div>
-                <div class="order-1 md:order-2 rounded-lg overflow-hidden border border-gray-700">
+                <div class="order-1 md:order-2 rounded-2xl overflow-hidden transition-all hover:scale-[1.02]" style="border: 1px solid rgba(51,65,85,0.6); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
                     <img src="images/feature-notes.jpg" alt="相場ノート画面" class="w-full">
                 </div>
             </div>
@@ -536,112 +1947,488 @@
     </section>
 
     <!-- 比較テーブル -->
-    <section class="py-10 md:py-20 border-t border-gray-800">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">なぜ、Trading Completeなのか？</h2>
-                <p class="text-gray-400">「記録するだけ」から「規律を構築する」への進化</p>
+    <section class="py-16 md:py-24 border-t border-gray-800 relative overflow-hidden">
+        <!-- ゴールドグローエフェクト -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(251,191,36,0.06) 0%, transparent 60%);"></div>
+
+        <div class="max-w-5xl mx-auto px-4 relative">
+            <!-- ヘッダー -->
+            <div class="text-center mb-12 md:mb-16">
+                <span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full text-xs font-bold mb-5" style="background: rgba(251,191,36,0.12); border: 1px solid rgba(251,191,36,0.4); color: #fbbf24;">
+                    日本初の本格FX記録SaaS
+                </span>
+                <h2 class="text-2xl md:text-4xl font-black text-white mb-4 leading-tight">なぜ、Trading Completeなのか?</h2>
+                <p class="text-gray-400 text-sm md:text-base">「記録するだけ」から「規律を構築する」への進化。</p>
             </div>
-            <div class="overflow-x-auto">
+
+            <!-- 比較テーブル -->
+            <div class="overflow-x-auto rounded-2xl" style="background: rgba(15,23,42,0.4); border: 1px solid rgba(51,65,85,0.4);">
                 <table class="w-full text-sm">
                     <thead>
                         <tr>
-                            <th class="py-4 px-6 text-left text-gray-400 font-medium w-1/3">機能</th>
-                            <th class="py-4 px-6 text-center text-gray-400 font-medium w-1/3">一般的なアプリ / Excel</th>
-                            <th class="py-4 px-6 text-center font-bold w-1/3 rounded-t-xl" style="background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.3); border-bottom: none;">
-                                <span class="text-brand-accent">Trading Complete 🚀</span>
+                            <th class="py-5 px-4 md:px-6 text-left text-gray-400 font-medium w-1/3 text-xs uppercase tracking-wider">項目</th>
+                            <th class="py-5 px-4 md:px-6 text-center text-gray-400 font-medium w-1/3 text-xs uppercase tracking-wider">一般的なアプリ / Excel</th>
+                            <th class="py-5 px-4 md:px-6 text-center font-bold w-1/3 relative" style="background: linear-gradient(180deg, rgba(251,191,36,0.15) 0%, rgba(251,191,36,0.08) 100%); border-left: 1px solid rgba(251,191,36,0.3); border-right: 1px solid rgba(251,191,36,0.3); border-top: 1px solid rgba(251,191,36,0.3);">
+                                <span class="text-brand-accent text-sm md:text-base">⭐ Trading Complete</span>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="border-t border-gray-800">
-                            <td class="py-4 px-6 text-white font-medium">エントリー判断</td>
-                            <td class="py-4 px-6 text-center text-gray-400">結果を記録するだけ</td>
-                            <td class="py-4 px-6 text-center font-bold" style="background: rgba(251,191,36,0.05); border-left: 1px solid rgba(251,191,36,0.3); border-right: 1px solid rgba(251,191,36,0.3);">
+                        <tr style="border-top: 1px solid rgba(51,65,85,0.4);">
+                            <td class="py-4 px-4 md:px-6 text-white font-medium">エントリー判断</td>
+                            <td class="py-4 px-4 md:px-6 text-center text-gray-400">結果を記録するだけ</td>
+                            <td class="py-4 px-4 md:px-6 text-center font-bold" style="background: rgba(251,191,36,0.05); border-left: 1px solid rgba(251,191,36,0.3); border-right: 1px solid rgba(251,191,36,0.3);">
                                 <span class="text-brand-accent">3つの根拠を強制チェック ✓</span>
                             </td>
                         </tr>
-                        <tr class="border-t border-gray-800">
-                            <td class="py-4 px-6 text-white font-medium">リスク管理</td>
-                            <td class="py-4 px-6 text-center text-gray-400">手動計算・感覚</td>
-                            <td class="py-4 px-6 text-center font-bold" style="background: rgba(251,191,36,0.05); border-left: 1px solid rgba(251,191,36,0.3); border-right: 1px solid rgba(251,191,36,0.3);">
+                        <tr style="border-top: 1px solid rgba(51,65,85,0.4);">
+                            <td class="py-4 px-4 md:px-6 text-white font-medium">リスク管理</td>
+                            <td class="py-4 px-4 md:px-6 text-center text-gray-400">手動計算・感覚</td>
+                            <td class="py-4 px-4 md:px-6 text-center font-bold" style="background: rgba(251,191,36,0.05); border-left: 1px solid rgba(251,191,36,0.3); border-right: 1px solid rgba(251,191,36,0.3);">
                                 <span class="text-brand-accent">3色で自動判定・警告 ✓</span>
                             </td>
                         </tr>
-                        <tr class="border-t border-gray-800">
-                            <td class="py-4 px-6 text-white font-medium">分析視点</td>
-                            <td class="py-4 px-6 text-center text-gray-400">Pips中心</td>
-                            <td class="py-4 px-6 text-center font-bold" style="background: rgba(251,191,36,0.05); border-left: 1px solid rgba(251,191,36,0.3); border-right: 1px solid rgba(251,191,36,0.3);">
-                                <span class="text-brand-accent">円建て純損益（手残り）＋税務対応 ✓</span>
+                        <tr style="border-top: 1px solid rgba(51,65,85,0.4);">
+                            <td class="py-4 px-4 md:px-6 text-white font-medium">分析視点</td>
+                            <td class="py-4 px-4 md:px-6 text-center text-gray-400">Pips中心</td>
+                            <td class="py-4 px-4 md:px-6 text-center font-bold" style="background: rgba(251,191,36,0.05); border-left: 1px solid rgba(251,191,36,0.3); border-right: 1px solid rgba(251,191,36,0.3);">
+                                <span class="text-brand-accent">円建て純損益(手残り)+税務対応 ✓</span>
                             </td>
                         </tr>
-                        <tr class="border-t border-gray-800">
-                            <td class="py-4 px-6 text-white font-medium">目的</td>
-                            <td class="py-4 px-6 text-center text-gray-400">データの保存</td>
-                            <td class="py-4 px-6 text-center font-bold rounded-b-xl" style="background: rgba(251,191,36,0.05); border-left: 1px solid rgba(251,191,36,0.3); border-right: 1px solid rgba(251,191,36,0.3); border-bottom: 1px solid rgba(251,191,36,0.3);">
+                        <tr style="border-top: 1px solid rgba(51,65,85,0.4);">
+                            <td class="py-4 px-4 md:px-6 text-white font-medium">目的</td>
+                            <td class="py-4 px-4 md:px-6 text-center text-gray-400">データの保存</td>
+                            <td class="py-4 px-4 md:px-6 text-center font-bold" style="background: rgba(251,191,36,0.05); border-left: 1px solid rgba(251,191,36,0.3); border-right: 1px solid rgba(251,191,36,0.3);">
                                 <span class="text-brand-accent">「規律」の構築 ✓</span>
+                            </td>
+                        </tr>
+                        <!-- 新規追加行1: 運営形態 -->
+                        <tr style="border-top: 1px solid rgba(51,65,85,0.4);">
+                            <td class="py-4 px-4 md:px-6 text-white font-medium">運営形態</td>
+                            <td class="py-4 px-4 md:px-6 text-center text-gray-400">個人作成・保守なし</td>
+                            <td class="py-4 px-4 md:px-6 text-center font-bold" style="background: rgba(251,191,36,0.05); border-left: 1px solid rgba(251,191,36,0.3); border-right: 1px solid rgba(251,191,36,0.3);">
+                                <span class="text-brand-accent">Studio Compana 運営 ✓</span>
+                            </td>
+                        </tr>
+                        <!-- 新規追加行2: 日本語対応 -->
+                        <tr style="border-top: 1px solid rgba(51,65,85,0.4);">
+                            <td class="py-4 px-4 md:px-6 text-white font-medium rounded-bl-2xl">日本語対応</td>
+                            <td class="py-4 px-4 md:px-6 text-center text-gray-400">海外ツールは英語のみ</td>
+                            <td class="py-4 px-4 md:px-6 text-center font-bold" style="background: rgba(251,191,36,0.05); border-left: 1px solid rgba(251,191,36,0.3); border-right: 1px solid rgba(251,191,36,0.3); border-bottom: 1px solid rgba(251,191,36,0.3); border-bottom-right-radius: 1rem;">
+                                <span class="text-brand-accent">日本語ネイティブ設計 ✓</span>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-        </div>
-    </section>
 
-    <section class="py-16 bg-gray-900">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h3 class="text-xl font-bold mb-8 text-white">成長を支える基盤</h3>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-                <span class="px-4 py-2 bg-gray-800 rounded-full text-sm text-gray-300 border border-gray-700 text-center">📈 許容損失・手法分析</span>
-                <span class="px-4 py-2 bg-gray-800 rounded-full text-sm text-gray-300 border border-gray-700 text-center">🔒 RLSでデータ保護</span>
-                <span class="px-4 py-2 bg-gray-800 rounded-full text-sm text-gray-300 border border-gray-700 text-center">💾 完全バックアップ対応</span>
-                <span class="px-4 py-2 bg-gray-800 rounded-full text-sm text-gray-300 border border-gray-700 text-center">☁️ クラウド同期</span>
-                <span class="px-4 py-2 bg-gray-800 rounded-full text-sm text-gray-300 border border-gray-700 text-center">📱 マルチデバイス対応</span>
-                <span class="px-4 py-2 bg-gray-800 rounded-full text-sm text-gray-300 border border-gray-700 text-center">⚡ インストール不要</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-10 md:py-20 bg-gray-900 border-t border-gray-800">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <p class="text-brand-accent text-sm font-medium tracking-widest uppercase mb-3">Developer Story</p>
-                <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">記録できなかった日々から生まれた6万行の執念</h2>
-            </div>
-            <div class="bg-gray-800 border border-gray-700 rounded-2xl p-8 md:p-12">
-                <p class="text-xl md:text-2xl text-brand-accent font-bold text-center mb-10 leading-relaxed">
-                    「これは、過去のどん底にいた自分自身を<br>救うために作ったツールです」
+            <!-- 日本初の根拠注釈 -->
+            <div class="mt-8 text-center">
+                <p class="text-xs md:text-sm text-gray-500 max-w-3xl mx-auto leading-relaxed">
+                    ※ 2026年4月時点、屋号登録・特商法準拠のFX記録特化SaaSで、日本向けに設計された本格事業サービスとしてはTrading Completeのみ。<br class="hidden md:block">
+                    個人開発アプリや海外ツール(TraderSync、TradeZella等)は複数存在しますが、日本向けに設計された本格事業SaaSとしては日本初の存在となります。
                 </p>
-                <div class="space-y-6 text-gray-300 leading-relaxed">
-                    <div class="flex items-start gap-4">
-                        <span class="text-brand-accent text-xl mt-0.5 flex-shrink-0">✓</span>
-                        <p>ルールなき感覚トレードを繰り返し、<span class="text-white font-medium">大きな失敗と向き合う日々を経験</span></p>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <span class="text-brand-accent text-xl mt-0.5 flex-shrink-0">✓</span>
-                        <p>過去検証と記録の徹底で立ち直るも、ExcelやノートでのトレードジャーナルのいわゆるSaaSの<span class="text-white font-medium">「時間的ストレス」に限界を感じる</span></p>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <span class="text-brand-accent text-xl mt-0.5 flex-shrink-0">✓</span>
-                        <p>記録のストレスをなくし、検証と勉強の<span class="text-white font-medium">「時間（時短）」を生み出すために、約60,000行のコードをソロで構築</span></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 border-t border-gray-800 bg-gray-900 relative overflow-hidden">
+        <!-- 微妙なブルーグロー(技術的信頼感) -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(59,130,246,0.05) 0%, transparent 70%);"></div>
+
+        <div class="max-w-6xl mx-auto px-4 relative">
+            <!-- ヘッダー -->
+            <div class="text-center mb-12 md:mb-16">
+                <p class="text-brand-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-4">Technical Foundation</p>
+                <h2 class="text-2xl md:text-4xl font-black text-white mb-4 leading-tight">成長を支える、技術基盤。</h2>
+                <p class="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">本格SaaSとしてのインフラを、<span class="text-white font-bold">個人開発の常識を超えて</span>。</p>
+            </div>
+
+            <!-- 6つの技術基盤カード -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 max-w-5xl mx-auto">
+
+                <!-- 01: Supabase RLS -->
+                <div class="rounded-2xl p-5 md:p-6 transition-all hover:border-gray-600" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <div class="flex items-start gap-3">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-white mb-2 text-sm md:text-base">Supabase RLS</h3>
+                            <p class="text-xs md:text-sm text-gray-400 leading-relaxed">Row Level Securityで、全5テーブルのユーザーデータを完全に分離。他のユーザーの記録は物理的に見えない。</p>
+                        </div>
                     </div>
                 </div>
-                <p class="mt-10 text-center text-sm text-gray-500">— Studio Compana（個人開発者・トレード記録7年）</p>
+
+                <!-- 02: クラウド同期 -->
+                <div class="rounded-2xl p-5 md:p-6 transition-all hover:border-gray-600" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <div class="flex items-start gap-3">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-white mb-2 text-sm md:text-base">クラウド自動同期</h3>
+                            <p class="text-xs md:text-sm text-gray-400 leading-relaxed">オフライン中の操作もローカル保存。復帰時に自動マージで、端末間のデータ差分を完全解消。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 03: 暗号化ストレージ -->
+                <div class="rounded-2xl p-5 md:p-6 transition-all hover:border-gray-600" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <div class="flex items-start gap-3">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-white mb-2 text-sm md:text-base">暗号化ストレージ</h3>
+                            <p class="text-xs md:text-sm text-gray-400 leading-relaxed">チャート画像は非公開バケットに保存。署名付きURLで、自分だけがアクセスできる仕組み。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 04: XSS対策徹底 -->
+                <div class="rounded-2xl p-5 md:p-6 transition-all hover:border-gray-600" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <div class="flex items-start gap-3">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M12 2a10 10 0 100 20 10 10 0 000-20z"/></svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-white mb-2 text-sm md:text-base">XSS対策・入力検証</h3>
+                            <p class="text-xs md:text-sm text-gray-400 leading-relaxed">SecurityUtils・InputValidatorで全入力をサニタイズ。金融データを扱うシステムとして、攻撃ベクトルを徹底対策。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 05: セッション管理 -->
+                <div class="rounded-2xl p-5 md:p-6 transition-all hover:border-gray-600" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <div class="flex items-start gap-3">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-white mb-2 text-sm md:text-base">24時間セッション管理</h3>
+                            <p class="text-xs md:text-sm text-gray-400 leading-relaxed">長期間の放置を自動検出し、セッションをタイムアウト。不正アクセスのリスクを最小化。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 06: インストール不要 -->
+                <div class="rounded-2xl p-5 md:p-6 transition-all hover:border-gray-600" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <div class="flex items-start gap-3">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-white mb-2 text-sm md:text-base">インストール不要・全デバイス対応</h3>
+                            <p class="text-xs md:text-sm text-gray-400 leading-relaxed">PC・タブレット・スマホ、ブラウザだけで動作。レスポンシブ設計で、どこでも記録。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- トラスト注釈 -->
+            <div class="mt-10 text-center">
+                <p class="text-xs text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                    セキュリティの詳細は<a href="/legal/#privacy" class="text-brand-accent hover:underline">プライバシーポリシー</a>をご参照ください。
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- 料金プラン -->
-    <section id="waitlist" class="py-24 border-t border-gray-800">
-        <div class="max-w-5xl mx-auto px-4">
-            <div class="text-center mb-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">成長できる環境は、ここにある。</h2>
-                <p class="text-gray-400">2026年 公開予定。このシステムは成長を約束しない。圧倒的に成長できる「環境」を提供する。</p>
+            <!-- ===== FAQ セクション(SEO強化) ===== -->
+    <section id="faq" class="py-16 md:py-24 border-t border-gray-800 bg-gray-900 relative overflow-hidden">
+        <!-- 微妙なゴールドグロー -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(251,191,36,0.04) 0%, transparent 70%);"></div>
+
+        <div class="max-w-4xl mx-auto px-4 relative">
+            <!-- ヘッダー -->
+            <div class="text-center mb-12 md:mb-16">
+                <p class="text-brand-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-4">FAQ</p>
+                <h2 class="text-2xl md:text-4xl font-black text-white mb-4 leading-tight">よくあるご質問</h2>
+                <p class="text-gray-400 text-sm md:text-base">Trading Completeについて、よくいただく5つの質問にお答えします。</p>
             </div>
 
+            <!-- FAQ アコーディオン -->
+            <div class="space-y-4" id="faq-list">
+                <!-- Q1 -->
+                <details class="group rounded-2xl p-5 md:p-6 transition-all" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <summary class="flex items-center justify-between cursor-pointer list-none">
+                        <h3 class="text-white font-bold text-base md:text-lg pr-4">データは安全ですか?</h3>
+                        <span class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </span>
+                    </summary>
+                    <div class="mt-4 text-sm md:text-base text-gray-300 leading-relaxed">
+                        SupabaseのRow Level Security(RLS)により、あなたのデータは他のユーザーから完全に分離・保護されています。画像はユーザーごとに非公開バケットで管理され、署名付きURLで自分だけがアクセス可能。エクスポート機能で手元にバックアップを取ることもできます。
+                    </div>
+                </details>
+
+                <!-- Q2 -->
+                <details class="group rounded-2xl p-5 md:p-6 transition-all" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <summary class="flex items-center justify-between cursor-pointer list-none">
+                        <h3 class="text-white font-bold text-base md:text-lg pr-4">スマホで使えますか?</h3>
+                        <span class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </span>
+                    </summary>
+                    <div class="mt-4 text-sm md:text-base text-gray-300 leading-relaxed">
+                        PC・タブレット・スマホの完全レスポンシブ対応です。ブラウザからアクセスするだけで、インストールは不要です。クラウド同期により、どのデバイスからでも同じデータにアクセスできます。
+                    </div>
+                </details>
+
+                <!-- Q3 -->
+                <details class="group rounded-2xl p-5 md:p-6 transition-all" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <summary class="flex items-center justify-between cursor-pointer list-none">
+                        <h3 class="text-white font-bold text-base md:text-lg pr-4">FX以外にも対応していますか?</h3>
+                        <span class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </span>
+                    </summary>
+                    <div class="mt-4 text-sm md:text-base text-gray-300 leading-relaxed">
+                        通貨ペアや商品名は自由にカスタマイズできます。ゴールド(XAUUSD)やビットコイン、株価指数など、お好みの銘柄を登録してご利用いただけます。
+                    </div>
+                </details>
+
+                <!-- Q4 -->
+                <details class="group rounded-2xl p-5 md:p-6 transition-all" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <summary class="flex items-center justify-between cursor-pointer list-none">
+                        <h3 class="text-white font-bold text-base md:text-lg pr-4">無料プランに制限はありますか?</h3>
+                        <span class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </span>
+                    </summary>
+                    <div class="mt-4 text-sm md:text-base text-gray-300 leading-relaxed">
+                        無料プランでは累計50トレードまで記録できます。分析・チャート・画像保存など全機能をご利用いただけます。トレード数無制限にはProプラン(月額1,980円)へのアップグレードが必要です。
+                    </div>
+                </details>
+
+                <!-- Q5 -->
+                <details class="group rounded-2xl p-5 md:p-6 transition-all" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <summary class="flex items-center justify-between cursor-pointer list-none">
+                        <h3 class="text-white font-bold text-base md:text-lg pr-4">確定申告に本当に使えますか?</h3>
+                        <span class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </span>
+                    </summary>
+                    <div class="mt-4 text-sm md:text-base text-gray-300 leading-relaxed">
+                        Trading Completeは記録・集計ツールであり、税務アドバイスは行いません。ただし、年間トレード損益や経費データをExcel互換のCSV形式で出力できるため、確定申告の準備作業を大幅に効率化できます。
+                    </div>
+                </details>
+
+                <!-- Q6 -->
+                <details class="group rounded-2xl p-5 md:p-6 transition-all" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <summary class="flex items-center justify-between cursor-pointer list-none">
+                        <h3 class="text-white font-bold text-base md:text-lg pr-4">いつでも解約できますか?</h3>
+                        <span class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </span>
+                    </summary>
+                    <div class="mt-4 text-sm md:text-base text-gray-300 leading-relaxed">
+                        はい、いつでも解約できます。マイページの「プラン管理」からワンクリックで解約可能です。契約期間の縛りや違約金は一切ありません。解約後も、契約期間の終了日までは有料プランの機能をご利用いただけます(日割り返金はございません)。
+                    </div>
+                </details>
+
+                <!-- Q7 -->
+                <details class="group rounded-2xl p-5 md:p-6 transition-all" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <summary class="flex items-center justify-between cursor-pointer list-none">
+                        <h3 class="text-white font-bold text-base md:text-lg pr-4">解約したら、今までの記録はどうなりますか?</h3>
+                        <span class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </span>
+                    </summary>
+                    <div class="mt-4 text-sm md:text-base text-gray-300 leading-relaxed">
+                        解約後もデータは保持されます。自動的にFreeプランに移行し、過去の記録はそのまま閲覧可能です。あなたが積み上げた「成長の軌跡」が失われることはありません。エクスポート機能でいつでもバックアップを取ることもできます。<br><br><span class="text-gray-400 text-sm">※ Freeプラン移行後は、新規記録は累計50件までに制限され、クラウド同期は停止します。再度有料プランに加入すれば、全機能が再開されます。</span>
+                    </div>
+                </details>
+
+                <!-- Q8 -->
+                <details class="group rounded-2xl p-5 md:p-6 transition-all" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <summary class="flex items-center justify-between cursor-pointer list-none">
+                        <h3 class="text-white font-bold text-base md:text-lg pr-4">クレジットカード情報の取り扱いは安全ですか?</h3>
+                        <span class="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-transform group-open:rotate-45" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                        </span>
+                    </summary>
+                    <div class="mt-4 text-sm md:text-base text-gray-300 leading-relaxed">
+                        カード情報はTCには一切保存されません。決済はPayPalまたはfincode(GMOペイメントゲートウェイ)という信頼性の高い決済代行サービスを通じて、SSL暗号化通信で直接処理されます。TCは決済ステータスのみを受け取る仕組みになっており、カード番号やCVVコードに触れることはありません。
+                    </div>
+                </details>
+            </div>
+
+            <!-- 追加の質問誘導 -->
+            <div class="mt-10 text-center">
+                <p class="text-sm text-gray-500">
+                    他にご質問がある場合は、<a href="https://x.com/Compana_Doppio" target="_blank" class="text-brand-accent hover:underline">X(@Compana_Doppio)のDM</a>までお気軽にご連絡ください。
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- ===== /FAQ セクション ===== -->
+
+<section class="py-16 md:py-24 border-t border-gray-800 relative overflow-hidden">
+        <!-- ゴールドグローエフェクト(新ヒーローとの統一感) -->
+        <div class="absolute top-0 left-1/4 w-[600px] h-[400px] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(251,191,36,0.06) 0%, transparent 60%);"></div>
+        
+        <div class="max-w-5xl mx-auto px-4 relative">
+            <!-- ヘッダー -->
+            <div class="text-center mb-12">
+                <p class="text-brand-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-4">Founder&#039;s Letter</p>
+                <h2 class="text-2xl md:text-4xl font-black text-white leading-tight mb-6">
+                    「続ける」ことが、<br class="hidden md:block">
+                    最も難しい。<br>
+                    <span class="text-brand-accent">でも、最も意味がある。</span>
+                </h2>
+            </div>
+
+            <!-- 引用メッセージ -->
+            <div class="rounded-2xl p-6 md:p-10 mb-10 text-center max-w-3xl mx-auto" style="background: linear-gradient(180deg, rgba(251,191,36,0.08) 0%, rgba(15,23,42,0.6) 100%); border: 1px solid rgba(251,191,36,0.3);">
+                <p class="text-base md:text-xl text-white font-bold leading-relaxed">
+                    「続けてくれるのは、あなた自身。<br>
+                    <span class="text-brand-accent">私が用意したのは、その環境です。</span>」
+                </p>
+            </div>
+
+            <!-- ストーリー本文(3ブロック: 失敗・気づき・環境) -->
+            <div class="grid gap-5 md:gap-6 max-w-3xl mx-auto mb-10">
+                <!-- 失敗 -->
+                <div class="rounded-xl p-5 md:p-7 flex gap-4" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <div class="flex-shrink-0">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(239,68,68,0.12); color: #f87171;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-xs font-bold uppercase tracking-[0.15em] text-red-400 mb-2">01 · 失敗</p>
+                        <p class="text-white font-bold text-lg md:text-xl mb-3 leading-tight">ルールのない、感情トレードを繰り返した。</p>
+                        <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                            含み損を抱えてリベンジトレード。「ここで上がるはず」というなんとなくエントリー。早く取り返したくて、高ロット。これは私だけの話ではなく、<span class="text-white">副業FXトレーダーの多くが経験する「共通の失敗パターン」</span>です。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 気づき -->
+                <div class="rounded-xl p-5 md:p-7 flex gap-4" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <div class="flex-shrink-0">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-xs font-bold uppercase tracking-[0.15em] text-brand-accent mb-2">02 · 気づき</p>
+                        <p class="text-white font-bold text-lg md:text-xl mb-3 leading-tight">相場を変えることはできない。でも、自分は変えられる。</p>
+                        <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                            記録を続けることで、<span class="text-white">「なんとなく」</span>が消えていく。小さな自覚の積み重ねが、いつの間にか、大きな違いになっていた。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 環境 -->
+                <div class="rounded-xl p-5 md:p-7 flex gap-4" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <div class="flex-shrink-0">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(34,197,94,0.12); color: #4ade80;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14M22 4L12 14.01l-3-3"/></svg>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-xs font-bold uppercase tracking-[0.15em] text-green-400 mb-2">03 · 環境</p>
+                        <p class="text-white font-bold text-lg md:text-xl mb-3 leading-tight">記録に、エネルギーを奪われないシステムを。</p>
+                        <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                            あなたの限られた時間を、「記録の作業」ではなく、<span class="text-white">「トレードの振り返り」</span>に使ってほしい。このシステムは、その道具です。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 署名 -->
+            <div class="text-center pt-8" style="border-top: 1px solid rgba(51,65,85,0.4);">
+                <p class="text-white font-bold text-lg md:text-xl mb-1">コンパナ</p>
+                <p class="text-sm text-gray-400 font-medium">Studio Compana Founder &middot; Trading Complete 開発者</p>
+            </div>
+        </div>
+    </section>
+
+<!-- ===== THE TRAP セクション(聖杯探しの罠) ===== -->
+    <section class="py-16 md:py-24 border-t border-gray-800 relative overflow-hidden">
+        <!-- 微妙な赤系グロー(警告のイメージ) -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(239,68,68,0.04) 0%, transparent 70%);"></div>
+
+        <div class="max-w-4xl mx-auto px-4 relative">
+            <!-- ヘッダー -->
+            <div class="text-center mb-10 md:mb-14">
+                <p class="text-red-400 text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-4">The Trap</p>
+                <h2 class="text-2xl md:text-4xl font-black text-white leading-tight">
+                    「勝てるツール」を、<br class="hidden md:block">
+                    <span class="text-brand-accent">探していませんか。</span>
+                </h2>
+            </div>
+
+            <!-- 3つの探し(警告) -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-10 max-w-3xl mx-auto">
+                <div class="rounded-xl p-4 md:p-5 text-center" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <p class="text-xs md:text-sm text-gray-400 mb-1">勝てる</p>
+                    <p class="font-bold text-white text-sm md:text-base">インジケーターを探す</p>
+                </div>
+                <div class="rounded-xl p-4 md:p-5 text-center" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <p class="text-xs md:text-sm text-gray-400 mb-1">勝てる</p>
+                    <p class="font-bold text-white text-sm md:text-base">手法を探す</p>
+                </div>
+                <div class="rounded-xl p-4 md:p-5 text-center" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                    <p class="text-xs md:text-sm text-gray-400 mb-1">勝てる</p>
+                    <p class="font-bold text-white text-sm md:text-base">記録ツールを探す</p>
+                </div>
+            </div>
+
+            <!-- 核心メッセージ -->
+            <div class="text-center mb-10 max-w-2xl mx-auto">
+                <p class="text-base md:text-lg text-gray-300 leading-relaxed mb-6">
+                    全部、<span class="text-white font-bold">同じ道</span>を歩いている。<br>
+                    <span class="text-red-400 font-bold">「聖杯探し」</span>という、永遠のループ。
+                </p>
+
+                <div class="rounded-2xl p-6 md:p-8 my-8" style="background: linear-gradient(180deg, rgba(251,191,36,0.08) 0%, rgba(15,23,42,0.6) 100%); border: 1px solid rgba(251,191,36,0.3);">
+                    <p class="text-base md:text-xl text-white font-bold leading-relaxed">
+                        同じインジケーター。同じ手法。同じツール。<br>
+                        それらを、<span class="text-brand-accent">使い続けた人だけが</span>、<br>
+                        何かを掴む。
+                    </p>
+                </div>
+
+                <p class="text-base md:text-lg text-gray-300 leading-relaxed">
+                    Trading Completeは、あなたに聖杯を渡しません。<br>
+                    ただ、<span class="text-brand-accent font-bold">「続ける」ことを、一緒に選び続けます</span>。
+                </p>
+            </div>
+
+            <!-- 締めの注釈 -->
+            <div class="text-center pt-6" style="border-top: 1px solid rgba(51,65,85,0.4);">
+                <p class="text-xs md:text-sm text-gray-500 leading-relaxed max-w-2xl mx-auto">
+                    ※ このシステムで、あなたを勝たせることはできません。<br>
+                    でも、<span class="text-gray-400">「勝てる自分」を育てる環境</span>は、ここにあります。
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- ===== /THE TRAP セクション ===== -->
+
+    <!-- 料金プラン -->
+    <section id="waitlist" class="py-24 border-t border-gray-800 relative overflow-hidden">
+        <!-- ゴールドグローエフェクト(新ヒーローとの統一感) -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] pointer-events-none" style="background: radial-gradient(ellipse at center, rgba(251,191,36,0.08) 0%, transparent 60%);"></div>
+        
+        <div class="max-w-5xl mx-auto px-4 relative">
+            <!-- ヘッダー -->
+            <div class="text-center mb-6">
+                <span class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full text-xs font-bold mb-6" style="background: rgba(251,191,36,0.12); border: 1px solid rgba(251,191,36,0.4); color: #fbbf24;">
+                    ✨ 先着100名限定・早期登録特典あり
+                </span>
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-4 leading-tight">成長できる環境は、ここにある。</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">2026年夏 公開予定。このシステムは成長を約束しない。<br class="hidden md:block">圧倒的に成長できる「環境」を提供する。</p>
+            </div>
+
+            <!-- 料金プラン -->
             <div class="grid md:grid-cols-3 gap-6 mt-12 mb-14">
                 <!-- Freeプラン -->
-                <div class="bg-gray-800 border border-gray-700 rounded-2xl p-8 flex flex-col">
+                <div class="rounded-2xl p-8 flex flex-col transition-all hover:border-gray-600" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
                     <p class="text-gray-400 font-bold mb-4">【Freeプラン】</p>
                     <p class="text-4xl font-black text-white mb-1">¥0</p>
                     <p class="text-gray-500 text-sm mb-6">ずっと無料</p>
@@ -656,45 +2443,166 @@
                     </a>
                 </div>
 
-                <!-- Proプラン（強調） -->
-                <div class="rounded-2xl p-8 flex flex-col border-2 border-brand-accent relative" style="background: rgba(251,191,36,0.06);">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-accent text-brand-dark text-xs font-black px-4 py-1 rounded-full">おすすめ</div>
+                <!-- Proプラン(強調) -->
+                <div class="rounded-2xl p-8 flex flex-col relative transition-all" style="background: linear-gradient(180deg, rgba(251,191,36,0.08) 0%, rgba(251,191,36,0.03) 100%); border: 2px solid #fbbf24; box-shadow: 0 0 40px rgba(251,191,36,0.15);">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-accent text-brand-dark text-xs font-black px-4 py-1 rounded-full whitespace-nowrap">⭐ 本命プラン</div>
                     <p class="text-brand-accent font-bold mb-4">【Proプラン】</p>
                     <p class="text-4xl font-black text-white mb-1">¥1,980<span class="text-lg font-normal text-gray-400">/月</span></p>
-                    <p class="text-gray-400 text-sm mb-6">¥19,800/年（2ヶ月分お得）</p>
+                    <p class="text-gray-400 text-sm mb-6">¥19,800/年(2ヶ月分お得)</p>
                     <ul class="space-y-2 text-gray-300 text-sm flex-1">
                         <li class="flex items-start gap-2"><span class="text-brand-accent">✓</span> トレード無制限</li>
                         <li class="flex items-start gap-2"><span class="text-brand-accent">✓</span> クラウド同期・マルチデバイス</li>
                         <li class="flex items-start gap-2"><span class="text-brand-accent">✓</span> 確定申告CSV出力まで完全網羅</li>
                     </ul>
                     <!-- TODO: 決済審査通過後にhrefを決済URLに差し替え -->
-                    <a href="#" class="mt-6 block text-center py-3 rounded-lg bg-brand-accent text-brand-dark font-black hover:bg-yellow-400 transition">
+                    <a href="#" class="mt-6 block text-center py-3 rounded-lg bg-brand-accent text-brand-dark font-black hover:bg-yellow-400 transition shadow-lg shadow-yellow-500/20">
                         Proプランを選ぶ
                     </a>
                 </div>
 
-                <!-- Premiumプラン（近日公開） -->
-                <div class="bg-gray-800 border border-gray-700 rounded-2xl p-8 flex flex-col relative opacity-60">
-                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-600 text-gray-300 text-xs font-black px-4 py-1 rounded-full whitespace-nowrap">近日公開予定</div>
+                <!-- Premiumプラン(近日公開) -->
+                <div class="rounded-2xl p-8 flex flex-col relative transition-all" style="background: rgba(15,23,42,0.4); border: 1px solid rgba(51,65,85,0.4); opacity: 0.7;">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gray-700 text-gray-300 text-xs font-black px-4 py-1 rounded-full whitespace-nowrap">🤖 2026.09 リリース予定</div>
                     <p class="text-gray-400 font-bold mb-4">【Premiumプラン】</p>
                     <p class="text-4xl font-black text-white mb-1">¥2,980<span class="text-lg font-normal text-gray-400">/月</span></p>
-                    <p class="text-gray-500 text-sm mb-6">¥29,800/年（2ヶ月分お得）</p>
+                    <p class="text-gray-500 text-sm mb-6">¥29,800/年(2ヶ月分お得)</p>
                     <ul class="space-y-2 text-gray-400 text-sm flex-1">
                         <li class="flex items-start gap-2"><span class="text-gray-500">✓</span> Proプランの全機能</li>
-                        <li class="flex items-start gap-2"><span class="text-gray-500">✓</span> AIによるトレード改善提案（開発中）</li>
-                        <li class="flex items-start gap-2"><span class="text-gray-500">✓</span> 究極の成長支援プラン</li>
+                        <li class="flex items-start gap-2"><span class="text-gray-500">✓</span> AIトレードコーチ(Claude搭載)</li>
+                        <li class="flex items-start gap-2"><span class="text-gray-500">✓</span> パーソナライズド改善提案</li>
                     </ul>
-                    <p class="text-xs text-gray-500 mt-4 text-center">※ リリース時期は未定です</p>
+                    <p class="text-xs text-gray-500 mt-4 text-center">※ 2026年9月リリース予定</p>
                 </div>
             </div>
 
-            <!-- CTA -->
+            <!-- 早期登録特典セクション -->
+            <div class="rounded-2xl p-8 mb-12" style="background: linear-gradient(180deg, rgba(251,191,36,0.08) 0%, rgba(15,23,42,0.6) 100%); border: 1px solid rgba(251,191,36,0.3);">
+                <div class="text-center mb-6">
+                    <h3 class="text-xl md:text-2xl font-black text-white mb-2">🎁 今、LINE事前登録すると</h3>
+                    <p class="text-sm text-gray-400">リリース前に登録すれば、2つの特典を受け取れます。</p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+                    <!-- 特典1: Edge Finder -->
+                    <div class="rounded-xl p-5" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                        <div class="flex items-start gap-3">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-brand-accent">特典1</span>
+                                    <span class="text-xs px-2 py-0.5 rounded bg-green-500/15 text-green-400 font-bold">今すぐDL可能</span>
+                                </div>
+                                <h4 class="font-bold text-white mb-1">Edge Finder 無料版</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed">過去検証ツール。「記録してからトレード」の前段階、検証の習慣を作るためのローカル版ツールを無料配布。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 特典2: 先着100名永久割引 -->
+                    <div class="rounded-xl p-5" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                        <div class="flex items-start gap-3">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 16.8l-6.2 4.5 2.4-7.4L2 9.4h7.6z"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="text-xs font-bold uppercase tracking-wider text-brand-accent">特典2</span>
+                                    <span class="text-xs px-2 py-0.5 rounded bg-red-500/15 text-red-400 font-bold">先着100名限定</span>
+                                </div>
+                                <h4 class="font-bold text-white mb-1">永久割引価格</h4>
+                                <p class="text-sm text-gray-400 leading-relaxed">リリース時、Pro ¥1,480/月・Premium ¥2,480/月の終身価格で利用可能に。契約継続中は値上げなし。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LINE登録CTA -->
             <div class="text-center">
-                <p class="text-gray-400 mb-6">リリース通知と最新情報を受け取る</p>
-                <a href="https://lin.ee/IL5usJM" target="_blank" class="inline-block px-12 py-5 rounded-xl bg-[#06C755] text-white font-black text-xl hover:bg-[#05b04c] transition shadow-lg shadow-green-500/20">
-                    📱 LINE事前登録はこちら
+                <p class="text-gray-300 mb-6 font-medium">リリース通知・開発進捗・特典を受け取る</p>
+                <a href="https://lin.ee/IL5usJM" target="_blank" class="inline-block px-12 py-5 rounded-xl bg-[#06C755] text-white font-black text-lg md:text-xl hover:bg-[#05b04c] transition-all shadow-lg shadow-green-500/25 hover:scale-105">
+                    📱 LINE事前登録して特典を受け取る
                 </a>
-                <p class="mt-4 text-xs text-gray-500">※ 開発進捗やリリース情報をお届けします</p>
+                <p class="mt-4 text-xs text-gray-500">※ 登録後すぐにEdge Finderダウンロードリンクをお届けします</p>
+            </div>
+
+            <!-- ご購入前の安心材料 -->
+            <div class="mt-14 pt-10" style="border-top: 1px solid rgba(51,65,85,0.4);">
+                <div class="text-center mb-8">
+                    <p class="text-brand-accent text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-3">Peace of Mind</p>
+                    <h3 class="text-xl md:text-2xl font-black text-white leading-tight">ご購入前に、ご確認ください。</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 max-w-3xl mx-auto">
+                    <!-- 01: いつでも解約 -->
+                    <div class="rounded-2xl p-5 md:p-6" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                        <div class="flex items-start gap-3">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(74,222,128,0.12); color: #4ade80;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 019.9-1"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-white mb-2 text-sm md:text-base">いつでも解約できます</h4>
+                                <p class="text-xs md:text-sm text-gray-400 leading-relaxed">マイページのプラン管理から、ワンクリックで解約可能。契約期間の縛りや違約金はありません。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 02: データは残ります -->
+                    <div class="rounded-2xl p-5 md:p-6" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                        <div class="flex items-start gap-3">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-white mb-2 text-sm md:text-base">解約後もデータは残ります</h4>
+                                <p class="text-xs md:text-sm text-gray-400 leading-relaxed">過去の記録は解約後もFreeプランで閲覧可能。エクスポート機能でバックアップも取れます。<br><span class="text-gray-500">※ 新規記録は累計50件までに制限されます</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 03: 安全な決済 -->
+                    <div class="rounded-2xl p-5 md:p-6" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                        <div class="flex items-start gap-3">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(96,165,250,0.15); color: #60a5fa;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-white mb-2 text-sm md:text-base">安全な決済処理</h4>
+                                <p class="text-xs md:text-sm text-gray-400 leading-relaxed">PayPalまたはfincode(GMO)による決済。<span class="text-white">カード情報はTCには一切保存されません</span>。SSL暗号化通信で安全に処理されます。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 04: Edge Finderは永久 -->
+                    <div class="rounded-2xl p-5 md:p-6" style="background: rgba(15,23,42,0.6); border: 1px solid rgba(51,65,85,0.6);">
+                        <div class="flex items-start gap-3">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center" style="background: rgba(251,191,36,0.15); color: #fbbf24;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-bold text-white mb-2 text-sm md:text-base">Edge Finder は永久にあなたのもの</h4>
+                                <p class="text-xs md:text-sm text-gray-400 leading-relaxed">LINE登録でお渡しするEdge Finder(バックテストツール)は、TC本体を契約されなくても、そのままご利用いただけます。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 特商法へのリンク -->
+                <div class="mt-6 text-center">
+                    <p class="text-xs text-gray-500">
+                        詳しい契約条件は<a href="tokutei.html" class="text-brand-accent hover:underline">特定商取引法に基づく表記</a>をご確認ください。
+                    </p>
+                </div>
+            </div>
+
+            <!-- 日本初の根拠(フッタートラスト) -->
+            <div class="mt-14 pt-8 text-center" style="border-top: 1px solid rgba(51,65,85,0.4);">
+                <p class="text-xs text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                    ※ 2026年4月時点、屋号登録・特商法準拠のFX記録特化SaaSで、<br class="hidden sm:block">
+                    日本向けに設計された本格事業サービスとしてはTrading Completeのみ。
+                </p>
             </div>
         </div>
     </section>
@@ -759,6 +2667,75 @@
         }
 
         setInterval(nextSlide, 3000);
+    </script>
+
+
+    <!-- ===== スティッキーCTA(スクロール中に表示) ===== -->
+    <div id="sticky-cta" class="fixed bottom-4 right-4 z-40 transition-all duration-300 opacity-0 translate-y-4 pointer-events-none hidden md:block">
+        <a href="#waitlist" class="flex items-center gap-2 bg-brand-accent hover:bg-amber-400 text-brand-dark font-black px-5 py-3 rounded-full shadow-2xl transition-all transform hover:scale-105" style="box-shadow: 0 10px 30px rgba(251,191,36,0.3);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 12h3v9h6v-6h4v6h6v-9h3L12 2z"/></svg>
+            <span class="text-sm">LINE事前登録</span>
+        </a>
+    </div>
+
+    <!-- ===== モバイル下部固定CTA(md未満のみ) ===== -->
+    <div id="mobile-sticky-cta" class="fixed bottom-0 left-0 right-0 z-40 md:hidden transition-all duration-300 opacity-0 translate-y-full pointer-events-none">
+        <div class="bg-brand-dark border-t border-gray-800 px-4 py-3" style="backdrop-filter: blur(12px); background: rgba(15,23,42,0.95);">
+            <a href="#waitlist" class="flex items-center justify-center gap-2 bg-brand-accent text-brand-dark font-black py-3 rounded-xl text-sm" style="box-shadow: 0 -4px 20px rgba(251,191,36,0.2);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 12h3v9h6v-6h4v6h6v-9h3L12 2z"/></svg>
+                <span>LINE事前登録して特典を受け取る</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- ===== スティッキーCTA 制御スクリプト ===== -->
+    <script>
+    (function() {
+        const desktopCta = document.getElementById('sticky-cta');
+        const mobileCta = document.getElementById('mobile-sticky-cta');
+        const waitlistSection = document.getElementById('waitlist');
+
+        function updateStickyCtaVisibility() {
+            const scrollY = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const showThreshold = windowHeight * 0.8; // ヒーロー80%スクロールしたら表示
+            
+            // CTAセクションに到達したら非表示(ダブルCTAを避ける)
+            let hideAtCta = false;
+            if (waitlistSection) {
+                const ctaTop = waitlistSection.getBoundingClientRect().top;
+                if (ctaTop < windowHeight) {
+                    hideAtCta = true;
+                }
+            }
+
+            const shouldShow = scrollY > showThreshold && !hideAtCta;
+
+            if (shouldShow) {
+                if (desktopCta) {
+                    desktopCta.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+                    desktopCta.classList.add('opacity-100', 'translate-y-0');
+                }
+                if (mobileCta) {
+                    mobileCta.classList.remove('opacity-0', 'translate-y-full', 'pointer-events-none');
+                    mobileCta.classList.add('opacity-100', 'translate-y-0');
+                }
+            } else {
+                if (desktopCta) {
+                    desktopCta.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+                    desktopCta.classList.remove('opacity-100', 'translate-y-0');
+                }
+                if (mobileCta) {
+                    mobileCta.classList.add('opacity-0', 'translate-y-full', 'pointer-events-none');
+                    mobileCta.classList.remove('opacity-100', 'translate-y-0');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', updateStickyCtaVisibility, { passive: true });
+        window.addEventListener('resize', updateStickyCtaVisibility, { passive: true });
+        updateStickyCtaVisibility();
+    })();
     </script>
 
 </body>

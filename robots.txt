@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tradingcomplete.com/sitemap.xml
+
+# Block AI training scrapers if desired (optional)
+# User-agent: GPTBot
+# Disallow: /
