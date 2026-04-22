@@ -937,9 +937,10 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <!-- ロゴ + リリース準備中バッジ (10.15) -->
-                <div class="flex items-center gap-3">
-                    <a href="#hero" class="text-xl font-bold tracking-wider text-white hover:text-brand-accent transition">Trading Complete</a>
-                    <span class="hidden md:inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider" style="background: rgba(251,191,36,0.12); border: 1px solid rgba(251,191,36,0.35); color: #fbbf24;">
+                <!-- スマホ: 縦並び(ロゴ上・バッジ下) / PC: 横並び -->
+                <div class="flex flex-col md:flex-row md:items-center gap-0.5 md:gap-3">
+                    <a href="#hero" class="text-base md:text-xl font-bold tracking-wider text-white hover:text-brand-accent transition leading-tight">Trading Complete</a>
+                    <span class="inline-flex items-center gap-1 px-2 md:px-2.5 py-0.5 md:py-1 rounded-full text-[9px] md:text-[10px] font-bold tracking-wider self-start md:self-auto" style="background: rgba(251,191,36,0.12); border: 1px solid rgba(251,191,36,0.35); color: #fbbf24;">
                         <span class="relative flex h-1.5 w-1.5">
                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-accent opacity-75"></span>
                             <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-brand-accent"></span>
