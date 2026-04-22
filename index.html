@@ -581,6 +581,11 @@
     #stats-grid {
       grid-template-columns: repeat(3, 1fr);
     }
+    /* スマホ/タブレット時は bento-streak の高さ制約を外し、
+       統計グリッドが6行分しっかり表示されるようにする */
+    .hero-section .bento-streak {
+      grid-row: span 7;
+    }
   }
 
   /* ========================================================
