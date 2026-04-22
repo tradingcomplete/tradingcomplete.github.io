@@ -11,9 +11,9 @@
     <link rel="canonical" href="https://tradingcomplete.com/">
     
     <!-- Favicon / App Icons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" href="/logo.png">
-    <link rel="apple-touch-icon" href="/logo.png">
+    <link rel="icon" type="image/x-icon" href="https://tradingcomplete.com/favicon.ico">
+    <link rel="icon" type="image/png" href="https://tradingcomplete.com/logo.png">
+    <link rel="apple-touch-icon" href="https://tradingcomplete.com/logo.png">
     
     <!-- Open Graph / Facebook / LINE -->
     <meta property="og:type" content="website">
@@ -570,6 +570,18 @@
   .hero-section .bento-checklist { grid-column: span 3; grid-row: span 4; }
   .hero-section .bento-tag { grid-column: span 3; grid-row: span 4; }
   .hero-section .bento-streak { grid-column: span 6; grid-row: span 4; }
+
+  /* Stats grid — responsive: 6 cols on PC, 3 cols on tablet/mobile */
+  #stats-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+  }
+  @media (max-width: 1024px) {
+    #stats-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
 
   /* ========================================================
      AI TEASER CARD (Premium preview, fills left-column void)
@@ -1299,7 +1311,7 @@
               </div>
               <div style="font-size:10px; color:var(--text-dimmer)" class="mono">12件のトレード</div>
             </div>
-            <div style="display:grid; grid-template-columns: repeat(6, 1fr); gap:5px" id="stats-grid"></div>
+            <div id="stats-grid"></div>
             <script>
               (function(){
                 const cells = [
@@ -1723,7 +1735,7 @@
             <!-- 既存タイムライン画像(下に配置) -->
             <div class="w-full max-w-5xl mx-auto">
                 <div class="rounded-2xl overflow-hidden" style="border: 1px solid rgba(51,65,85,0.6); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                    <img src="images/timeline.jpg" alt="「記録してからトレード」が作る1年後の未来" class="w-full">
+                    <img src="https://tradingcomplete.com/images/timeline.jpg" alt="「記録してからトレード」が作る1年後の未来" class="w-full">
                 </div>
             </div>
         </div>
@@ -1770,14 +1782,14 @@
                     </p>
                 </div>
                 <div class="order-1 md:order-2 rounded-2xl overflow-hidden transition-all hover:scale-[1.02]" style="border: 1px solid rgba(51,65,85,0.6); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                    <img src="images/feature-checklist.jpg" alt="チェックリスト機能" class="w-full">
+                    <img src="https://tradingcomplete.com/images/feature-checklist.jpg" alt="チェックリスト機能" class="w-full">
                 </div>
             </div>
 
             <!-- 機能02: リスクの自動判定 -->
             <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-center mb-14 md:mb-24">
                 <div class="rounded-2xl overflow-hidden transition-all hover:scale-[1.02]" style="border: 1px solid rgba(51,65,85,0.6); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                    <img src="images/feature-risk.jpg" alt="リスク管理自動判定" class="w-full">
+                    <img src="https://tradingcomplete.com/images/feature-risk.jpg" alt="リスク管理自動判定" class="w-full">
                 </div>
                 <div>
                     <div class="flex items-center gap-3 mb-5">
@@ -1829,14 +1841,14 @@
                     </ul>
                 </div>
                 <div class="order-1 md:order-2 rounded-2xl overflow-hidden transition-all hover:scale-[1.02]" style="border: 1px solid rgba(51,65,85,0.6); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                    <img src="images/feature-calendar.jpg" alt="月次カレンダー" class="w-full">
+                    <img src="https://tradingcomplete.com/images/feature-calendar.jpg" alt="月次カレンダー" class="w-full">
                 </div>
             </div>
 
             <!-- 機能04: 手法別パフォーマンス分析 -->
             <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-center mb-14 md:mb-24">
                 <div class="rounded-2xl overflow-hidden transition-all hover:scale-[1.02]" style="border: 1px solid rgba(51,65,85,0.6); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                    <img src="images/feature-analysis.jpg" alt="手法別パフォーマンス分析" class="w-full">
+                    <img src="https://tradingcomplete.com/images/feature-analysis.jpg" alt="手法別パフォーマンス分析" class="w-full">
                 </div>
                 <div>
                     <div class="flex items-center gap-3 mb-5">
@@ -1884,14 +1896,14 @@
                     </ul>
                 </div>
                 <div class="order-1 md:order-2 rounded-2xl overflow-hidden transition-all hover:scale-[1.02]" style="border: 1px solid rgba(51,65,85,0.6); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                    <img src="images/feature-analytics.jpg" alt="円建て損益の分析画面" class="w-full">
+                    <img src="https://tradingcomplete.com/images/feature-analytics.jpg" alt="円建て損益の分析画面" class="w-full">
                 </div>
             </div>
 
             <!-- 機能06: 確定申告サポート -->
             <div class="grid md:grid-cols-2 gap-6 md:gap-10 items-center mb-14 md:mb-24">
                 <div class="rounded-2xl overflow-hidden transition-all hover:scale-[1.02]" style="border: 1px solid rgba(51,65,85,0.6); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                    <img src="images/feature-tax.jpg" alt="確定申告・経費管理画面" class="w-full">
+                    <img src="https://tradingcomplete.com/images/feature-tax.jpg" alt="確定申告・経費管理画面" class="w-full">
                 </div>
                 <div>
                     <div class="flex items-center gap-3 mb-5">
@@ -1940,7 +1952,7 @@
                     </ul>
                 </div>
                 <div class="order-1 md:order-2 rounded-2xl overflow-hidden transition-all hover:scale-[1.02]" style="border: 1px solid rgba(51,65,85,0.6); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                    <img src="images/feature-notes.jpg" alt="相場ノート画面" class="w-full">
+                    <img src="https://tradingcomplete.com/images/feature-notes.jpg" alt="相場ノート画面" class="w-full">
                 </div>
             </div>
         </div>
