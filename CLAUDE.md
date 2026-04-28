@@ -62,7 +62,7 @@ GitHub/
 ### 3. 決済プロバイダ表記
 - 公開向け: 「外部決済サービスを利用」（具体名は本番切替時に追記）
 - 本番切替時: PayPal・Square を tokutei.html に追記
-- 詳細: `../trading-complete/docs/features/決済システム要件定義書 v3.9.md`
+- 詳細: `../trading-complete/docs/features/決済システム要件定義書_v3_10.md`
 
 ### 4. 「FX」キーワードの取り扱い
 カードブランドの自動審査で減点対象になりうる。
@@ -83,7 +83,7 @@ GitHub/
 |---|---|
 | 経営全体方針 | `../trading-complete/docs/business/Studio_Compana_運営要件定義書.md` |
 | 価格・プラン | `../trading-complete/docs/marketing/Trading_Complete_中核オファー要件定義書_v1_0.md` |
-| 決済実装 | `../trading-complete/docs/features/決済システム要件定義書 v3.9.md` |
+| 決済実装 | `../trading-complete/docs/features/決済システム要件定義書_v3_10.md` |
 | ミッション・ビジョン | `../trading-complete/docs/marketing/Trading_Complete_ミッションステートメント_v1_3.md` |
 | マーケ戦略 | `../trading-complete/docs/marketing/Trading_Complete_マーケティング戦略.md` |
 
@@ -95,7 +95,7 @@ LPの主要セクションを変更したら、以下も連動更新が必要か
 
 | LP変更 | 連動チェック |
 |---|---|
-| 価格セクション | 本社の中核オファー要件定義書 / v3.9 / TASKS.md |
+| 価格セクション | 本社の中核オファー要件定義書 / v3.10 / TASKS.md |
 | 機能紹介セクション | 本社の docs/機能一覧.md / OVERVIEW.md |
 | 屋号・住所表記 | tokutei.html / legal/ / 本社CLAUDE.md / 運営要件定義書 §1 |
 | ミッション・スローガン | 本社のミッションステートメント / 記事スキル mission.md |
